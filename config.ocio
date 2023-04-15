@@ -1,0 +1,2205 @@
+# OpenColorIO configuration file for Blender
+#
+# Based on aces, nuke-default and spi configurations from OpenColorIO-Config
+#
+# Filmic Dynamic Range LUT configuration crafted by Troy James Sobotka with
+# special thanks and feedback from Guillermo, Claudio Rocha, Bassam Kurdali,
+# Eugenio Pignataro, Henri Hebeisen, Jason Clarke, Haarm-Peter Duiker, Thomas
+# Mansencal, and Timothy Lottes.
+#
+# See ocio-license.txt for details.
+
+# -----------------------------------------------------------------------
+
+# Blender, Filmic, AgX, TCAMv2 and ACES OCIO profiles merged by Genco Uney.
+# Additional Film Print LUTS created in Davinci.
+
+# AgX by Troy Sobotka https://github.com/sobotka/
+# Truelight TCAMv2 OCIO config by filmlight https://www.filmlight.ltd.uk/support/customer-login/colourspaces/colourspaces.php
+# Using Default ACES 1.3 config and built in transforms for OCIO v2 https://github.com/ampas/aces-dev/tree/v1.3
+
+# -----------------------------------------------------------------------
+
+# PRE ALPHA!!! IF STUFF BREAKS PLEASE clearly note the issue and the error and let me know.
+
+ocio_profile_version: 2.1
+
+search_path: "AgX:ARRI:ARRI_REVEAL_LookLib:BMD_Gen5:Canon:filmic:luts:RED_IPP2_Creative:RWG:Sony:TCAMv2:TCAMv2_Looks:Untonemapped"
+strictparsing: true
+luma: [0.2126, 0.7152, 0.0722]
+
+description: RRT version ut33
+
+roles:
+  reference: Linear Rec709/sRGB
+  scene_linear: Linear Rec709/sRGB
+  rendering: Linear Rec709/sRGB
+  default_byte: sRGB
+  default_float: Linear Rec709/sRGB
+  default_sequencer: sRGB
+  color_picking: sRGB
+  data: Non-Color
+  aces_interchange: Linear ACES - AP0
+
+  color_timing: Filmic Log
+  compositing_log: Filmic Log
+  default: Linear Rec709/sRGB
+  matte_paint: Linear Rec709/sRGB
+  texture_paint: Linear Rec709/sRGB
+
+displays:
+  sRGB:
+    - !<View> {name: Un-tone-mapped, colorspace: Gamma 2.2 EOTF sRGB}
+    - !<View> {name: Standard, colorspace: sRGB}
+    - !<View> {name: Filmic, colorspace: Filmic sRGB}
+    - !<View> {name: AgX, colorspace: AgX Base}
+    - !<View> {name: AgX-SB2383, colorspace: AgX-SB2383 Base}
+    - !<View> {name: TCAMv2, colorspace: Filmlight sRGB}
+    - !<View> {name: ACES, colorspace: ACES sRGB}
+    - !<View> {name: ACES GamutComp, colorspace: ACES sRGB, look: ACES 1.3 Reference Gamut Compression}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}
+  2.2 Rec709:
+    - !<View> {name: Un-tone-mapped, colorspace: Gamma 2.2 EOTF sRGB}
+    - !<View> {name: ARRI REVEAL, colorspace: ARRI Reveal Gamma 2.4 Rec709, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: ARRI ALF2, colorspace: ARRI Rec709, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: ARRI Classic (K1S1), colorspace: ARRI Classic, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: RED, colorspace: RED Medium Contrast Medium - Rec709, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: Sony, colorspace: Sony Cine709, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: Canon, colorspace: Canon BT709 WideDR, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: BMD Gen5 ExtendedVid, colorspace: BMD Gen5 ExtendedVid, look: +2.4 to 2.2 Gamma}
+    - !<View> {name: BMD Gen5 Vid, colorspace: BMD Gen5 Vid, look: +2.4 to 2.2 Gamma}
+  2.4 Rec709:
+#    - !<View> {name: Nuke Rec709, colorspace: nuke_rec709} 
+    - !<View> {name: Un-tone-mapped, colorspace: BT.1886}
+    - !<View> {name: AgX, colorspace: AgX Base BT.1886}
+    - !<View> {name: AgX-SB2383, colorspace: AgX-SB2383 Base BT.1886}
+    - !<View> {name: TCAMv2, colorspace: Filmlight Rec1886 Rec709}
+    - !<View> {name: ARRI REVEAL, colorspace: ARRI Reveal Gamma 2.4 Rec709}
+    - !<View> {name: ARRI ALF2, colorspace: ARRI Rec709}
+    - !<View> {name: ARRI Classic (K1S1), colorspace: ARRI Classic}
+    - !<View> {name: RED, colorspace: RED Medium Contrast Medium - Rec709}
+    - !<View> {name: Sony, colorspace: Sony Cine709}
+    - !<View> {name: Canon, colorspace: Canon BT709 WideDR}
+    - !<View> {name: ACES, colorspace: ACES Rec.709}
+    - !<View> {name: ACES GamutComp, colorspace: ACES Rec.709, look: ACES 1.3 Reference Gamut Compression}
+    - !<View> {name: BMD Gen5 ExtendedVid, colorspace: BMD Gen5 ExtendedVid}
+    - !<View> {name: BMD Gen5 Vid, colorspace: BMD Gen5 Vid}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}
+  Apple Display P3:
+    - !<View> {name: Un-tone-mapped, colorspace: Display P3}
+    - !<View> {name: AgX, colorspace: AgX Base Display P3}
+    - !<View> {name: AgX-SB2383, colorspace: AgX-SB2383 Base Display P3}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}
+  DCI-P3D65:
+    - !<View> {name: Un-tone-mapped, colorspace: DCI EOTF P3-D65}
+    - !<View> {name: ARRI REVEAL, colorspace: ARRI Reveal P3-D65}
+    - !<View> {name: RED, colorspace: RED Medium Contrast Medium - P3D65}
+    - !<View> {name: Canon, colorspace: Canon DCIP3}
+    - !<View> {name: TCAMv2, colorspace: Filmlight DCI - P3D65}
+    - !<View> {name: ACES, colorspace: ACES P3D65}
+    - !<View> {name: ACES GamutComp, colorspace: ACES P3D65, look: ACES 1.3 Reference Gamut Compression}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}    
+  2.4 Rec2020:
+    - !<View> {name: Un-tone-mapped, colorspace: Gamma 2.4 EOTF Rec2020}
+    - !<View> {name: ARRI REVEAL, colorspace: ARRI Reveal Rec2020}
+    - !<View> {name: ARRI ALF2, colorspace: ARRI Rec2020}
+    - !<View> {name: RED, colorspace: RED Medium Contrast Medium - Rec2020}
+    - !<View> {name: Canon, colorspace: Canon BT2020 WideDR}
+    - !<View> {name: TCAMv2, colorspace: Filmlight Rec1886 Rec.2020}
+    - !<View> {name: ACES GamutComp, colorspace: ACES Rec.2020, look: ACES 1.3 Reference Gamut Compression}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}  
+  PQ(1000)-Rec2020:
+    - !<View> {name: Un-tone-mapped, colorspace: PQ EOTF Rec2020}
+    - !<View> {name: ARRI REVEAL, colorspace: ARRI Reveal ST2084-1k Rec2100}
+    - !<View> {name: ARRI ALF2, colorspace: ARRI PQ-1k Rec2020}
+    - !<View> {name: RED, colorspace: RED Medium Contrast Medium - PQ2084-1k}
+    - !<View> {name: Canon, colorspace: Canon BT2020 PQ}
+    - !<View> {name: TCAMv2, colorspace: Filmlight Rec2100 PQ - Rec 2020 - 1000 nits}
+    - !<View> {name: ACES, colorspace: ACES Rec.2020 ST2084 1000 nits}
+    - !<View> {name: ACES GamutComp, colorspace: ACES Rec.2020 ST2084 1000 nits, look: ACES 1.3 Reference Gamut Compression}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}  
+  HLG(1000)-Rec2020:
+    - !<View> {name: Un-tone-mapped, colorspace: Gamma 2.2 EOTF sRGB}
+    - !<View> {name: Canon, colorspace: Canon BT2020 HLG}
+    - !<View> {name: TCAMv2, colorspace: Filmlight Rec2100 HLG - 2020 - 1000 nits}
+    - !<View> {name: ACES, colorspace: ACES Rec.2020 HLG 1000 nits}
+    - !<View> {name: ACES GamutComp, colorspace: ACES Rec.2020 HLG 1000 nits, look: ACES 1.3 Reference Gamut Compression}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}  
+  Log:
+    - !<View> {name: Un-tone-mapped, colorspace: Gamma 2.2 EOTF sRGB}
+    - !<View> {name: Filmic Log, colorspace: Filmic Log}
+    - !<View> {name: AgX Log Kraken, colorspace: AgX Log (Kraken)}
+    - !<View> {name: AgX Log SB2383, colorspace: AgX Log (SB2383)}
+    - !<View> {name: CineonLog Rec709, colorspace: CineonLog - Rec.709}
+    - !<View> {name: ACEScc, colorspace: ACES - ACEScc}
+    - !<View> {name: ACEScct, colorspace: ACES - ACEScct}
+    - !<View> {name: T-Log E-Gamut, colorspace: T-Log - E-Gamut}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}
+  Camera Log:
+    - !<View> {name: Un-tone-mapped, colorspace: Gamma 2.2 EOTF sRGB}
+    - !<View> {name: ARRI LogC AWG, colorspace: ARRI LogC AWG}
+    - !<View> {name: ARRI LogC4 AWG, colorspace: ARRI LogC4}
+    - !<View> {name: Canon - CLog2 CGamut, colorspace: Canon - CLog2 CGamut}
+    - !<View> {name: Canon - CLog3 CGamut, colorspace: Canon - CLog3 CGamut}
+    - !<View> {name: RED - Log3G10 RWG, colorspace: RED - Log3G10 RWG}
+    - !<View> {name: Sony - S-Log2 Rec709, colorspace: Sony - S-Log2 Rec709}
+    - !<View> {name: Sony - SLog3 SGamut3, colorspace: Sony - SLog3 SGamut3}
+    - !<View> {name: Sony - SLog3 SGamut3Cine, colorspace: Sony - SLog3 SGamut3Cine}
+    - !<View> {name: Sony - SLog3 Venice SGamut3, colorspace: Sony - SLog3 Venice SGamut3}
+    - !<View> {name: Sony - SLog3 Venice SGamut3Cine, colorspace: Sony - SLog3 Venice SGamut3Cine}
+    - !<View> {name: Panasonic - VLog VGamut, colorspace: Panasonic - VLog VGamut}
+    - !<View> {name: BMDFilm WideGamut Gen5, colorspace: BMDFilm WideGamut Gen5}
+    - !<View> {name: DaVinci Intermediate WideGamut, colorspace: DaVinci Intermediate WideGamut}
+    - !<View> {name: Raw, colorspace: Non-Color}
+    - !<View> {name: False Color, colorspace: False Color}
+#  sRGB_Looks:
+#    - !<View> {name: AgX Punchy, colorspace: AgX Base, look: +AgX Punchy}
+#    - !<View> {name: AgX Golden, colorspace: AgX Base, look: +AgX Golden}
+#    - !<View> {name: TCAMv2 - C-101-Generic-Film, colorspace: Filmlight sRGB, look: +Filmlight C-101-Generic-Film}
+#    - !<View> ... (Put your own looks here as views, if your software doesnt have "LOOKS"
+
+active_displays: [sRGB, 2.2 Rec709, 2.4 Rec709, Apple Display P3, DCI-P3D65, 2.4 Rec2020, PQ(1000)-Rec2020, HLG(1000)-Rec2020, Log, Camera Log]
+
+active_views: [Un-tone-mapped, Standard, sRGB, Filmic, AgX, AgX-SB2383, TCAMv2, ACES, ACES GamutComp, ARRI REVEAL, ARRI ALF2, ARRI Classic (K1S1), RED, Sony, Canon, BMD Gen5 ExtendedVid, BMD Gen5 Vid, Filmic Log, AgX Log Kraken, AgX Log SB2383, CineonLog Rec709, ACEScc, ACEScct, T-Log E-Gamut, ARRI LogC AWG, ARRI LogC4, Canon - CLog2 CGamut, Canon - CLog3 CGamut, RED - Log3G10 RWG, Sony - S-Log2 Rec709, Sony - SLog3 SGamut3, Sony - SLog3 SGamut3Cine, Sony - SLog3 Venice SGamut3, Sony - SLog3 Venice SGamut3Cine, Panasonic - VLog VGamut, BMDFilm WideGamut Gen5, DaVinci Intermediate WideGamut, Raw, False Color]
+
+inactive_colorspaces: [Linear - E-Gamut, Filmic sRGB, ARRI Reveal Gamma 2.4 Rec709, ARRI Classic, ARRI Rec709, AgX Base, AgX-SB2383 Base, AgX Base BT.1886, AgX-SB2383 Base BT.1886, AgX Base Display P3, AgX-SB2383 Base Display P3, Display P3, 2.2 EOTF Encoding, 2.4 EOTF Encoding, BT.1886, Filmlight sRGB, Filmlight Rec1886 Rec709, Filmlight DCI - P3D65, Filmlight Rec1886 Rec.2020, Filmlight Rec2100 PQ - Rec 2020 - 1000 nits, Filmlight Rec2100 PQ - Rec 2020 - 4000 nits, Filmlight Rec2100 HLG - 2020 - 1000 nits, ACES sRGB, ACES Rec.709, ACES P3D65, ACES Rec.2020, ACES Rec.2020 ST2084 1000 nits, ACES Rec.2020 HLG 1000 nits, nuke_rec709, RED Medium Contrast Medium - Rec709, lg10, Filmic Log, CineonLog - Rec.709, ACES - ACEScc, ACES - ACEScct, T-Log - E-Gamut, AgX Log (Kraken), AgX Log (SB2383), ARRI LogC4, ARRI LogC AWG, Canon - CLog2 CGamut, Canon - CLog3 CGamut, RED - Log3G10 RWG, Sony - S-Log2 Rec709, Sony - SLog3 SGamut3, Sony - SLog3 SGamut3Cine, Sony - SLog3 Venice SGamut3, Sony - SLog3 Venice SGamut3Cine, Panasonic - VLog VGamut, Filmlight XYZ, XYZ, dci_xyz, False Color, Linear ACES - AP0, Linear ACES - AP1, ARRI PQ-1k Rec2020, ARRI Reveal Rec2020, ARRI Rec2020, ARRI PQ-1k Rec2020, RED Medium Contrast Medium - PQ2084-1k, RED Medium Contrast Medium - Rec2020, RED Medium Contrast Medium - P3D65, Sony Cine709, ARRI Reveal P3-D65, ARRI Reveal ST2084-1k Rec2100, Canon BT709 WideDR, Canon BT2020 WideDR, Canon BT2020 HLG, Canon BT2020 PQ, Canon DCIP3, DCI EOTF P3-D65, Rec2020 Un-tone-mapped, Gamma 2.4 EOTF Rec2020, PQ EOTF Rec2020, Linear Rec2020, BMDFilm WideGamut Gen5, DaVinci Intermediate WideGamut, BMD Gen5 ExtendedVid, BMD Gen5 Vid]
+
+colorspaces:
+
+#Linear stuff:
+
+  - !<ColorSpace>
+    name: Linear Rec709/sRGB
+    aliases: [Linear, Linear Tristimulus, Linear Rec709, Linear Rec.709 (sRGB)]
+    family: Utility
+    categories: [Linear]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Linear Rec. 709/sRGB (Full Range), Native linear space
+    isdata: false
+    allocation: lg2
+    allocationvars: [-12.473931188, 12.526068812]
+    
+  - !<ColorSpace>
+    name: Linear Rec2020
+    aliases: [Linear Rec.2020, Linear BT2020, Linear BT.2020]
+    family: Utility
+    categories: [Linear]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Linear Rec. 709/sRGB (Full Range), Native linear space
+    isdata: false
+    allocation: lg2
+    allocationvars: [-12.473931188, 12.526068812]
+    from_reference: !<GroupTransform>
+      children:
+        - !<MatrixTransform> {matrix: [0.627403895935, 0.329283038378, 0.043313065687, 0.000000000000, 0.069097289358, 0.919540395075, 0.011362315566, 0.000000000000, 0.016391438875, 0.088013307877, 0.895595253248, 0.000000000000, 0.000000000000, 0.000000000000, 0.000000000000, 1.000000000000]}
+
+  - !<ColorSpace>
+    name: Linear ACES - AP0
+    aliases: [ACES2065-1]
+    family: Utility
+    categories: [Linear]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES AP0 linear space AKA ACES2065-1
+    isdata: false
+    allocation: lg2
+    allocationvars: [-8, 5, 0.00390625]
+    from_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: srgb_to_xyz.spimtx, interpolation: linear}
+        - !<BuiltinTransform> {style: "UTILITY - ACES-AP0_to_CIE-XYZ-D65_BFD", direction: inverse}
+		
+  - !<ColorSpace>
+    name: Linear ACES - AP1
+    aliases: [ACEScg]
+    family: Utility
+    categories: [Linear]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES AP1 linear space AKA ACEScg
+    isdata: false
+    allocation: lg2
+    allocationvars: [-8, 5, 0.00390625]
+    from_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: srgb_to_xyz.spimtx, interpolation: linear}
+        - !<BuiltinTransform> {style: "UTILITY - ACES-AP1_to_CIE-XYZ-D65_BFD", direction: inverse}
+		
+  - !<ColorSpace>
+    name: Linear - E-Gamut
+    family: Utility
+    categories: [Linear]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Grading Space
+    isdata: false
+    allocation: lg2
+    allocationvars: [-10, 7, 0.0056065625]
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: EGamut_2_XYZ.spimtx}
+        - !<ColorSpaceTransform> {src: Filmlight XYZ, dst: Linear Rec709/sRGB}
+
+#Display Conversions:
+
+  - !<ColorSpace>
+    name: Gamma 2.2 Piecewise sRGB
+    aliases: [Gamma 2.2 Rec.709 - Texture, Input - Generic - sRGB - Texture, sRGB]
+    family: Utility
+    bitdepth: 32f
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    description: |
+      Gamma 2.2 sRGB Display and Texture space.
+    isdata: false
+    allocation: uniform
+    allocationvars: [-0.125, 4.875]
+    to_reference: !<FileTransform> {src: srgb.spi1d, interpolation: linear}
+    from_reference: !<FileTransform> {src: srgb_inv.spi1d, interpolation: linear}
+		
+  - !<ColorSpace>
+    name: Filmic sRGB
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Filmic sRGB view transform
+    isdata: false
+    allocation: lg2
+    allocationvars: [-12.473931188, 12.526068812]
+    from_reference: !<GroupTransform>
+        children:
+            - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Filmic Log}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear}
+
+#BMD Gen5
+  - !<ColorSpace>
+    name: BMD Gen5 ExtendedVid
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: BMDFilm WideGamut Gen5}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Extended Video.cube, interpolation: tetrahedral}
+        
+  - !<ColorSpace>
+    name: BMD Gen5 Vid
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: BMDFilm WideGamut Gen5}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Video.cube, interpolation: tetrahedral}
+
+#ARRI Reveal:
+  - !<ColorSpace>
+    name: ARRI Reveal Gamma 2.4 Rec709
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC4}
+        - !<FileTransform> {src: ARRI_LogC4-to-Gamma24_Rec709-D65_v1-65.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ARRI Reveal P3-D65
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC4}
+        - !<FileTransform> {src: ARRI_LogC4-to-gamma26_P3-D65_v1-65.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ARRI Reveal Rec2020
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC4}
+        - !<FileTransform> {src: ARRI_LogC4-to-gamma24_Rec2020-D65_v1-65.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ARRI Reveal ST2084-1k Rec2100
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC4}
+        - !<FileTransform> {src: ARRI_LogC4-to-St2084_1K_Rec2100-D65_DW100_v1_65.cube, interpolation: tetrahedral}
+
+#ARRI:	
+  - !<ColorSpace>
+    name: ARRI Classic
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC AWG}
+        - !<FileTransform> {src: ARRI_LogC2Video_Classic709_davinci3d_33.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ARRI Rec709
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC AWG}
+        - !<FileTransform> {src: ARRI_LogC_WG_full_2_Rec1886_Rec709_Full_ALF-2.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ARRI Rec2020
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC AWG}
+        - !<FileTransform> {src: ARRI_LogC_WG_full_2_Rec1886_Rec2020_Full_ALF-2.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ARRI PQ-1k Rec2020
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC AWG}
+        - !<FileTransform> {src: ARRI_LogC_WG_full_2_ST2084_Rec2020_1000nits_ALF-2.cub, interpolation: tetrahedral}
+
+#AGX:
+  - !<ColorSpace>
+    name: AgX Base
+    family: Display Encodings
+    categories: [AgX_Display]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: AgX Log (Kraken)}
+        - !<FileTransform> {src: AgX_Default_Contrast.spi1d}
+
+  - !<ColorSpace>
+    name: AgX-SB2383 Base
+    family: Display Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: AgX Log (SB2383)}
+        - !<FileTransform> {src: AgX-SB2383_Default_Contrast.spi1d}
+        - !<ExponentTransform> {value: 2.2}
+        - !<MatrixTransform> {matrix: [0.913500795022407, 0.0447436243802427, 0.0417555805973487, 0, 0.0808718821432089, 0.815474287341219, 0.103653830515572, 0, 0.0359397231776181, 0.0342846039509055, 0.929775672871476, 0, 0, 0, 0, 1], direction: inverse}
+        - !<ExponentTransform> {value: 2.2, direction: inverse}
+		
+  - !<ColorSpace>
+    name: AgX Base BT.1886
+    family: Display Encodings
+    categories: [AgX_Display]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding for BT.1886 Displays
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: AgX Base}
+        - !<ColorSpaceTransform> {src: 2.2 EOTF Encoding, dst: 2.4 EOTF Encoding}
+
+#AGX-SB2383:
+  - !<ColorSpace>
+    name: AgX-SB2383 Base BT.1886
+    family: Display Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding for BT.1886 Displays
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: AgX-SB2383 Base}
+        - !<ColorSpaceTransform> {src: 2.2 EOTF Encoding, dst: 2.4 EOTF Encoding}
+
+  - !<ColorSpace>
+    name: AgX Base Display P3
+    family: Display Encodings
+    categories: [AgX_Display]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding for Display P3 Displays
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: AgX Base}
+        - !<ColorSpaceTransform> {src: 2.2 EOTF Encoding, dst: Display P3}
+
+  - !<ColorSpace>
+    name: AgX-SB2383 Base Display P3
+    family: Display Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding for Display P3 Displays
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: AgX-SB2383 Base}
+        - !<ColorSpaceTransform> {src: 2.2 EOTF Encoding, dst: Display P3}
+
+#Gamma Utility
+
+  - !<ColorSpace>
+    name: Display P3
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Display P3 2.2 Exponent EOTF Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<MatrixTransform> {matrix: [0.822533651175139, 0.17754580666797, 5.36947712599933e-05, 0, 0.0331170846132368, 0.966848142976822, -3.14995811217383e-06, 0, 0.0170564417474994, 0.0724006113523901, 0.910489265923157, 0, 0, 0, 0, 1]}
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: 2.2 EOTF Encoding}
+ 
+  - !<ColorSpace>
+    name: PQ EOTF Rec2020
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: The PQ (Perceptual Quantizer) EOTF (Electro-Optical Transfer Function) is a transfer function defined by the ITU-R BT.2100 standard. PQ is designed to provide better visual fidelity and improved representation of high dynamic range (HDR) content when compared to traditional gamma curves.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Linear ACES - AP0}
+        - !<BuiltinTransform> {style: UTILITY - ACES-AP0_to_CIE-XYZ-D65_BFD}
+        - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.2100-PQ}
+   
+  - !<ColorSpace>
+    name: Gamma 2.4 EOTF Rec2020
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Rec.2020 2.4 Exponent EOTF Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<MatrixTransform> {matrix: [0.627403895935, 0.329283038378, 0.043313065687, 0.000000000000, 0.069097289358, 0.919540395075, 0.011362315566, 0.000000000000, 0.016391438875, 0.088013307877, 0.895595253248, 0.000000000000, 0.000000000000, 0.000000000000, 0.000000000000, 1.000000000000]}
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: 2.4 EOTF Encoding}
+     
+  - !<ColorSpace>
+    name: DCI EOTF P3-D65
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: DCI-P3 2.4 EOTF  Exponent EOTF Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<MatrixTransform> {matrix: [0.875905335124, 0.122069761745, 0.002024903130, 0.000000000000, 0.035331936669, 0.964541590181, 0.000126473150, 0.000000000000, 0.016382072206, 0.063766765962, 0.919851161832, 0.000000000000, 0.000000000000, 0.000000000000, 0.000000000000, 1.000000000000]}
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: 2.4 EOTF Encoding}
+
+  - !<ColorSpace>
+    name: Gamma 2.2 EOTF sRGB
+    aliases: [sRGB EOTF Encoding, 2.2 EOTF Encoding]
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2.2 Exponent EOTF Encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<ExponentTransform> {value: 2.2, direction: inverse}
+
+  - !<ColorSpace>
+    name: Gamma 2.4 EOTF sRGB
+    aliases: [BT.1886 EOTF Encoding, 2.4 EOTF Encoding]
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2.4 Exponent EOTF Encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<ExponentTransform> {value: 2.4, direction: inverse}
+
+  - !<ColorSpace>
+    name: BT.1886
+    family: Display Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: BT.1886 2.4 Exponent EOTF Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: 2.4 EOTF Encoding}
+
+#Filmlight TCAMv2 Display
+  - !<ColorSpace>
+    name: Filmlight sRGB
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    description: |
+      Filmlight - sRGB Rec1886 Display space
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_sRGB_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: sRGB_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: Filmlight Rec1886 Rec709
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    description: |
+      Filmlight - Rec709 Rec1886 Display space
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_Rec1886_709_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: Rec1886_709_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: Filmlight DCI - P3D65
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    description: |
+      Filmlight - DCIP3-D65 Rec1886 Display space
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_P3D65_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: P3D65_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: Filmlight Rec1886 Rec.2020
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    description: |
+      Filmlight - Rec2020 Rec1886 Display space
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_Rec1886_2020_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: Rec1886_2020_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: Filmlight Rec2100 PQ - Rec 2020 - 1000 nits
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    description: |
+      Filmlight - Rec2020 PQ Gamma 1000 nit HDR Display space
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_PQ2020_1000_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: PQ2020_1000_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Filmlight Rec2100 PQ - Rec 2020 - 4000 nits
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    description: |
+      Filmlight - Rec2020 PQ Gamma 4000 nit HDR Display space
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_PQ2020_4000_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: PQ2020_4000_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Filmlight Rec2100 HLG - 2020 - 1000 nits
+    family: Display Encodings
+    categories: [Filmlight_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: T-Log - E-Gamut}
+        - !<FileTransform> {src: TLog_2_HLG2020_1000_TCAMv2.cub, interpolation: tetrahedral}
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: HLG2020_1000_2_TLog_TCAMv2.cub, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: T-Log - E-Gamut, dst: Linear Rec709/sRGB}
+
+#ACES Display		
+  - !<ColorSpace>
+    name: ACES sRGB
+    aliases: [Output - sRGB]
+    family: Display Encodings
+    categories: [ACES_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES - sRGB 2.4 Gamma Display space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0.055, direction: inverse}
+        - !<ColorSpaceTransform> {src: sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: Log2_48_nits_Shaper_to_linear.spi1d, interpolation: linear, direction: inverse}
+        - !<FileTransform> {src: Log2_48_nits_Shaper.RRT.sRGB.spi3d, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ACES Rec.709
+    aliases: [Output - Rec.709]
+    family: Display Encodings
+    categories: [ACES_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES - sRGB 2.4 Gamma Display space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0.055, direction: inverse}
+        - !<ColorSpaceTransform> {src: sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: Log2_48_nits_Shaper_to_linear.spi1d, interpolation: linear, direction: inverse}
+        - !<FileTransform> {src: Log2_48_nits_Shaper.RRT.Rec.709.spi3d, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ACES P3D65
+    family: Display Encodings
+    categories: [ACES_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES - P3D65 2.4 Gamma Display Space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_reference: !<GroupTransform>
+      children:
+        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0.055, direction: inverse}
+        - !<ColorSpaceTransform> {src: sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: Log2_48_nits_Shaper_to_linear.spi1d, interpolation: linear, direction: inverse}
+        - !<FileTransform> {src: Log2_48_nits_Shaper.RRT.P3D65.spi3d, interpolation: tetrahedral}
+		
+  - !<ColorSpace>
+    name: ACES Rec.2020
+    family: Display Encodings
+    categories: [ACES_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES - Rec2020 2.4 Gamma Display Space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_reference: !<GroupTransform>
+      children:
+        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0.055, direction: inverse}
+        - !<ColorSpaceTransform> {src: sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: Log2_48_nits_Shaper_to_linear.spi1d, interpolation: linear, direction: inverse}
+        - !<FileTransform> {src: Log2_48_nits_Shaper.RRT.Rec.2020.spi3d, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ACES Rec.2020 ST2084 1000 nits
+    family: Display Encodings
+    categories: [ACES_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      ACES - Rec2020 PQ Gamma 1000 nit HDR Display space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_reference: !<GroupTransform>
+      children:
+        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0.055, direction: inverse}
+        - !<ColorSpaceTransform> {src: sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: Dolby_PQ_1000_nits_Shaper_to_linear.spi1d, interpolation: linear, direction: inverse}
+        - !<FileTransform> {src: Dolby_PQ_1000_nits_Shaper.RRTODT.Rec.2020_ST2084__1000_nits_.spi3d, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: ACES Rec.2020 HLG 1000 nits
+    family: Display Encodings
+    categories: [ACES_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Filmlight - Rec2020 HLG Gamma 1000 nit HDR Display space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_reference: !<GroupTransform>
+      children:
+        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0.055, direction: inverse}
+        - !<ColorSpaceTransform> {src: sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: Dolby_PQ_1000_nits_Shaper_to_linear.spi1d, interpolation: linear, direction: inverse}
+        - !<FileTransform> {src: Dolby_PQ_1000_nits_Shaper.RRTODT.Rec.2020_HLG__1000_nits_.spi3d, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: nuke_rec709
+    family: Display Encodings
+    categories: [Display_Encodings]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Rec. 709 (Full Range) Display Space
+    isdata: false
+    allocation: uniform
+    allocationvars: [-0.125, 1.125]
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: rec709.spi1d, interpolation: linear}
+
+#RWG Display
+
+  - !<ColorSpace>
+    name: RED Medium Contrast Medium - Rec709
+    family: Display Encodings
+    categories: [RED_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: RED - Log3G10 RWG}
+        - !<FileTransform> {src: RWG_Log3G10_to_REC709_BT1886_with_MEDIUM_CONTRAST_and_R_2_Medium_size_64_v1.13.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: RED Medium Contrast Medium - P3D65
+    family: Display Encodings
+    categories: [RED_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: RED - Log3G10 RWG}
+        - !<FileTransform> {src: RWG_Log3G10_to_P3D65_GAMMA26_with_MEDIUM_CONTRAST_and_R_2_Medium_size_64_v1.13.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: RED Medium Contrast Medium - Rec2020
+    family: Display Encodings
+    categories: [RED_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: RED - Log3G10 RWG}
+        - !<FileTransform> {src: RWG_Log3G10_to_REC2020_BT1886_with_MEDIUM_CONTRAST_and_R_2_Medium_size_64_v1.13.cub, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: RED Medium Contrast Medium - PQ2084-1k
+    family: Display Encodings
+    categories: [RED_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: RED - Log3G10 RWG}
+        - !<FileTransform> {src: RWG_Log3G10_to_REC2020_HDR2084_1K_with_MEDIUM_CONTRAST_and_R_2_Medium_size_64_v1.13.cub, interpolation: tetrahedral}
+
+#Sony Display
+
+  - !<ColorSpace>
+    name: Sony Cine709
+    family: Display Encodings
+    categories: [Sony_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Sony - SLog3 SGamut3Cine}
+        - !<FileTransform> {src: 4_SGamut3CineSLog3_To_Cine+709.cube, interpolation: tetrahedral}
+
+#Canon Display
+
+  - !<ColorSpace>
+    name: Canon BT709 WideDR
+    family: Display Encodings
+    categories: [Canon_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Canon - CLog3 CGamut}
+        - !<FileTransform> {src: CinemaGamut_CanonLog3-to-BT709_WideDR_65_FF_Ver.2.0.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: Canon BT2020 WideDR
+    family: Display Encodings
+    categories: [Canon_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Canon - CLog3 CGamut}
+        - !<FileTransform> {src: CinemaGamut_CanonLog3-to-BT2020_709WideDR_65_FF_Ver.2.0.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: Canon BT2020 HLG
+    family: Display Encodings
+    categories: [Canon_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Canon - CLog3 CGamut}
+        - !<FileTransform> {src: CinemaGamut_CanonLog3-to-BT2020_HLG_65_FF_Ver.2.0.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: Canon BT2020 PQ
+    family: Display Encodings
+    categories: [Canon_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Canon - CLog3 CGamut}
+        - !<FileTransform> {src: CinemaGamut_CanonLog3-to-BT2020_PQ_65_FF_Ver.2.0.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace>
+    name: Canon DCIP3
+    family: Display Encodings
+    categories: [Canon_Display]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: 
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Canon - CLog3 CGamut}
+        - !<FileTransform> {src: CinemaGamut_CanonLog3-to-DCIP3_DCI_65_FF_Ver.2.0.cube, interpolation: tetrahedral}
+
+#Log Conversions:
+
+  - !<ColorSpace>
+    name: lg10
+    family: Log Encodings
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: 10ui
+    description: |
+      conversion from film log
+    isdata: false
+    allocation: uniform
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: lg10.spi1d, interpolation: nearest}	
+
+  - !<ColorSpace>
+    name: Filmic Log
+    aliases: [Filmic Log Encoding]
+    family: Log Encodings
+    categories: [Log]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Log based filmic shaper with 16.5 stops of latitude, and 25 stops of dynamic range
+    isdata: false
+    allocation: lg2
+    allocationvars: [-12.473931188, 12.526068812]
+    from_reference: !<GroupTransform>
+        children:
+            - !<AllocationTransform> {allocation: lg2, vars: [-12.473931188, 12.526068812]}
+            - !<FileTransform> {src: filmic_desat65cube.spi3d, interpolation: best}
+            - !<AllocationTransform> {allocation: uniform, vars: [0, 0.66]}
+    to_reference: !<AllocationTransform> {allocation: lg2, vars: [-12.473931188, 4.026068812], direction: inverse}
+	
+  - !<ColorSpace>
+    name: CineonLog - Rec.709
+    family: Log Encodings
+    bitdepth: 32f
+    categories: [Log]
+    equalitygroup: ""
+    description: Grading Space
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: CineonLog_2_Linear.spi1d, interpolation: linear}
+	
+  - !<ColorSpace>
+    name: ACES - ACEScc
+    family: Log Encodings
+    categories: [Log]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+        ACES - AP1 Logarithmic space.
+    isdata: false
+    encoding: log
+    allocation: uniform
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: ACEScc_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: ACES - ACEScct
+    family: Log Encodings
+    categories: [Log]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+        ACES - AP1 Logarithmic space with a toe.
+    isdata: false
+    encoding: log
+    allocation: uniform
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: ACEScct_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: T-Log - E-Gamut
+    family: Log Encodings
+    categories: [Log]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Grading Space
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: TLog_2_Linear.spi1d, interpolation: linear}
+        - !<FileTransform> {src: EGamut_2_XYZ.spimtx}
+        - !<ColorSpaceTransform> {src: Filmlight XYZ, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: AgX Log (Kraken)
+    aliases: [Kraken, AgX Kraken Log]
+    family: Log Encodings
+    categories: [Log]
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Log, (Kraken)
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<RangeTransform> {min_in_value: 0, min_out_value: 0}
+        - !<MatrixTransform> {matrix: [0.842479062253094, 0.0784335999999992, 0.0792237451477643, 0, 0.0423282422610123, 0.878468636469772, 0.0791661274605434, 0, 0.0423756549057051, 0.0784336, 0.879142973793104, 0, 0, 0, 0, 1]}
+        - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 4.026069]}
+
+  - !<ColorSpace>
+    name: AgX Log (SB2383)
+    aliases: [SB2383, AgX SB2383 Log]
+    family: Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Log, (SB2383)
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<RangeTransform> {min_in_value: 0, min_out_value: 0}
+        - !<MatrixTransform> {matrix: [0.913500795022408, 0.0447436243802432, 0.041755580597349, 0, 0.0808718821432087, 0.815474287341219, 0.103653830515572, 0, 0.0359397231776182, 0.0342846039509056, 0.929775672871476, 0, 0, 0, 0, 1]}
+        - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 4.026069]}
+	
+  - !<ColorSpace>
+    name: ARRI LogC4
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      name: ARRI LogC4 to ACES2065-1
+      children:
+        - !<LogCameraTransform> {log_side_slope: 0.0647954196341293, log_side_offset: -0.295908392682586, lin_side_slope: 2231.82630906769, lin_side_offset: 64, lin_side_break: -0.0180569961199113, direction: inverse}
+        - !<MatrixTransform> {matrix: [0.750957362824734, 0.144422786709757, 0.104619850465509, 0, 0.000821837079380207, 1.007397584885, -0.00821942196438358, 0, -0.000499952143533471, -0.000854177231436971, 1.00135412937497, 0, 0, 0, 0, 1]}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: ARRI LogC AWG
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: ARRI_ALEXA-LOGC-EI800-AWG_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+		
+  - !<ColorSpace>
+    name: Canon - CLog2 CGamut
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Canon Log 2 Cinema Gamut
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: CANON_CLOG2-CGAMUT_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Canon - CLog3 CGamut
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: CANON_CLOG3-CGAMUT_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: RED - Log3G10 RWG
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: RED_LOG3G10-RWG_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Sony - S-Log2 Rec709
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: S-Log2_to_linear.spi1d, interpolation: linear}
+
+  - !<ColorSpace>
+    name: Sony - SLog3 SGamut3
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: SONY_SLOG3-SGAMUT3_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Sony - SLog3 SGamut3Cine
+    family: Camera Log Encodings
+    categories: [Input]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: SONY_SLOG3-SGAMUT3.CINE_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Sony - SLog3 Venice SGamut3
+    family: Camera Log Encodings
+    bitdepth: 32f
+    isdata: false
+    categories: [Input]
+    equalitygroup: ""
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: SONY_SLOG3-SGAMUT3-VENICE_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Sony - SLog3 Venice SGamut3Cine
+    family: Camera Log Encodings
+    bitdepth: 32f
+    isdata: false
+    categories: [Input]
+    equalitygroup: ""
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: SONY_SLOG3-SGAMUT3.CINE-VENICE_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: Panasonic - VLog VGamut
+    family: Camera Log Encodings
+    bitdepth: 32f
+    isdata: false
+    categories: [Input]
+    equalitygroup: ""
+    encoding: log
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_scene_reference: !<GroupTransform>
+      children: 
+        - !<BuiltinTransform> {style: PANASONIC_VLOG-VGAMUT_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: BMDFilm WideGamut Gen5
+    aliases: [bmdfilm_widegamut_gen5]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    categories: [Input]
+    encoding: log
+    allocation: uniform
+    to_scene_reference: !<GroupTransform>
+      name: Blackmagic Film Wide Gamut (Gen 5) to ACES2065-1
+      children:
+        - !<LogCameraTransform> {base: 2.71828182845905, log_side_slope: 0.0869287606549122, log_side_offset: 0.530013339229194, lin_side_offset: 0.00549407243225781, lin_side_break: 0.005, direction: inverse}
+        - !<MatrixTransform> {matrix: [0.647091325580708, 0.242595385134207, 0.110313289285085, 0, 0.0651915997328519, 1.02504756760476, -0.0902391673376125, 0, -0.0275570729194699, -0.0805887097177784, 1.10814578263725, 0, 0, 0, 0, 1]}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+  - !<ColorSpace>
+    name: DaVinci Intermediate WideGamut
+    aliases: [davinci_intermediate_widegamut]
+    family: Input/BlackmagicDesign
+    equalitygroup: ""
+    bitdepth: 32f
+    description:
+    isdata: false
+    categories: [file-io]
+    encoding: log
+    allocation: uniform
+    to_scene_reference: !<GroupTransform>
+      name: DaVinci Intermediate Wide Gamut to ACES2065-1
+      children:
+        - !<LogCameraTransform> {log_side_slope: 0.07329248, log_side_offset: 0.51304736, lin_side_offset: 0.0075, lin_side_break: 0.00262409, linear_slope: 10.44426855, direction: inverse}
+        - !<MatrixTransform> {matrix: [0.748270290272981, 0.167694659554328, 0.0840350501726906, 0, 0.0208421234689102, 1.11190474268894, -0.132746866157851, 0, -0.0915122574225729, -0.127746712807307, 1.21925897022988, 0, 0, 0, 0, 1]}
+        - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
+
+#Utility Conversions:
+  - !<ColorSpace>
+    name: Filmlight XYZ
+    categories: [Utility]
+    equalitygroup: ""
+    family: Utility
+    bitdepth: 32f
+    description: Grading Space
+    allocation: lg2
+    allocationvars: [-10, 7, 0.0056065625]
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Linear ACES - AP0}
+        - !<FileTransform> {src: AP0_2_XYZ.spimtx}
+
+  - !<ColorSpace>
+    name: XYZ
+    family: Utility
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: false
+    allocation: lg2
+    allocationvars: [-8.5, 5]
+    from_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: srgb_to_xyz.spimtx, interpolation: linear}
+
+  - !<ColorSpace>
+    name: dci_xyz
+    family: Utility
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: 16f
+    description: |
+      OpenDCP output LUT with DCI reference white and Gamma 2.6
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: srgb_to_xyz.spimtx, interpolation: linear}
+        - !<FileTransform> {src: dci_xyz.spi1d, interpolation: linear}
+		
+  - !<ColorSpace>
+    name: Non-Color
+    aliases: [Generic Data, Raw, Non-Colour Data]
+    family: Utility
+    description: |
+        Used for images which contains non-color data (i.e. normal maps)
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: 32f
+    isdata: true
+    allocation: uniform
+    allocationvars: [0, 1]
+
+  - !<ColorSpace>
+    name: False Color
+    family: Utility
+    categories: [Utility]
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      Filmic false color view transform
+    isdata: false
+    allocation: lg2
+    allocationvars: [-12.473931188, 12.526068812]
+    from_reference: !<GroupTransform>
+        children:
+            - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Filmic Log}
+            - !<FileTransform> {src: Filmic_False_Colour.spi3d, interpolation: best}
+
+looks:
+
+  - !<Look>
+    name: __________________
+    process_space: Linear
+
+  - !<Look>
+    name: AgX Golden
+    process_space: AgX Base
+    description: A golden tinted, slightly washed look
+    transform: !<CDLTransform> {slope: [1, 0.9, 0.5], power: [0.8, 0.8, 0.8], sat: 1.3}
+
+  - !<Look>
+    name: AgX Punchy
+    process_space: AgX Base
+    description: A punchy and more chroma laden look
+    transform: !<CDLTransform> {power: [1.35, 1.35, 1.35], sat: 1.4}
+	
+  - !<Look>
+    name: ____________________
+    process_space: Linear
+
+  - !<Look>
+    name: Filmlight C-101-Generic-Film
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-101-Generic-Film.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-102-Japanese-Film
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-102-Japanese-Film.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-103-Earthy-Film
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-103-Earthy-Film.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-104
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-104.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-105_Vision
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-105_Vision.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-201-Truelight-Classic
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-201-Truelight-Classic.cub, interpolation: tetrahedral}
+	
+  - !<Look>
+    name: Filmlight C-202
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-202.cub, interpolation: tetrahedral}
+		
+  - !<Look>
+    name: Filmlight C-202_v2
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-202_v2.cub, interpolation: tetrahedral}
+			
+  - !<Look>
+    name: Filmlight C-203
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-203.cub, interpolation: tetrahedral}
+				
+  - !<Look>
+    name: Filmlight C-302_ARRI-2018
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-302_ARRI-2018.cub, interpolation: tetrahedral}
+					
+  - !<Look>
+    name: Filmlight C-303_Academy-2010
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-303_Academy-2010.cub, interpolation: tetrahedral}
+						
+  - !<Look>
+    name: Filmlight C-304_Academy-2019
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-304_Academy-2019.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-305_RED-2019
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-305_RED-2019.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight C-306_Sony-2019
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: C-306_Sony-2019.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: Filmlight Z-101-Old-Film-1
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: Z-101-Old-Film-1.cub, interpolation: tetrahedral}
+    
+  - !<Look>
+    name: Filmlight M-101_ENR
+    process_space: T-Log - E-Gamut
+    transform: !<FileTransform> {src: M-101_ENR.cub, interpolation: tetrahedral}
+
+#Filmlight Technicolor (RLAB COLORSPACE ISNT IMPLEMETNED)
+
+  # - !<Look>
+    # name: Filmlight Reversal
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: Reversal.cub, interpolation: tetrahedral}
+
+  # - !<Look>
+    # name: Filmlight Technicolor1
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: Technicolor1.cub, interpolation: tetrahedral}
+
+  # - !<Look>
+    # name: Filmlight Technicolor2
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: Technicolor2.cub, interpolation: tetrahedral}
+
+  # - !<Look>
+    # name: Filmlight Technicolor3
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: Technicolor3.cub, interpolation: tetrahedral}
+
+  # - !<Look>
+    # name: Filmlight Technicolor4
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: Technicolor4.cub, interpolation: tetrahedral}
+
+  # - !<Look>
+    # name: Filmlight Technicolor5
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: Technicolor5.cub, interpolation: tetrahedral}
+
+  # - !<Look>
+    # name: Filmlight ENR
+    # process_space: Filmlight RLAB
+    # transform: !<FileTransform> {src: ENR.cub, interpolation: tetrahedral}
+
+  - !<Look>
+    name: _________________
+    process_space: Linear
+
+  - !<Look>
+    name: Very High Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+            - !<FileTransform> {src: filmic_to_1.20_1-00.spi1d, interpolation: linear}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look>
+    name: High Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+            - !<FileTransform> {src: filmic_to_0.99_1-0075.spi1d, interpolation: linear}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look>
+    name: Medium High Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+            - !<FileTransform> {src: filmic_to_0-85_1-011.spi1d, interpolation: best}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look>
+    name: Medium Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+
+  - !<Look>
+    name: Medium Low Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+            - !<FileTransform> {src: filmic_to_0-60_1-04.spi1d, interpolation: linear}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look>
+    name: Low Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+            - !<FileTransform> {src: filmic_to_0-48_1-09.spi1d, interpolation: linear}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look>
+    name: Very Low Contrast
+    process_space: Filmic Log
+    transform: !<GroupTransform>
+        children:
+            - !<FileTransform> {src: filmic_to_0-35_1-30.spi1d, interpolation: linear}
+            - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look>
+    name: ______________
+    process_space: Linear
+
+  - !<Look>
+    name: ACES 1.3 Reference Gamut Compression
+    process_space: ACES2065-1
+    description: |
+      LMT (applied in ACES2065-1) to compress scene-referred values from common cameras into the AP1 gamut
+    transform: !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+    
+  - !<Look>
+    name: 2.4 to 2.2 Gamma
+    process_space: Linear Rec709/sRGB
+    transform: !<ColorSpaceTransform> {src: Gamma 2.4 EOTF sRGB, dst: Gamma 2.2 EOTF sRGB}
+    
+  - !<Look>
+    name: _______________
+    process_space: Linear
+
+  - !<Look>
+    name: 1110 Black and White
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 1110 Black and White.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 1111 Black and White
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 1111 Black and White.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 1120 Black and White - Night sky
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 1120 Black and White - Night sky.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 2110 Commercial
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 2110 Commercial.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 2111 Commercial
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 2111 Commercial.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 2120 Fashion
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 2120 Fashion.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 2121 Fashion
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 2121 Fashion.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 2130 Beauty
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 2130 Beauty.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 2131 Beauty
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 2131 Beauty.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3110 Film A
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3110 Film A.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3111 Film B
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3111 Film B.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3112 Film C
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3112 Film C.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3113 Film D
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3113 Film D.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3114 Film E
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3114 Film E.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3150 Film Process - Bleach bypass
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3150 Film Process - Bleach bypass.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3151 Film Process - Bleach bypass
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3151 Film Process - Bleach bypass.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3210 Vintage
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3210 Vintage.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3211 Vintage
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3211 Vintage.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3220 Analog
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3220 Analog.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3221 Analog
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3221 Analog.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3230 Retro
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3230 Retro.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3231 Retro
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3231 Retro.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3240 Faded
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3240 Faded.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3241 Faded
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3241 Faded.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3250 Cross
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3250 Cross.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3410 Film - Teal and orange
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3410 Film - Teal and orange.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3411 Film - Teal and orange
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3411 Film - Teal and orange.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 3420 Video - Teal and orange
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 3420 Video - Teal and orange.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4110 Tinted - Desert
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4110 Tinted - Desert.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4120 Tinted - Sepia
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4120 Tinted - Sepia.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4130 Tinted - Orange
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4130 Tinted - Orange.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4131 Tinted - Orange
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4131 Tinted - Orange.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4140 Tinted - Earth
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4140 Tinted - Earth.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4150 Tinted - White
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4150 Tinted - White.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4160 Tinted - Teal
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4160 Tinted - Teal.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4170 Tinted - Blue sky
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4170 Tinted - Blue sky.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4180 Tinted - Ocean
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4180 Tinted - Ocean.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4190 Tinted - Aqua
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4190 Tinted - Aqua.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4210 Tinted - Green
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4210 Tinted - Green.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4220 Tinted - Magenta
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4220 Tinted - Magenta.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4230 Tinted - Yellow
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4230 Tinted - Yellow.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 4240 Tinted - Fire
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 4240 Tinted - Fire.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5110 Nature
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5110 Nature.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5111 Nature
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5111 Nature.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5120 City
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5120 City.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5121 City
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5121 City.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5122 City
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5122 City.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5130 Suburban
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5130 Suburban.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5131 Suburban
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5131 Suburban.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5210 Vibrant
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5210 Vibrant.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5220 Desaturated
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5220 Desaturated.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 5230 Saturated
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 5230 Saturated.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6110 Warm
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6110 Warm.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6111 Warm
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6111 Warm.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6112 Warm
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6112 Warm.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6120 Cold
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6120 Cold.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6121 Cold
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6121 Cold.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6210 Spring
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6210 Spring.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6220 Summer
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6220 Summer.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6230 Autumn
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6230 Autumn.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6240 Winter
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6240 Winter.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6310 Pastel
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6310 Pastel.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6311 Pastel
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6311 Pastel.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6410 Sunset
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6410 Sunset.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6420 Early Morning
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6420 Early Morning.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6610 Desert
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6610 Desert.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 6620 Snow
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 6620 Snow.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7110 Low Contrast
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7110 Low Contrast.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7111 Low Contrast
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7111 Low Contrast.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7120 High Contrast
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7120 High Contrast.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7121 High Contrast
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7121 High Contrast.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7130 High Key
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7130 High Key.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7131 High Key
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7131 High Key.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 7140 Low Key
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 7140 Low Key.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8120 20s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8120 20s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8130 30s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8130 30s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8140 40s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8140 40s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8150 50s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8150 50s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8160 60s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8160 60s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8170 70s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8170 70s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8180 80s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8180 80s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 8190 90s
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 8190 90s.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 9110 Dream
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 9110 Dream.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 9111 Dream
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 9111 Dream.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 9120 Flash Back
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 9120 Flash Back.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 9210 Day for Night
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 9210 Day for Night.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: 9211 Day for Night
+    process_space: ARRI LogC4
+    transform: !<FileTransform> {src: 9211 Day for Night.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: ____________________________
+    process_space: Linear
+
+  - !<Look>
+    name: RED_Achromic
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_Achromic.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_AWASH
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_AWASH.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BASE
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BASE.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BIPOLAR
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BIPOLAR.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BLAU
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BLAU.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BLEACH_1
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BLEACH_1.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BLEACH_2
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BLEACH_2.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0100
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0100.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0200
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0200.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0300
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0300.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0400
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0400.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0500
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0500.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0600
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0600.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_BW_0700
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_BW_0700.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_CAUSTIC
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_CAUSTIC.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_CHROMATIC
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_CHROMATIC.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_DEEP_CHROMA
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_DEEP_CHROMA.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_FilmBias
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_FilmBias.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_FilmBiasBleachBypass
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_FilmBiasBleachBypass.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_FilmBiasOffset
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_FilmBiasOffset.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_FLASH
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_FLASH.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_FLUORESCE
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_FLUORESCE.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_GRIME
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_GRIME.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_LUSH
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_LUSH.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_MAUVE
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_MAUVE.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_NARCISSUS
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_NARCISSUS.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_PASTEL
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_PASTEL.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_PROCESS
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_PROCESS.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_ST4
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_ST4.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_SUPERCOLOR
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_SUPERCOLOR.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_TECH
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_TECH.cube, interpolation: tetrahedral}
+
+  - !<Look>
+    name: RED_ZONE
+    process_space: RED - Log3G10 RWG
+    transform: !<FileTransform> {src: RED_ZONE.cube, interpolation: tetrahedral}
