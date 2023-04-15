@@ -164,7 +164,7 @@ displays:
 #    - !<View> {name: AgX Punchy, colorspace: AgX Base, look: +AgX Punchy}
 #    - !<View> {name: AgX Golden, colorspace: AgX Base, look: +AgX Golden}
 #    - !<View> {name: TCAMv2 - C-101-Generic-Film, colorspace: Filmlight sRGB, look: +Filmlight C-101-Generic-Film}
-#    - !<View> ... (Put your own looks here as views, if your software doesnt have "LOOKS"
+#    - !<View> ... (Put your own looks here as views, if your software doesnt have "LOOKS")
 
 active_displays: [sRGB, 2.2 Rec709, 2.4 Rec709, Apple Display P3, DCI-P3D65, 2.4 Rec2020, PQ(1000)-Rec2020, HLG(1000)-Rec2020, Log, Camera Log]
 
