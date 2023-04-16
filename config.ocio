@@ -200,8 +200,7 @@ colorspaces:
     encoding: scene-linear
     equalitygroup: ""
     bitdepth: 32f
-    description: |
-      Linear Rec. 709/sRGB (Full Range), Native linear space
+    description: Wide-gamut linear space for Rec. 2020, used in UHD and HDR content creation.
     isdata: false
     allocation: lg2
     allocationvars: [-12.473931188, 12.526068812]
@@ -217,7 +216,7 @@ colorspaces:
     encoding: scene-linear
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES AP0 linear space, the native color space of the ACES pipeline.
       ACES AP0 linear space AKA ACES2065-1
     isdata: false
     allocation: lg2
@@ -235,7 +234,7 @@ colorspaces:
     encoding: scene-linear
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES AP1 linear space, optimized for CGI and VFX in the ACES pipeline.
       ACES AP1 linear space AKA ACEScg
     isdata: false
     allocation: lg2
@@ -252,7 +251,7 @@ colorspaces:
     encoding: scene-linear
     equalitygroup: ""
     bitdepth: 32f
-    description: Grading Space
+    description: Wide-gamut linear space used for grading and color correction.
     isdata: false
     allocation: lg2
     allocationvars: [-10, 7, 0.0056065625]
@@ -271,7 +270,7 @@ colorspaces:
     categories: [Display_Encodings]
     encoding: data-spaces
     equalitygroup: ""
-    description: |
+    description: sRGB colorspace with piecewise gamma 2.2 curve for display output.
       Gamma 2.2 sRGB Display and Texture space.
     isdata: false
     allocation: uniform
@@ -286,7 +285,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: sRGB colorspace with a filmic curve for a more cinematic look.
       Filmic sRGB view transform
     isdata: false
     allocation: lg2
@@ -304,7 +303,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: Blackmagic Design Gen5 Extended Video for better highlight handling.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -318,7 +317,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: Blackmagic Design Gen5 Video with a standard dynamic range.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -333,7 +332,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI Reveal with gamma 2.4 curve for Rec.709 color space.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -347,7 +346,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI Reveal colorspace for P3-D65 display.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -361,7 +360,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI Reveal colorspace optimized for Rec.2020 display.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -375,7 +374,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI Reveal with PQ curve for Rec.2100 1000-nit HDR display.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -390,7 +389,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI Classic colorspace for a more filmic look.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -404,7 +403,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI colorspace for Rec.709 display.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -418,7 +417,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI colorspace optimized for Rec.2020 display.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -432,7 +431,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description:
+    description: ARRI colorspace with PQ curve for Rec.2020 1000-nit HDR display.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
@@ -447,7 +446,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Base Image Encoding
+    description: AgX base image encoding for standard dynamic range.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -462,7 +461,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Base Image Encoding
+    description: AgX base image encoding with SB2383 LUT for HDR content.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -480,7 +479,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Base Image Encoding for BT.1886 Displays
+    description: AgX base image encoding for BT.1886 displays.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -496,7 +495,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Base Image Encoding for BT.1886 Displays
+    description: AgX base image encoding with SB2383 LUT for BT.1886 displays.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -511,7 +510,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Base Image Encoding for Display P3 Displays
+    description: AgX base image encoding for Display P3 displays.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -526,7 +525,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Base Image Encoding for Display P3 Displays
+    description: AgX base image encoding with SB2383 LUT for Display P3 displays.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -543,7 +542,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: Display P3 2.2 Exponent EOTF Display
+    description: Display P3 colorspace for wide-gamut display output.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -558,7 +557,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: The PQ (Perceptual Quantizer) EOTF (Electro-Optical Transfer Function) is a transfer function defined by the ITU-R BT.2100 standard. PQ is designed to provide better visual fidelity and improved representation of high dynamic range (HDR) content when compared to traditional gamma curves.
+    description: PQ EOTF for HDR content in Rec.2020 colorspace.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -574,7 +573,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: Rec.2020 2.4 Exponent EOTF Display
+    description: Rec.2020 colorspace with 2.4 gamma EOTF for display output.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -589,7 +588,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: DCI-P3 2.4 EOTF  Exponent EOTF Display
+    description: DCI-P3 colorspace with 2.4 gamma EOTF for cinema display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -618,7 +617,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: 2.4 Exponent EOTF Encoding
+    description: sRGB colorspace with 2.4 gamma EOTF for display output.
     isdata: false
     allocation: uniform
     from_scene_reference: !<ExponentTransform> {value: 2.4, direction: inverse}
@@ -630,7 +629,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: BT.1886 2.4 Exponent EOTF Display
+    description: BT.1886 colorspace with 2.4 gamma EOTF for broadcast and HDTV display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: 2.4 EOTF Encoding}
@@ -642,7 +641,7 @@ colorspaces:
     categories: [Filmlight_Display]
     encoding: sdr-spaces
     equalitygroup: ""
-    description: |
+    description: Filmlight's sRGB colorspace for display output.
       Filmlight - sRGB Rec1886 Display space
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -660,7 +659,7 @@ colorspaces:
     categories: [Filmlight_Display]
     encoding: sdr-spaces
     equalitygroup: ""
-    description: |
+    description: Filmlight's Rec.1886 colorspace for Rec.709 display.
       Filmlight - Rec709 Rec1886 Display space
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -678,7 +677,7 @@ colorspaces:
     categories: [Filmlight_Display]
     encoding: sdr-spaces
     equalitygroup: ""
-    description: |
+    description: Filmlight's DCI-P3D65 colorspace for cinema display.
       Filmlight - DCIP3-D65 Rec1886 Display space
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -696,7 +695,7 @@ colorspaces:
     categories: [Filmlight_Display]
     encoding: sdr-spaces
     equalitygroup: ""
-    description: |
+    description: Filmlight's Rec.1886 colorspace for Rec.2020 display.
       Filmlight - Rec2020 Rec1886 Display space
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -714,7 +713,7 @@ colorspaces:
     categories: [Filmlight_Display]
     encoding: hdr-spaces
     equalitygroup: ""
-    description: |
+    description: Filmlight PQ EOTF for Rec.2100 HDR content at 1000 nits.
       Filmlight - Rec2020 PQ Gamma 1000 nit HDR Display space
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -732,7 +731,7 @@ colorspaces:
     categories: [Filmlight_Display]
     encoding: hdr-spaces
     equalitygroup: ""
-    description: |
+    description: Filmlight PQ EOTF for Rec.2100 HDR content at 4000 nits.
       Filmlight - Rec2020 PQ Gamma 4000 nit HDR Display space
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -749,6 +748,7 @@ colorspaces:
     family: Display Encodings
     categories: [Filmlight_Display]
     encoding: hdr-spaces
+    description: Filmlight HLG EOTF for Rec.2100 HDR content at 1000 nits.
     equalitygroup: ""
     bitdepth: 32f
     from_reference: !<GroupTransform>
@@ -769,8 +769,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
-      ACES - sRGB 2.4 Gamma Display space
+    description: ACES - sRGB 2.4 Gamma Display space
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -788,7 +787,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES colorspace optimized for Rec.709 display.
       ACES - sRGB 2.4 Gamma Display space
     isdata: false
     allocation: uniform
@@ -806,7 +805,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES colorspace optimized for P3-D65 display.
       ACES - P3D65 2.4 Gamma Display Space
     isdata: false
     allocation: uniform
@@ -824,7 +823,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES colorspace optimized for Rec.2020 display.
       ACES - Rec2020 2.4 Gamma Display Space
     isdata: false
     allocation: uniform
@@ -842,7 +841,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES colorspace with PQ curve for Rec.2020 1000-nit HDR display.
       ACES - Rec2020 PQ Gamma 1000 nit HDR Display space
     isdata: false
     allocation: uniform
@@ -860,7 +859,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACES colorspace with HLG curve for Rec.2020 1000-nit HDR display.
       Filmlight - Rec2020 HLG Gamma 1000 nit HDR Display space
     isdata: false
     allocation: uniform
@@ -882,7 +881,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: Nuke's implementation of the Rec.709 colorspace for display output.
       Rec. 709 (Full Range) Display Space
     isdata: false
     allocation: uniform
@@ -900,7 +899,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: RED color profile with medium contrast for Rec.709 display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -915,7 +914,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: RED color profile with medium contrast for P3-D65 display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -930,7 +929,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: RED color profile with medium contrast for Rec.2020 display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -945,7 +944,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: RED color profile with medium contrast for PQ 1000-nit HDR display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -962,7 +961,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: Sony's Cine709 colorspace for display output.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -979,7 +978,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: Canon's BT.709 colorspace with WideDR for improved dynamic range.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -994,7 +993,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: Canon's BT.2020 colorspace with WideDR for improved dynamic range.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -1009,7 +1008,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: Canon's BT.2020 colorspace with HLG for HDR content.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -1024,7 +1023,7 @@ colorspaces:
     encoding: hdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: Canon's BT.2020 colorspace with PQ curve for HDR content.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -1039,7 +1038,7 @@ colorspaces:
     encoding: sdr-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: 
+    description: Canon's implementation of the DCI-P3 colorspace for cinema display.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -1056,7 +1055,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: 10ui
-    description: |
+    description: LG 10-bit colorspace for display output.
       conversion from film log
     isdata: false
     allocation: uniform
@@ -1072,7 +1071,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: Log colorspace with a filmic curve for a cinematic look.
       Log based filmic shaper with 16.5 stops of latitude, and 25 stops of dynamic range
     isdata: false
     allocation: lg2
@@ -1091,7 +1090,7 @@ colorspaces:
     categories: [Log]
     encoding: log-spaces
     equalitygroup: ""
-    description: Grading Space
+    description: Cineon Log encoding in Rec.709 colorspace for film-like output.
     to_reference: !<GroupTransform>
       children:
         - !<FileTransform> {src: CineonLog_2_Linear.spi1d, interpolation: linear}
@@ -1103,7 +1102,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACEScc log colorspace for color grading in the ACES pipeline.
         ACES - AP1 Logarithmic space.
     isdata: false
     allocation: uniform
@@ -1119,7 +1118,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: ACEScct log colorspace, more filmic version of ACEScc.
         ACES - AP1 Logarithmic space with a toe.
     isdata: false
     allocation: uniform
@@ -1135,7 +1134,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: Grading Space
+    description: T-Log encoding with E-Gamut colorspace for color grading.
     to_reference: !<GroupTransform>
       children:
         - !<FileTransform> {src: TLog_2_Linear.spi1d, interpolation: linear}
@@ -1150,7 +1149,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Log, (Kraken)
+    description: AgX Log encoding with Kraken LUT for color grading.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -1167,7 +1166,7 @@ colorspaces:
     encoding: log-spaces
     equalitygroup: ""
     bitdepth: unknown
-    description: AgX Log, (SB2383)
+    description: AgX Log encoding with SB2383 LUT for color grading.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -1193,6 +1192,7 @@ colorspaces:
         - !<MatrixTransform> {matrix: [0.750957362824734, 0.144422786709757, 0.104619850465509, 0, 0.000821837079380207, 1.007397584885, -0.00821942196438358, 0, -0.000499952143533471, -0.000854177231436971, 1.00135412937497, 0, 0, 0, 0, 1]}
         - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
 
+    description: ARRI's LogC version 4 for color grading and encoding.
   - !<ColorSpace>
     name: ARRI LogC AWG
     family: Camera Log Encodings
@@ -1240,6 +1240,7 @@ colorspaces:
         - !<BuiltinTransform> {style: CANON_CLOG3-CGAMUT_to_ACES2065-1}
         - !<ColorSpaceTransform> {src: Linear ACES - AP0, dst: Linear Rec709/sRGB}
 
+    description: Canon CLog3 with Cinema Gamut for color grading and encoding.
   - !<ColorSpace>
     name: RED - Log3G10 RWG
     family: Camera Log Encodings
@@ -1410,6 +1411,7 @@ colorspaces:
       children:
         - !<FileTransform> {src: srgb_to_xyz.spimtx, interpolation: linear}
 
+    description: CIE XYZ colorspace, a standard for colorimetry and color matching.
   - !<ColorSpace>
     name: dci_xyz
     family: Utility
@@ -1431,7 +1433,7 @@ colorspaces:
     name: Non-Color
     aliases: [Generic Data, Raw, Non-Colour Data]
     family: Utility
-    description: |
+    description: Data-only space for non-color information, such as masks and alpha channels.
         Used for images which contains non-color data (i.e. normal maps)
     categories: [Utility]
     encoding: data-spaces
@@ -1448,7 +1450,7 @@ colorspaces:
     encoding: data-spaces
     equalitygroup: ""
     bitdepth: 32f
-    description: |
+    description: Visualization tool for analyzing exposure, highlights, and shadows.
       Filmic false color view transform
     isdata: false
     allocation: lg2
