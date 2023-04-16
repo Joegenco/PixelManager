@@ -1425,89 +1425,89 @@ looks:
     description: A punchy and more chroma laden look
     transform: !<CDLTransform> {power: [1.35, 1.35, 1.35], sat: 1.4}
 	
-  - !<Look>
-    name: ____________________
-    process_space: Linear
+  # - !<Look>
+    # name: ____________________
+    # process_space: Linear
 
-  - !<Look>
-    name: Filmlight C-101-Generic-Film
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-101-Generic-Film.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-101-Generic-Film
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-101-Generic-Film.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-102-Japanese-Film
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-102-Japanese-Film.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-102-Japanese-Film
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-102-Japanese-Film.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-103-Earthy-Film
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-103-Earthy-Film.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-103-Earthy-Film
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-103-Earthy-Film.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-104
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-104.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-104
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-104.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-105_Vision
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-105_Vision.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-105_Vision
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-105_Vision.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-201-Truelight-Classic
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-201-Truelight-Classic.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-201-Truelight-Classic
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-201-Truelight-Classic.cub, interpolation: tetrahedral}
 	
-  - !<Look>
-    name: Filmlight C-202
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-202.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-202
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-202.cub, interpolation: tetrahedral}
 		
-  - !<Look>
-    name: Filmlight C-202_v2
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-202_v2.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-202_v2
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-202_v2.cub, interpolation: tetrahedral}
 			
-  - !<Look>
-    name: Filmlight C-203
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-203.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-203
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-203.cub, interpolation: tetrahedral}
 				
-  - !<Look>
-    name: Filmlight C-302_ARRI-2018
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-302_ARRI-2018.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-302_ARRI-2018
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-302_ARRI-2018.cub, interpolation: tetrahedral}
 					
-  - !<Look>
-    name: Filmlight C-303_Academy-2010
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-303_Academy-2010.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-303_Academy-2010
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-303_Academy-2010.cub, interpolation: tetrahedral}
 						
-  - !<Look>
-    name: Filmlight C-304_Academy-2019
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-304_Academy-2019.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-304_Academy-2019
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-304_Academy-2019.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-305_RED-2019
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-305_RED-2019.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-305_RED-2019
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-305_RED-2019.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight C-306_Sony-2019
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: C-306_Sony-2019.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight C-306_Sony-2019
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: C-306_Sony-2019.cub, interpolation: tetrahedral}
 
-  - !<Look>
-    name: Filmlight Z-101-Old-Film-1
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: Z-101-Old-Film-1.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight Z-101-Old-Film-1
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: Z-101-Old-Film-1.cub, interpolation: tetrahedral}
     
-  - !<Look>
-    name: Filmlight M-101_ENR
-    process_space: T-Log - E-Gamut
-    transform: !<FileTransform> {src: M-101_ENR.cub, interpolation: tetrahedral}
+  # - !<Look>
+    # name: Filmlight M-101_ENR
+    # process_space: T-Log - E-Gamut
+    # transform: !<FileTransform> {src: M-101_ENR.cub, interpolation: tetrahedral}
 
 #Filmlight Technicolor (RLAB COLORSPACE ISNT IMPLEMETNED)
 
