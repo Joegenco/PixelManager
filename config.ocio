@@ -158,7 +158,7 @@ displays:
     - !<View> {name: Canon - CLog2 CGamut, colorspace: Canon - CLog2 CGamut}
     - !<View> {name: Canon - CLog3 CGamut, colorspace: Canon - CLog3 CGamut}
     - !<View> {name: RED - Log3G10 RWG, colorspace: RED - Log3G10 RWG}
-    - !<View> {name: Sony - S-Log2 Rec709, colorspace: Sony - S-Log2 Rec709}
+    # - !<View> {name: Sony - S-Log2 Rec709, colorspace: Sony - S-Log2 Rec709}
     - !<View> {name: Sony - SLog3 SGamut3, colorspace: Sony - SLog3 SGamut3}
     - !<View> {name: Sony - SLog3 SGamut3Cine, colorspace: Sony - SLog3 SGamut3Cine}
     - !<View> {name: Sony - SLog3 Venice SGamut3, colorspace: Sony - SLog3 Venice SGamut3}
