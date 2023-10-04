@@ -48,7 +48,7 @@ roles:
   texture_paint: Linear Rec709/sRGB
 
 file_rules:
-  - !<Rule> {name: PBRMaps, regex: ".*(?:_?(?:Normal|normal|Normals|normals|Roughness|roughness|Metallic|metallic|Metal|metal|Height|height|Displacement|displacement|AmbientOcclusion|ambientOcclusion|AO|ao|Specular|specular|Glossiness|glossiness|Gloss|gloss|Cavity|cavity|Subsurface|subsurface|SubsurfaceScattering|subsurfaceScattering|SSS|sss|Alpha|alpha|Opacity|opacity|_nm|_rm|_mm|_hm|_dm|_ao|_sm|_gm|_cm|_ss|_sssm|_sss|_am|_om)).*", colorspace: Non-Color}
+  - !<Rule> {name: PBRMaps, regex: ".*(_(Normal|normal|Roughness|roughness|Metallic|metallic|Metal|metal|Height|height|Displacement|displacement|AmbientOcclusion|ambientOcclusion|AO|ao|Specular|specular|Glossiness|glossiness|Gloss|gloss|Cavity|cavity|Subsurface|subsurface|SubsurfaceScattering|subsurfaceScattering|SSS|sss|Alpha|alpha|Opacity|opacity|_nm|_rm|_mm|_hm|_dm|_ao|_sm|_gm|_cm|_ss|_sssm|_sss|_am|_om)).*", colorspace: Non-Color}
   - !<Rule> {name: OpenEXR, extension: "exr", pattern: "*", colorspace: Linear Rec709/sRGB}
   - !<Rule> {name: hdr, extension: "hdr", pattern: "*", colorspace: Linear Rec709/sRGB}
   - !<Rule> {name: ColorSpaceNamePathSearch}
@@ -61,6 +61,7 @@ displays:
     - !<View> {name: Filmic, colorspace: Filmic sRGB}
     - !<View> {name: AgX, colorspace: AgX Base}
     - !<View> {name: AgX-SB2383, colorspace: AgX-SB2383 Base}
+    - !<View> {name: AgX-R-Bombastic, colorspace: AgX-R-Bombastic sRGB}
     - !<View> {name: TCAMv2, colorspace: Filmlight sRGB}
     - !<View> {name: ACES, colorspace: ACES sRGB}
     - !<View> {name: ACES GamutComp, colorspace: ACES sRGB, look: ACES 1.3 Reference Gamut Compression}
@@ -176,7 +177,7 @@ displays:
 
 active_displays: [sRGB, 2.2 Rec709, 2.4 Rec709, Apple Display P3, DCI-P3D65, 2.4 Rec2020, PQ(1000)-Rec2020, HLG(1000)-Rec2020, Log, Camera Log]
 
-active_views: [Display Native, Standard, Filmic, AgX, AgX-SB2383, TCAMv2, ACES, ACES GamutComp, ARRI REVEAL, ARRI ALF2, ARRI Classic (K1S1), RED, Sony, Canon, BMD Gen5 ExtendedVid, BMD Gen5 Vid, Filmic Log, AgX Log Kraken, AgX Log SB2383, CineonLog Rec709, ACEScc, ACEScct, T-Log E-Gamut, ARRI LogC AWG, ARRI LogC4, Canon - CLog2 CGamut, Canon - CLog3 CGamut, RED - Log3G10 RWG, Sony - S-Log2 Rec709, Sony - SLog3 SGamut3, Sony - SLog3 SGamut3Cine, Sony - SLog3 Venice SGamut3, Sony - SLog3 Venice SGamut3Cine, Panasonic - VLog VGamut, BMDFilm WideGamut Gen5, DaVinci Intermediate WideGamut, Raw, False Color]
+active_views: [Display Native, Standard, Filmic, AgX, AgX-SB2383, AgX-R-Bombastic, TCAMv2, ACES, ACES GamutComp, ARRI REVEAL, ARRI ALF2, ARRI Classic (K1S1), RED, Sony, Canon, BMD Gen5 ExtendedVid, BMD Gen5 Vid, Filmic Log, AgX Log Kraken, AgX Log SB2383, CineonLog Rec709, ACEScc, ACEScct, T-Log E-Gamut, ARRI LogC AWG, ARRI LogC4, Canon - CLog2 CGamut, Canon - CLog3 CGamut, RED - Log3G10 RWG, Sony - S-Log2 Rec709, Sony - SLog3 SGamut3, Sony - SLog3 SGamut3Cine, Sony - SLog3 Venice SGamut3, Sony - SLog3 Venice SGamut3Cine, Panasonic - VLog VGamut, BMDFilm WideGamut Gen5, DaVinci Intermediate WideGamut, Raw, False Color]
 
 #All colorspaces except Linear Rec709/sRGB, sRGB, Non-Color comment this in if you want less clutter.
 #inactive_colorspaces: [Linear - E-Gamut, Filmic sRGB, ARRI Reveal Gamma 2.4 Rec709, ARRI Classic, ARRI Rec709, AgX Base, AgX-SB2383 Base, AgX Base BT.1886, AgX-SB2383 Base BT.1886, AgX Base Display P3, AgX-SB2383 Base Display P3, Display P3, 2.2 EOTF Encoding, 2.4 EOTF Encoding, BT.1886, Filmlight sRGB, Filmlight Rec1886 Rec709, Filmlight DCI - P3D65, Filmlight Rec1886 Rec.2020, Filmlight Rec2100 PQ - Rec 2020 - 1000 nits, Filmlight Rec2100 PQ - Rec 2020 - 4000 nits, Filmlight Rec2100 HLG - 2020 - 1000 nits, ACES sRGB, ACES Rec.709, ACES P3D65, ACES Rec.2020, ACES Rec.2020 ST2084 1000 nits, ACES Rec.2020 HLG 1000 nits, nuke_rec709, RED Medium Contrast Medium - Rec709, lg10, Filmic Log, CineonLog - Rec.709, ACES - ACEScc, ACES - ACEScct, T-Log - E-Gamut, AgX Log (Kraken), AgX Log (SB2383), ARRI LogC4, ARRI LogC AWG, Canon - CLog2 CGamut, Canon - CLog3 CGamut, RED - Log3G10 RWG, Sony - S-Log2 Rec709, Sony - SLog3 SGamut3, Sony - SLog3 SGamut3Cine, Sony - SLog3 Venice SGamut3, Sony - SLog3 Venice SGamut3Cine, Panasonic - VLog VGamut, XYZ, dci_xyz, False Color, Linear ACES - AP0, Linear ACES - AP1, ARRI PQ-1k Rec2020, ARRI Reveal Rec2020, ARRI Rec2020, ARRI PQ-1k Rec2020, RED Medium Contrast Medium - PQ2084-1k, RED Medium Contrast Medium - Rec2020, RED Medium Contrast Medium - P3D65, Sony Cine709, ARRI Reveal P3-D65, ARRI Reveal ST2084-1k Rec2100, Canon BT709 WideDR, Canon BT2020 WideDR, Canon BT2020 HLG, Canon BT2020 PQ, Canon DCIP3, DCI EOTF P3-D65, Gamma 2.4 EOTF Rec2020, PQ EOTF Rec2020, Linear Rec2020, BMDFilm WideGamut Gen5, DaVinci Intermediate WideGamut, BMD Gen5 ExtendedVid, BMD Gen5 Vid]
@@ -483,6 +484,24 @@ colorspaces:
         - !<ExponentTransform> {value: 2.2}
         - !<MatrixTransform> {matrix: [0.913500795022407, 0.0447436243802427, 0.0417555805973487, 0, 0.0808718821432089, 0.815474287341219, 0.103653830515572, 0, 0.0359397231776181, 0.0342846039509055, 0.929775672871476, 0, 0, 0, 0, 1], direction: inverse}
         - !<ExponentTransform> {value: 2.2, direction: inverse}
+        
+  - !<ColorSpace>
+    name: AgX-R-Bombastic sRGB
+    family: display
+    categories: [AgX_Display]
+    encoding: sdr-spaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: AgX Resolve Bombastic for maximum contrast, very sharp.. maybe too much.
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: ARRI LogC AWG}
+        - !<FileTransform> {src: AgX-R-Bombastic.cube, interpolation: tetrahedral}
+        
+
 		
   - !<ColorSpace>
     name: AgX Base BT.1886
@@ -861,6 +880,24 @@ colorspaces:
       children:
         - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Linear ACES - AP0}
         - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - HDR-VIDEO-1000nit-15nit-REC2020lim_1.1}
+        - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.2100-PQ}
+        
+  - !<ColorSpace>
+    name: ACES Rec.2020 ST2084 4000 nits
+    family: display
+    categories: [ACES_Display]
+    encoding: hdr-spaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: ACES colorspace with PQ curve for Rec.2020 4000-nit HDR display.
+      ACES - Rec2020 PQ Gamma 1000 nit HDR Display space
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear Rec709/sRGB, dst: Linear ACES - AP0}
+        - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - HDR-VIDEO-4000nit-15nit-REC2020lim_1.1}
         - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.2100-PQ}
 
   - !<ColorSpace>
