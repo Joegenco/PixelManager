@@ -74,6 +74,7 @@ displays:
     - !<View> {name: AgX, colorspace: AgX Base sRGB}
     - !<View> {name: Filmic, colorspace: Filmic sRGB}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 sRGB}
+    - !<View> {name: ACES, colorspace: ACES sRGB}
     - !<View> {name: ARRI K1S1, colorspace: ARRI K1S1 sRGB}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 sRGB}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal sRGB}
@@ -85,6 +86,7 @@ displays:
     - !<View> {name: Standard, colorspace: Display P3}
     - !<View> {name: AgX, colorspace: AgX Base Display P3}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Display P3}
+    - !<View> {name: ACES, colorspace: ACES Display P3}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Display P3}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Display P3}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Display P3}
@@ -95,6 +97,7 @@ displays:
     - !<View> {name: Standard, colorspace: Rec.1886}
     - !<View> {name: AgX, colorspace: AgX Base Rec.1886}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.1886}
+    - !<View> {name: ACES, colorspace: ACES Rec.1886}
     - !<View> {name: ARRI K1S1, colorspace: ARRI K1S1 Rec.1886}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Rec.1886}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Rec.1886}
@@ -106,6 +109,7 @@ displays:
     - !<View> {name: Standard, colorspace: Rec.2020}
     - !<View> {name: AgX, colorspace: AgX Base Rec.2020}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.2020}
+    - !<View> {name: ACES, colorspace: ACES Rec.2020}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Rec.2020}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Rec.2020}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.2020}
@@ -116,6 +120,7 @@ displays:
     - !<View> {name: Standard, colorspace: Rec.2100}
     - !<View> {name: Standard (1000 Limited), colorspace: Rec.2100(1000nit Limit)}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.2100PQ(1000)}
+    - !<View> {name: ACES, colorspace: ACES Rec.2100PQ(1000)}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Rec.2100PQ(1000)}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Rec.2100PQ(1000)}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.2100PQ(1000)}
@@ -153,7 +158,7 @@ displays:
     
 active_displays: [sRGB, Display P3, Rec.1886, Rec.2020, Rec.2100PQ(1000), Log, Camera Log]
 
-active_views: [Standard, AgX, Filmic, TCAMv2, ARRI K1S1, ARRI ALF2, ARRI Reveal, RED IPP2, Canon 201911, False Color, Smooth False Color, None, AgX Log, Filmic Log, DaVinci Intermidiate, Filmlight T-Log - E-Gamut, ACEScc, ACEScct, ARRI LogC3, ARRI LogC4, BMDFilm Gen5, CanonLog2, CanonLog3, V-Log V-Gamut, Log3G10 RWG, S-Log2 ITU-709, S-Log2 S-Gamut, S-Log3 S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 Venice S-Gamut3.Cine, F-Log F-Gamut, F-Log2 F-Gamut, D-Log X5-X7 D-Gamut, ProTune Log, N-Log]  
+active_views: [Standard, AgX, Filmic, TCAMv2, ACES, ARRI K1S1, ARRI ALF2, ARRI Reveal, RED IPP2, Canon 201911, False Color, Smooth False Color, None, AgX Log, Filmic Log, DaVinci Intermidiate, Filmlight T-Log - E-Gamut, ACEScc, ACEScct, ARRI LogC3, ARRI LogC4, BMDFilm Gen5, CanonLog2, CanonLog3, V-Log V-Gamut, Log3G10 RWG, S-Log2 ITU-709, S-Log2 S-Gamut, S-Log3 S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 Venice S-Gamut3.Cine, F-Log F-Gamut, F-Log2 F-Gamut, D-Log X5-X7 D-Gamut, ProTune Log, N-Log]  
 
 #ONLY ONE INACTIVE SPACE CAN BE UN-COMMENTED AT A TIME. PICK ONE!
 
@@ -1713,7 +1718,7 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Rec.2020, dst: Linear Rec.2020}
         - !<MatrixTransform> {matrix: [0.2658180370250449, 0.59846986045365, 0.1357121025213052, 0, 0.2658180370250449, 0.59846986045365, 0.1357121025213052, 0, 0.2658180370250449, 0.59846986045365, 0.1357121025213052, 0, 0, 0, 0, 1]}
         - !<ExponentTransform> {value: 2.5, direction: inverse}
-        - !<FileTransform> {src: AgX_False_Color.spi1d, interpolation: tetrahedral}
+        - !<FileTransform> {src: AgX_False_Color.spi1d, interpolation: linear}
 
   - !<ColorSpace> #AgX False Color P3
     name: AgX False Color P3
