@@ -63,8 +63,8 @@ roles:
 
 file_rules:
   - !<Rule> {name: PBRMaps, regex: ".*(_(Normal|normal|Roughness|roughness|Metallic|metallic|Metal|metal|Height|height|Displacement|displacement|AmbientOcclusion|ambientOcclusion|AO|ao|Specular|specular|Glossiness|glossiness|Gloss|gloss|Cavity|cavity|Subsurface|subsurface|SubsurfaceScattering|subsurfaceScattering|SSS|sss|Alpha|alpha|Opacity|opacity|_nm|_rm|_mm|_hm|_dm|_ao|_sm|_gm|_cm|_ss|_sssm|_sss|_am|_om)).*", colorspace: Non-Color}
-  - !<Rule> {name: OpenEXR, extension: "exr", pattern: "*", colorspace: Linear Rec709}
-  - !<Rule> {name: hdr, extension: "hdr", pattern: "*", colorspace: Linear Rec709}
+  - !<Rule> {name: OpenEXR, extension: "exr", pattern: "*", colorspace: Linear Rec.709}
+  - !<Rule> {name: hdr, extension: "hdr", pattern: "*", colorspace: Linear Rec.709}
   - !<Rule> {name: ColorSpaceNamePathSearch}
   - !<Rule> {name: Default, colorspace: sRGB}
  
@@ -80,7 +80,6 @@ displays:
     - !<View> {name: RED IPP2, colorspace: RED IPP2 sRGB}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 sRGB}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.709}
-    - !<View> {name: Smooth False Color, colorspace: Smooth False Color Rec.709}
     - !<View> {name: None, colorspace: Non-Color}
   Display P3:
     - !<View> {name: Standard, colorspace: Display P3}
@@ -91,7 +90,6 @@ displays:
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Display P3}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Display P3}
     - !<View> {name: False Color, colorspace: AgX False Color P3}
-    - !<View> {name: Smooth False Color, colorspace: Smooth False Color P3}
     - !<View> {name: None, colorspace: Non-Color}
   Rec.1886:
     - !<View> {name: Standard, colorspace: Rec.1886}
@@ -103,7 +101,6 @@ displays:
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.1886}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Rec.1886}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.709}
-    - !<View> {name: Smooth False Color, colorspace: Smooth False Color Rec.709}
     - !<View> {name: None, colorspace: Non-Color}
   Rec.2020:
     - !<View> {name: Standard, colorspace: Rec.2020}
@@ -114,7 +111,6 @@ displays:
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.2020}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Rec.2020}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.2020}
-    - !<View> {name: Smooth False Color, colorspace: Smooth False Color Rec.2020}
     - !<View> {name: None, colorspace: Non-Color}
   Rec.2100PQ(1000):
     - !<View> {name: Standard, colorspace: Rec.2100}
@@ -125,7 +121,6 @@ displays:
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.2100PQ(1000)}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Rec.2100PQ(1000)}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.2100}
-    - !<View> {name: Smooth False Color, colorspace: Smooth False Color Rec.2100}
     - !<View> {name: None, colorspace: Non-Color}
   Log:
     - !<View> {name: AgX Log, colorspace: AgX Log}
@@ -844,12 +839,12 @@ colorspaces:
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3.cine}
         - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582}
     to_scene_reference: !<GroupTransform>
       children:
         - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582, direction: inverse}
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3.cine, direction: inverse}
 
   - !<ColorSpace> #S-Log3 Venice S-Gamut3
     name: S-Log3 Venice S-Gamut3
@@ -1760,65 +1755,6 @@ colorspaces:
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX False Color Rec.709}
         - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec.2100(1000nit Limit)}
-
-  - !<ColorSpace> #Smooth False Color Rec.709
-    name: Smooth False Color Rec.709
-    aliases: [Smooth False Color BT.709, Filmic False Color]
-    family: False Color
-    equalitygroup:
-    bitdepth: unknown
-    description: Visualization tool for analyzing exposure, highlights, and shadows.
-      Filmic false color view transform
-    isdata: false
-    from_scene_reference: !<GroupTransform>
-      children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Filmic Log}
-        - !<FileTransform> {src: Filmic_False_Colour.spi3d, interpolation: best}
- 
-  - !<ColorSpace> #Smooth False Color P3
-    name: Smooth False Color P3
-    aliases: []
-    family: False Color
-    equalitygroup:
-    bitdepth: unknown
-    description: Visualization tool for analyzing exposure, highlights, and shadows.
-      Filmic false color view transform
-    isdata: false
-    from_scene_reference: !<GroupTransform>
-      children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Filmic Log}
-        - !<FileTransform> {src: Filmic_False_Colour.spi3d, interpolation: best}
-        - !<ColorSpaceTransform> {src: sRGB, dst: Display P3}    
- 
-  - !<ColorSpace> #Smooth False Color Rec.2020
-    name: Smooth False Color Rec.2020
-    aliases: [Smooth False Color BT.2020]
-    family: False Color
-    equalitygroup:
-    bitdepth: unknown
-    description: Visualization tool for analyzing exposure, highlights, and shadows.
-      Filmic false color view transform
-    isdata: false
-    from_scene_reference: !<GroupTransform>
-      children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Filmic Log}
-        - !<FileTransform> {src: Filmic_False_Colour.spi3d, interpolation: best}
-        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec.2020}    
- 
-  - !<ColorSpace> #Smooth False Color Rec.2100
-    name: Smooth False Color Rec.2100
-    aliases: [Smooth False Color BT.2100]
-    family: False Color
-    equalitygroup:
-    bitdepth: unknown
-    description: Visualization tool for analyzing exposure, highlights, and shadows.
-      Filmic false color view transform
-    isdata: false
-    from_scene_reference: !<GroupTransform>
-      children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Filmic Log}
-        - !<FileTransform> {src: Filmic_False_Colour.spi3d, interpolation: best}
-        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec.2100(1000nit Limit)}    
 
   - !<ColorSpace> #Luminance Compensation Rec.2020
     name: Luminance Compensation Rec.2020
