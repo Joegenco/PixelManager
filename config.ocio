@@ -119,6 +119,7 @@ displays:
   Rec.2100PQ(1000):
     - !<View> {name: Standard, colorspace: Rec.2100}
     - !<View> {name: Standard (1000 Limited), colorspace: Rec.2100(1000nit Limit)}
+    - !<View> {name: AgX, colorspace: AgX Base Rec.2100-PQ 1000 nits}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.2100PQ(1000)}
     - !<View> {name: ACES, colorspace: ACES Rec.2100PQ(1000)}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Rec.2100PQ(1000)}
@@ -163,16 +164,16 @@ active_views: [Standard, AgX, Filmic, TCAMv2, ACES, ARRI K1S1, ARRI ALF2, ARRI R
 #ONLY ONE INACTIVE SPACE CAN BE UN-COMMENTED AT A TIME. PICK ONE!
 
 #MINIMAL - Inactive spaces with absolute minimal clutter
-inactive_colorspaces: [DCI-P3 2.6, Filmic Log, ACEScct, ACEScc, AgX Log, DaVinci Intermidiate WideGamut Log, T-Log - E-Gamut, N-Log, ProTune Log, D-Log X5-X7 D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, AgX Base sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+inactive_colorspaces: [AgX Base Rec.2100-PQ 1000 nits, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, Filmic Log, ACEScct, ACEScc, AgX Log, DaVinci Intermidiate WideGamut Log, T-Log - E-Gamut, N-Log, ProTune Log, D-Log X5-X7 D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, AgX Base sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
 
 #CG - Inactive spaces with STORAGE log formats visible
-#inactive_colorspaces: [DCI-P3 2.6, N-Log, ProTune Log, D-Log X5-X7 D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, AgX Base sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+#inactive_colorspaces: [AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, N-Log, ProTune Log, D-Log X5-X7 D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, AgX Base sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
 
 #STUDIO - Inactive spaces with CAMERA  log formats visible to the user
-#inactive_colorspaces: [DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, AgX Base sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+#inactive_colorspaces: [AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, AgX Base sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
 
 #EXPERIMENTAL - Inactive spaces with WHACKY REVERSE FORMATION possibilies visible to the user
-#inactive_colorspaces: [DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+#inactive_colorspaces: [AgX Base Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
 
 colorspaces:
 
@@ -1091,6 +1092,38 @@ colorspaces:
        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec.2020}
        - !<ColorSpaceTransform> {src: AgX Base Rec.2020, dst: Linear CIE-XYZ E}
 
+  - !<ColorSpace> #AgX Base Rec.2100-HLG
+    name: AgX Base Rec.2100-HLG
+    family: Imagery
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding for BT.2100-HLG 1000 nits Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear FilmLight E-Gamut}
+        - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 12.5260688117]}
+        - !<FileTransform> {src: AgX_Base_Rec2100-HLG.cube, interpolation: tetrahedral}
+    # to_scene_reference: !<GroupTransform>
+      # children:
+        # - !<FileTransform> {src: Inverse_AgX_Base_Rec2100-HLG.cube, interpolation: tetrahedral}
+        # - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 4.026069], direction: inverse}
+        # - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.2020, direction: inverse}
+
+  - !<ColorSpace> #AgX Base Rec.2100-PQ 1000 nits
+    name: AgX Base Rec.2100-PQ 1000 nits
+    family: Imagery
+    equalitygroup: ""
+    bitdepth: unknown
+    description: AgX Base Image Encoding for BT.2100-PQ 1000 nits Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX Base Rec.2100-HLG}
+        - !<ColorSpaceTransform> {src: Rec.2100-HLG, dst: Rec.2100-PQ}
+
 #ACES
   - !<ColorSpace> #ACES sRGB
     name: ACES sRGB
@@ -1661,9 +1694,9 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.2020}
         - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0, direction: inverse}
 
-  - !<ColorSpace> #Rec.2100
-    name: Rec.2100
-    aliases: [BT2100, ST-2084]
+  - !<ColorSpace> #Rec.2100-PQ
+    name: Rec.2100-PQ
+    aliases: [Rec.2100-PQ - Display, rec2100_pq_display, BT2100, ST-2084, Rec.2100]
     family: Display
     equalitygroup:
     bitdepth: 32f
@@ -1675,20 +1708,38 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.2020}
         - !<BuiltinTransform> {style: CURVE - LINEAR_to_ST-2084}
 
-  - !<ColorSpace> #Rec.2100(1000nit Limit)
-    name: Rec.2100(1000nit Limit)
-    aliases: []
+  - !<ColorSpace> #Rec.2100-PQ 1000 nits limited
+    name: Rec.2100-PQ 1000 nits limited
+    aliases: [Rec.2100(1000nit Limit)]
     family: Display
-    equalitygroup:
+    equalitygroup: ""
     bitdepth: 32f
-    description: |
-      BT.2100 PQ Exponent Display
+    description: BT.2100-ST.2084 1000 nits limited display
     isdata: false
+    allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.2020}
+        - !<RangeTransform> {max_in_value: 10, max_out_value: 10}
         - !<BuiltinTransform> {style: CURVE - LINEAR_to_ST-2084}
-        - !<RangeTransform> {min_in_value: 0., min_out_value: 0., max_in_value: 0.75, max_out_value: 0.75}       
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<BuiltinTransform> {style: CURVE - LINEAR_to_ST-2084, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.2020, direction: inverse}  
+
+  - !<ColorSpace> #Rec.2100-HLG
+    name: Rec.2100-HLG
+    aliases: [rec2100_hlg_display, Rec.2100-HLG - Display, BT.2100-HLG]
+    family: Display
+    equalitygroup: ""
+    bitdepth: 32f
+    description: BT.2100-HLG 1000 nit Display
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear CIE-XYZ D65}
+        - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.2100-HLG-1000nit}
 
   - !<ColorSpace> #BT.2020 2.4 I-E
     name: BT.2020 2.4 I-E
@@ -1733,6 +1784,10 @@ colorspaces:
         - !<MatrixTransform> {matrix: [0.2658180370250449, 0.59846986045365, 0.1357121025213052, 0, 0.2658180370250449, 0.59846986045365, 0.1357121025213052, 0, 0.2658180370250449, 0.59846986045365, 0.1357121025213052, 0, 0, 0, 0, 1]}
         - !<ExponentTransform> {value: 2.5, direction: inverse}
         - !<FileTransform> {src: AgX_False_Color.spi1d, interpolation: linear}
+    to_scene_reference: !<GroupTransform> #Does nothing. This is just a pacifier for the crybaby Maya
+      children:
+       - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Rec.2020}
+       - !<ColorSpaceTransform> {src: AgX Base Rec.2020, dst: Linear CIE-XYZ E}
 
   - !<ColorSpace> #AgX False Color P3
     name: AgX False Color P3
