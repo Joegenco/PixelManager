@@ -1268,7 +1268,7 @@ colorspaces:
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: T-Log - E-Gamut}
         - !<FileTransform> {src: TLog_2_P3D65_TCAMv2.cub, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: DCI-P3 2.6, dst: Display P3}
+        - !<ColorSpaceTransform> {src: DCI-P3 D65 2.6, dst: Display P3}
         
   - !<ColorSpace> #TCAMv2 Rec.2020
     name: TCAMv2 Rec.2020
@@ -1371,7 +1371,7 @@ colorspaces:
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC3}
         - !<FileTransform> {src: ARRI_LogC2Video_P3D65_33.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: DCI-P3 2.6, dst: Display P3}
+        - !<ColorSpaceTransform> {src: DCI-P3 D65 2.6, dst: Display P3}
 
   - !<ColorSpace> #ARRI ALF2 Rec.2020
     name: ARRI ALF2 Rec.2020
@@ -1444,7 +1444,7 @@ colorspaces:
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC4}
         - !<FileTransform> {src: ARRI_LogC4-to-Gamma26_P3-D65_v1-33.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: DCI-P3 2.6, dst: Display P3}
+        - !<ColorSpaceTransform> {src: DCI-P3 D65 2.6, dst: Display P3}
 
   - !<ColorSpace> #ARRI Reveal Rec.2020
     name: ARRI Reveal Rec.2020
@@ -1517,7 +1517,7 @@ colorspaces:
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Log3G10 REDWideGamutRGB}
         - !<FileTransform> {src: RWG_Log3G10_to_P3D65_GAMMA26_with_MEDIUM_CONTRAST_and_R_2_Medium_size_64_v1.13.cub, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: DCI-P3 2.6, dst: Display P3}
+        - !<ColorSpaceTransform> {src: DCI-P3 D65 2.6, dst: Display P3}
 
   - !<ColorSpace> #RED IPP2 Rec.2020
     name: RED IPP2 Rec.2020
