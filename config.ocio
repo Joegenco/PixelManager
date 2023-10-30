@@ -26,7 +26,7 @@ ocio_profile_version: 2.0
 
 environment:
   {}
-search_path: "luts:filmic:ARRI:Canon:RWG:TCAMv2"
+search_path: "luts:filmic:ARRI:Canon:RWG:TCAMv2:OpenDRT"
 strictparsing: true
 luma: [0.2126, 0.7152, 0.0722]
 
@@ -1321,8 +1321,8 @@ colorspaces:
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: OpenDRT-Param_LinRec2020.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: OpenDRT-LogC3LinRec2020.cube, interpolation: tetrahedral}
         - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Rec.2020}
 
   - !<ColorSpace> #OpenDRT sRGB
@@ -1332,14 +1332,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      OpenDRT-Param DCTL Default by jedypod-Jed Smith.
+      OpenDRT DCTL Default by jedypod-Jed Smith.
       A simple and robust display transform designed for smooth tonality, neutral appearance, faithful rendering of input colorimetry where possible.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: OpenDRT-Param_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: sRGB}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: OpenDRT-LogC3LinRec709.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: sRGB}
 
   - !<ColorSpace> #OpenDRT Rec.1886
     name: OpenDRT Rec.1886
@@ -1348,14 +1348,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      OpenDRT-Param DCTL Default by jedypod-Jed Smith.
+      OpenDRT DCTL Default by jedypod-Jed Smith.
       A simple and robust display transform designed for smooth tonality, neutral appearance, faithful rendering of input colorimetry where possible.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: OpenDRT-Param_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Rec.1886}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: OpenDRT-LogC3LinRec709.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: Rec.1886}
 
   - !<ColorSpace> #OpenDRT Display P3
     name: OpenDRT Display P3
@@ -1364,14 +1364,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      OpenDRT-Param DCTL Default by jedypod-Jed Smith.
+      OpenDRT DCTL Default by jedypod-Jed Smith.
       A simple and robust display transform designed for smooth tonality, neutral appearance, faithful rendering of input colorimetry where possible.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: OpenDRT-Param_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Display P3}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: OpenDRT-LogC3LinP3D65.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear DCI-P3 D65, dst: Display P3}
 
 #JzDT
 
@@ -1382,14 +1382,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      JzDT DCTL Default by jedypod-Jed Smith.
+      JzDT DCTL Default Average Surround by jedypod-Jed Smith.
       Another experiment using the max(r,g,b) norm and the JzAzBz LMS space.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: JzDT_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Rec.2020}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: JzDT-LogC3LinRec2020.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: sRGB}
 
   - !<ColorSpace> #JzDT sRGB
     name: JzDT sRGB
@@ -1398,14 +1398,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      JzDT DCTL Default by jedypod-Jed Smith.
+      JzDT DCTL Default Average Surround by jedypod-Jed Smith.
       Another experiment using the max(r,g,b) norm and the JzAzBz LMS space.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: JzDT_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: sRGB}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: JzDT-LogC3LinRec709.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: sRGB}
 
   - !<ColorSpace> #JzDT Rec.1886
     name: JzDT Rec.1886
@@ -1414,14 +1414,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      JzDT DCTL Default by jedypod-Jed Smith.
+      JzDT DCTL Default Average Surround by jedypod-Jed Smith.
       Another experiment using the max(r,g,b) norm and the JzAzBz LMS space.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: JzDT_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Rec.1886}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: JzDT-LogC3LinRec709.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: Rec.1886}
 
   - !<ColorSpace> #JzDT Display P3
     name: JzDT Display P3
@@ -1430,14 +1430,14 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      JzDT DCTL Default by jedypod-Jed Smith.
+      JzDT DCTL Default Average Surround by jedypod-Jed Smith.
       Another experiment using the max(r,g,b) norm and the JzAzBz LMS space.
     isdata: false
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: T-Log - E-Gamut}
-        - !<FileTransform> {src: JzDT_LinRec2020.cube, interpolation: tetrahedral}
-        - !<ColorSpaceTransform> {src: Linear Rec.2020, dst: Display P3}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: ARRI LogC3}
+        - !<FileTransform> {src: JzDT-LogC3LinP3D65.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Linear DCI-P3 D65, dst: Display P3}
 
 #ACES
   - !<ColorSpace> #ACES sRGB
