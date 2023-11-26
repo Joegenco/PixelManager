@@ -1527,9 +1527,12 @@ colorspaces:
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACEScct}
-        - !<FileTransform> {src: aces1.3_ref_gamut_compression.spi3d, interpolation: linear}
-        - !<ColorSpaceTransform> {src: ACEScct, dst: ACES2065-1}
+        # - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        # - !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+        # Remove the below 3 lines and enable the two lines above IF you switch to OCIO 2.1
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC4}
+        - !<FileTransform> {src: aces1.3_ref_gamut_compression.3dl, interpolation: linear}
+        - !<ColorSpaceTransform> {src: ARRI LogC4, dst: ACES2065-1}
         - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - SDR-VIDEO_1.0}
         - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_sRGB}
 
@@ -1544,9 +1547,12 @@ colorspaces:
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACEScct}
-        - !<FileTransform> {src: aces1.3_ref_gamut_compression.spi3d, interpolation: linear}
-        - !<ColorSpaceTransform> {src: ACEScct, dst: ACES2065-1}
+        # - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        # - !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+        # Remove the below 3 lines and enable the two lines above IF you switch to OCIO 2.1
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC4}
+        - !<FileTransform> {src: aces1.3_ref_gamut_compression.3dl, interpolation: linear}
+        - !<ColorSpaceTransform> {src: ARRI LogC4, dst: ACES2065-1}
         - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - SDR-VIDEO_1.0}
         - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.1886-REC.709}
 
@@ -1561,9 +1567,12 @@ colorspaces:
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACEScct}
-        - !<FileTransform> {src: aces1.3_ref_gamut_compression.spi3d, interpolation: linear}
-        - !<ColorSpaceTransform> {src: ACEScct, dst: ACES2065-1}
+        # - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        # - !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+        # Remove the below 3 lines and enable the two lines above IF you switch to OCIO 2.1
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC4}
+        - !<FileTransform> {src: aces1.3_ref_gamut_compression.3dl, interpolation: linear}
+        - !<ColorSpaceTransform> {src: ARRI LogC4, dst: ACES2065-1}
         - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - SDR-VIDEO_1.0}
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ D65, dst: Display P3}
 
@@ -1578,9 +1587,12 @@ colorspaces:
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACEScct}
-        - !<FileTransform> {src: aces1.3_ref_gamut_compression.spi3d, interpolation: linear}
-        - !<ColorSpaceTransform> {src: ACEScct, dst: ACES2065-1}
+        # - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        # - !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+        # Remove the below 3 lines and enable the two lines above IF you switch to OCIO 2.1
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC4}
+        - !<FileTransform> {src: aces1.3_ref_gamut_compression.3dl, interpolation: linear}
+        - !<ColorSpaceTransform> {src: ARRI LogC4, dst: ACES2065-1}
         - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - SDR-VIDEO_1.0}
         - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.1886-REC.2020}
 
@@ -1595,9 +1607,12 @@ colorspaces:
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACEScct}
-        - !<FileTransform> {src: aces1.3_ref_gamut_compression.spi3d, interpolation: linear}
-        - !<ColorSpaceTransform> {src: ACEScct, dst: ACES2065-1}
+        # - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        # - !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+        # Remove the below 3 lines and enable the two lines above IF you switch to OCIO 2.1
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC4}
+        - !<FileTransform> {src: aces1.3_ref_gamut_compression.3dl, interpolation: linear}
+        - !<ColorSpaceTransform> {src: ARRI LogC4, dst: ACES2065-1}
         - !<BuiltinTransform> {style: ACES-OUTPUT - ACES2065-1_to_CIE-XYZ-D65 - HDR-VIDEO-1000nit-15nit-REC2020lim_1.1}
         - !<BuiltinTransform> {style: DISPLAY - CIE-XYZ-D65_to_REC.2100-PQ}
 
@@ -2562,19 +2577,21 @@ looks:
         - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
 
   - !<Look> #ACES - 1.3 Reference Gamut Compression BAKED!!!
+      # special thanks to piotrus3333 for supplying the LogC4 based LMT lut
+      # not perfect but closer to OCIO 2.1 LMT.
     name: ACES - 1.3 Reference Gamut Compression
-    process_space: ACEScct
+    process_space: ARRI LogC4
     description: |
       This LUT is baked from ACES 1.3 to be backwards compatible with OCIO 2.0
-      LMT (applied in ACEScct) to compress scene-referred values from common cameras into the AP1 gamut
-    transform: !<FileTransform> {src: aces1.3_ref_gamut_compression.spi3d, interpolation: linear}
+      LMT (applied in LogC4) to compress scene-referred values from common cameras into the AP1 gamut
+    transform: !<FileTransform> {src: aces1.3_ref_gamut_compression.3dl, interpolation: linear}
 
-    # - !<Look> #ACES - 1.3 Reference Gamut Compression ORIGINAL FOR OCIO v2.1!!!
+  # - !<Look> #ACES - 1.3 Reference Gamut Compression ORIGINAL FOR OCIO v2.1!!!
     # name: ACES - 1.3 Reference Gamut Compression
     # process_space: ACES2065-1
     # description: |
       # LMT (applied in ACES2065-1) to compress scene-referred values from common cameras into the AP1 gamut
-#    transform: !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
+    # transform: !<BuiltinTransform> {style: ACES-LMT - ACES 1.3 Reference Gamut Compression}
 
   - !<Look> #Greyscale
     name: Greyscale
