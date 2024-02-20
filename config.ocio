@@ -2263,7 +2263,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
-        - !<ExponentWithLinearTransform> {gamma: 2.2, offset: 0, direction: inverse}
+        - !<ExponentTransform> {value: 2.2, direction: inverse}
 
   - !<ColorSpace> #sRGB 2.2 I-E
     name: sRGB 2.2 I-E
@@ -2305,7 +2305,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
-        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0, direction: inverse}
+        - !<ExponentTransform> {value: 2.4, direction: inverse}
 
   - !<ColorSpace> #Display P3
     name: Display P3
@@ -2333,7 +2333,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear DCI-P3 D65}
-        - !<ExponentWithLinearTransform> {gamma: 2.2, offset: 0.00, direction: inverse}
+        - !<ExponentTransform> {value: 2.2, direction: inverse}
 
   - !<ColorSpace> #AdobeRGB Piecewise 2.2
     name: AdobeRGB Piecewise 2.2
@@ -2361,7 +2361,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Adobe RGB (1998)}
-        - !<ExponentWithLinearTransform> {gamma: 2.2, offset: 0.00, direction: inverse}
+        - !<ExponentTransform> {value: 2.2, direction: inverse}
 
   - !<ColorSpace> #DCI-P3 2.6
     name: DCI-P3 2.6
@@ -2375,7 +2375,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear DCI-P3 DCI}
-        - !<ExponentWithLinearTransform> {gamma: 2.6, offset: 0.0, direction: inverse}
+        - !<ExponentTransform> {value: 2.6, direction: inverse}
         
   - !<ColorSpace> #DCI-P3 D65 2.6
     name: DCI-P3 D65 2.6
@@ -2389,7 +2389,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear DCI-P3 D65}
-        - !<ExponentWithLinearTransform> {gamma: 2.6, offset: 0.0, direction: inverse}
+        - !<ExponentTransform> {value: 2.6, direction: inverse}
 
   - !<ColorSpace> #Rec.2020
     name: Rec.2020
@@ -2403,7 +2403,7 @@ colorspaces:
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.2020}
-        - !<ExponentWithLinearTransform> {gamma: 2.4, offset: 0, direction: inverse}
+        - !<ExponentTransform> {value: 2.4, direction: inverse}
 
   - !<ColorSpace> #Rec.2100-PQ
     name: Rec.2100-PQ
