@@ -2539,7 +2539,7 @@ colorspaces:
 
   - !<ColorSpace> #Display P3 EOTF 2.2
     name: Display P3 EOTF 2.2
-    aliases: [Display P3 2.2, Display P3 I-D65, P3-D65 - Display, p3_d65_display, p3d65_display, AppleP3 sRGB OETF]
+    aliases: [Display P3, Display P3 2.2, Display P3 I-D65, P3-D65 - Display, p3_d65_display, p3d65_display, AppleP3 sRGB OETF]
     family: Display
     equalitygroup:
     bitdepth: 32f
