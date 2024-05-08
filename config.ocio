@@ -82,7 +82,7 @@ displays:
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken sRGB}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default sRGB}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic sRGB}
-    - !<View> {name: AgX-SB2383 Nihal, colorspace: AgX SB2383 Nihal sRGB}
+    - !<View> {name: AgX NR2383, colorspace: AgX NR2383 sRGB}
     - !<View> {name: Filmic, colorspace: Filmic sRGB}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 sRGB}
     - !<View> {name: OpenDRT, colorspace: OpenDRT sRGB}
@@ -103,7 +103,7 @@ displays:
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken Display P3}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default Display P3}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic Display P3}
-    - !<View> {name: AgX-SB2383 Nihal, colorspace: AgX SB2383 Nihal Display P3}
+    - !<View> {name: AgX NR2383, colorspace: AgX NR2383 Display P3}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Display P3}
     - !<View> {name: OpenDRT, colorspace: OpenDRT Display P3}
     - !<View> {name: JzDT, colorspace: JzDT Display P3}
@@ -122,7 +122,7 @@ displays:
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken Rec.1886}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default Rec.1886}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic Rec.1886}
-    - !<View> {name: AgX-SB2383 Nihal, colorspace: AgX SB2383 Nihal Rec.1886}
+    - !<View> {name: AgX NR2383, colorspace: AgX NR2383 Rec.1886}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.1886}
     - !<View> {name: OpenDRT, colorspace: OpenDRT Rec.1886}
     - !<View> {name: JzDT, colorspace: JzDT Rec.1886}
@@ -142,7 +142,7 @@ displays:
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken AdobeRGB}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default AdobeRGB}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic AdobeRGB}
-    - !<View> {name: AgX-SB2383 Nihal, colorspace: AgX SB2383 Nihal AdobeRGB}
+    - !<View> {name: AgX NR2383, colorspace: AgX NR2383 AdobeRGB}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 AdobeRGB}
     - !<View> {name: OpenDRT, colorspace: OpenDRT AdobeRGB}
     - !<View> {name: JzDT, colorspace: JzDT AdobeRGB}
@@ -161,7 +161,7 @@ displays:
     - !<View> {name: AgX, colorspace: AgX Base Rec.2020}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default Rec.2020}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic Rec.2020}
-    - !<View> {name: AgX-SB2383 Nihal, colorspace: AgX SB2383 Nihal Rec.2020}
+    - !<View> {name: AgX NR2383, colorspace: AgX NR2383 Rec.2020}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.2020}
     - !<View> {name: OpenDRT, colorspace: OpenDRT Rec.2020}
     - !<View> {name: JzDT, colorspace: JzDT Rec.2020}
@@ -220,7 +220,7 @@ displays:
     
 active_displays: [sRGB, Display P3, Rec.1886, AdobeRGB, Rec.2020, Rec.2100PQ(1000), Log, Camera Log]
 
-active_views: [Standard, AgX, AgX Kraken, AgX-Resolve Default, AgX-Resolve Bombastic, AgX-SB2383 Nihal, Filmic, TCAMv2, OpenDRT, JzDT, ACES, ACES GamutComp, UnrealEngine, ARRI K1S1, ARRI ALF2, ARRI Reveal, RED IPP2, Canon 201911, False Color, None, AgX Log, Filmic Log, DaVinci Intermidiate, Filmlight T-Log - E-Gamut, ACEScc, ACEScct, ARRI LogC3, ARRI LogC4, BMDFilm Gen5, CanonLog2, CanonLog3, V-Log V-Gamut, Log3G10 RWG, S-Log2 ITU-709, S-Log2 S-Gamut, S-Log3 S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 Venice S-Gamut3.Cine, F-Log F-Gamut, F-Log2 F-Gamut, D-Log D-Gamut, ProTune Log, N-Log, Apple Log, Standard (1000 Limited)]  
+active_views: [Standard, AgX, AgX Kraken, AgX-Resolve Default, AgX-Resolve Bombastic, AgX NR2383, Filmic, TCAMv2, OpenDRT, JzDT, ACES, ACES GamutComp, UnrealEngine, ARRI K1S1, ARRI ALF2, ARRI Reveal, RED IPP2, Canon 201911, False Color, None, AgX Log, Filmic Log, DaVinci Intermidiate, Filmlight T-Log - E-Gamut, ACEScc, ACEScct, ARRI LogC3, ARRI LogC4, BMDFilm Gen5, CanonLog2, CanonLog3, V-Log V-Gamut, Log3G10 RWG, S-Log2 ITU-709, S-Log2 S-Gamut, S-Log3 S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 Venice S-Gamut3.Cine, F-Log F-Gamut, F-Log2 F-Gamut, D-Log D-Gamut, ProTune Log, N-Log, Apple Log, Standard (1000 Limited)]  
 
 #ONLY ONE INACTIVE SPACE CAN BE UN-COMMENTED AT A TIME. PICK ONE!
 #If you're a FUSION user comment-out ALL inactive_colorspaces!!!!
@@ -1510,78 +1510,78 @@ colorspaces:
         - !<FileTransform> {src: AgX-Resolve_Bombastic.cube, interpolation: tetrahedral}
         - !<ColorSpaceTransform> {src: Linear ARRI Wide Gamut 3, dst: Display P3 EOTF 2.2}
 
-#AgX SB2383 Nihal
-  - !<ColorSpace> #AgX SB2383 Nihal sRGB 
-    name: AgX SB2383 Nihal sRGB 
+#AgX NR2383
+  - !<ColorSpace> #AgX NR2383 sRGB 
+    name: AgX NR2383 sRGB 
     family: Imagery
     equalitygroup: ""
     bitdepth: 32f
     description: |
-        AgX SB2383 Nihal transform for sRGB Display with 2.2 gamma
+        AgX NR2383 transform for sRGB Display with 2.2 gamma
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX Log SB2383 Nihal}
-        - !<FileTransform> {src: AgX_2383_Nihal_Default_Contrast.spi1d}
+        - !<FileTransform> {src: AgX_NR2383_Default_Contrast.spi1d}
         - !<ExponentTransform> {value: 2.2}
         - !<MatrixTransform> {matrix: [0.892117703985358, 0.0682709287349655, 0.0396113672796752, 0, 0.0504186619847998, 0.878895737795481, 0.0706856002197205, 0, 0.0333124149657632, 0.0572705341147235, 0.909417050919513, 0, 0, 0, 0, 1], direction: inverse}
         - !<ExponentTransform> {value: 2.2, direction: inverse}
 
   - !<ColorSpace> #AgX Nihal Rec.1886
-    name: AgX SB2383 Nihal Rec.1886
+    name: AgX NR2383 Rec.1886
     family: Imagery
     equalitygroup: ""
     bitdepth: 32f
     description: |
-        AgX SB2383 Nihal transform for Rec.709 display with 2.4 gamma
+        AgX NR2383 transform for Rec.709 display with 2.4 gamma
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX SB2383 Nihal sRGB }
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.1886}
         
   - !<ColorSpace> #AgX Nihal AdobeRGB
-    name: AgX SB2383 Nihal AdobeRGB
+    name: AgX NR2383 AdobeRGB
     family: Imagery
     equalitygroup: ""
     bitdepth: 32f
     description: |
-        AgX SB2383 Nihal transform for AdobeRGB Display with 2.4 gamma.
+        AgX NR2383 transform for AdobeRGB Display with 2.4 gamma.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX SB2383 Nihal sRGB }
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: AdobeRGB EOTF 2.2}
 
   - !<ColorSpace> #AgX Nihal Display P3
-    name: AgX SB2383 Nihal Display P3
+    name: AgX NR2383 Display P3
     family: Imagery
     equalitygroup: ""
     bitdepth: 32f
     description: |
-        AgX SB2383 Nihal transform for Display P3
+        AgX NR2383 transform for Display P3
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX SB2383 Nihal sRGB }
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Display P3 EOTF 2.2}
 
   - !<ColorSpace> #AgX Nihal Rec.2020
-    name: AgX SB2383 Nihal Rec.2020
+    name: AgX NR2383 Rec.2020
     family: Imagery
     equalitygroup: ""
     bitdepth: 32f
     description: |
-        AgX SB2383 Nihal transform for BT.2020 Display with 2.4 gamma.
+        AgX NR2383 transform for BT.2020 Display with 2.4 gamma.
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
       children:
-        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX SB2383 Nihal sRGB }
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.2020}
 
 #OpenDRT
