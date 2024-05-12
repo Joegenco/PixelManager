@@ -4,6 +4,7 @@ Tries to manage pixels colors
 
 This is not a full readme. That is coming soon™
 
+Tested with "Blender 4.0+, Maya 2023+, Nuke 15+, Fusion 18.5+ and more...
 
 ## How to edit "Colorspaces" visible to users (Inactive Colorspaces)
 To be able to see and utilize more colorspaces, open `config.ocio` file
@@ -24,7 +25,7 @@ Only one `inactive_colorspaces` line can be active at a time.
  - [Troy James Sobotka's AgX (Kraken)](https://github.com/sobotka/AgX)
 - [Troy James Sobotka's AgX Resolve DCTL](https://github.com/sobotka/AgX-Resolve)
 - [Eary Chow's AgX (Default Blender)](https://github.com/EaryChow/AgX) 
- - [Jaun Pabro Zambrano's DRT2399 - DCTL](https://github.com/JuanPabloZambrano/DCTL)
+ - [Jaun Pablo Zambrano's DRT2399 - DCTL](https://github.com/JuanPabloZambrano/DCTL)
  - [Jedy Pod's OpenDRT & JzDT - DCTL](https://github.com/jedypod/open-display-transform)
  - [Filmlight's TcamV2](https://www.filmlight.ltd.uk/support/customer-login/colourspaces/colourspaces.php)
  - [ACES 1.3 for OCIO 2.0](https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES/releases/)
