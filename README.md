@@ -4,6 +4,7 @@ Tries to manage pixels colors
 
 This is not a full readme. That is coming soon™
 
+Tested with "Blender 4.0+, Maya 2023+, Nuke 15+, Fusion 18.5+ and more...
 
 ## How to edit "Colorspaces" visible to users (Inactive Colorspaces)
 To be able to see and utilize more colorspaces, open `config.ocio` file
