@@ -13,11 +13,13 @@
 #
 # Further expanded upon by Genco Uney.
 # PixelManager OCIO config https://github.com/Joegenco/PixelManager/
+# With contributions from Nihal Rahman.
 #
 # ---- Additional sources ----
 # OpenDRT and JzDT from Jed Smith - Jedy Pod, https://github.com/jedypod/open-display-transform
-# Using ACES 2.0.0 via OCIO 2.1 https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES/releases/tag/v2.0.0
+# Using ACES 1.3 via OCIO 2.1 https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES/releases/tag/v2.0.0
 # Filmlight TCAMv2 for Baselight via Truelight Colour Spaces OCIO config https://www.filmlight.ltd.uk/support/customer-login/colourspaces/colourspaces.php
+# JP-2499DRT from Juan Pablo Zambrano https://github.com/JuanPabloZambrano/DCTL
 # See ocio-license.txt for details.
 
 ocio_profile_version: 2.0
@@ -26,7 +28,7 @@ ocio_profile_version: 2.0
 
 environment:
   {}
-search_path: "luts:filmic:ARRI:Canon:RWG:TCAMv2:OpenDRT"
+search_path: "luts:filmic:ARRI:Canon:RWG:TCAMv2:OpenDRT:2499DRT:Sony:BMD"
 strictparsing: true
 luma: [0.2126, 0.7152, 0.0722]
 
@@ -80,9 +82,11 @@ displays:
     - !<View> {name: Standard, colorspace: sRGB}
     - !<View> {name: AgX, colorspace: AgX Base sRGB}
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken sRGB}
+    - !<View> {name: AgX Kraken 800T, colorspace: AgX Base Kraken 800T sRGB}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default sRGB}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic sRGB}
     - !<View> {name: AgX NR2383, colorspace: AgX NR2383 sRGB}
+    - !<View> {name: 2499DRT, colorspace: 2499DRT Base sRGB}
     - !<View> {name: Filmic, colorspace: Filmic sRGB}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 sRGB}
     - !<View> {name: OpenDRT, colorspace: OpenDRT sRGB}
@@ -94,6 +98,8 @@ displays:
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 sRGB}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal sRGB}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 sRGB}
+    - !<View> {name: Sony S-Cinetone, colorspace: Sony S-Cinetone sRGB}
+    - !<View> {name: Blackmagic Extended Video, colorspace: Blackmagic Extended Video sRGB}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 sRGB}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.709}
     - !<View> {name: None, colorspace: Non-Color}
@@ -101,18 +107,23 @@ displays:
     - !<View> {name: Standard, colorspace: Display P3}
     - !<View> {name: AgX, colorspace: AgX Base Display P3}
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken Display P3}
+    - !<View> {name: AgX Kraken 800T, colorspace: AgX Base Kraken 800T Display P3}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default Display P3}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic Display P3}
     - !<View> {name: AgX NR2383, colorspace: AgX NR2383 Display P3}
+    - !<View> {name: 2499DRT, colorspace: 2499DRT Base Display P3}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Display P3}
     - !<View> {name: OpenDRT, colorspace: OpenDRT Display P3}
     - !<View> {name: JzDT, colorspace: JzDT Display P3}
     - !<View> {name: ACES, colorspace: ACES Display P3}
     - !<View> {name: ACES GamutComp, colorspace: ACES LMT Display P3}
     - !<View> {name: UnrealEngine, colorspace: UnrealEngine Viewport Display P3}
+    - !<View> {name: ARRI K1S1, colorspace: ARRI K1S1 Display P3}
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Display P3}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Display P3}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Display P3}
+    - !<View> {name: Sony S-Cinetone, colorspace: Sony S-Cinetone Display P3}
+    - !<View> {name: Blackmagic Extended Video, colorspace: Blackmagic Extended Video Display P3}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Display P3}
     - !<View> {name: False Color, colorspace: AgX False Color P3}
     - !<View> {name: None, colorspace: Non-Color}
@@ -120,9 +131,11 @@ displays:
     - !<View> {name: Standard, colorspace: Rec.1886}
     - !<View> {name: AgX, colorspace: AgX Base Rec.1886}
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken Rec.1886}
+    - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken 800T Rec.1886}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default Rec.1886}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic Rec.1886}
     - !<View> {name: AgX NR2383, colorspace: AgX NR2383 Rec.1886}
+    - !<View> {name: 2499DRT, colorspace: 2499DRT Base Rec.1886}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.1886}
     - !<View> {name: OpenDRT, colorspace: OpenDRT Rec.1886}
     - !<View> {name: JzDT, colorspace: JzDT Rec.1886}
@@ -133,6 +146,8 @@ displays:
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Rec.1886}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Rec.1886}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.1886}
+    - !<View> {name: Sony S-Cinetone, colorspace: Sony S-Cinetone Rec.1886}
+    - !<View> {name: Blackmagic Extended Video, colorspace: Blackmagic Extended Video Rec.1886}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Rec.1886}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.709}
     - !<View> {name: None, colorspace: Non-Color}
@@ -140,9 +155,11 @@ displays:
     - !<View> {name: Standard, colorspace: AdobeRGB EOTF 2.2}
     - !<View> {name: AgX, colorspace: AgX Base AdobeRGB}
     - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken AdobeRGB}
+    - !<View> {name: AgX Kraken, colorspace: AgX Base Kraken 800T AdobeRGB}
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default AdobeRGB}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic AdobeRGB}
     - !<View> {name: AgX NR2383, colorspace: AgX NR2383 AdobeRGB}
+    - !<View> {name: 2499DRT, colorspace: 2499DRT Base AdobeRGB}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 AdobeRGB}
     - !<View> {name: OpenDRT, colorspace: OpenDRT AdobeRGB}
     - !<View> {name: JzDT, colorspace: JzDT AdobeRGB}
@@ -153,6 +170,8 @@ displays:
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 AdobeRGB}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal AdobeRGB}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 AdobeRGB}
+    - !<View> {name: Sony S-Cinetone, colorspace: Sony S-Cinetone AdobeRGB}
+    - !<View> {name: Blackmagic Extended Video, colorspace: Blackmagic Extended Video AdobeRGB}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 AdobeRGB}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.709}
     - !<View> {name: None, colorspace: Non-Color}
@@ -162,6 +181,7 @@ displays:
     - !<View> {name: AgX-Resolve Default, colorspace: AgX Resolve Default Rec.2020}
     - !<View> {name: AgX-Resolve Bombastic, colorspace: AgX Resolve Bombastic Rec.2020}
     - !<View> {name: AgX NR2383, colorspace: AgX NR2383 Rec.2020}
+    - !<View> {name: 2499DRT, colorspace: 2499DRT Base Rec.2020}
     - !<View> {name: TCAMv2, colorspace: TCAMv2 Rec.2020}
     - !<View> {name: OpenDRT, colorspace: OpenDRT Rec.2020}
     - !<View> {name: JzDT, colorspace: JzDT Rec.2020}
@@ -171,6 +191,8 @@ displays:
     - !<View> {name: ARRI ALF2, colorspace: ARRI ALF2 Rec.2020}
     - !<View> {name: ARRI Reveal, colorspace: ARRI Reveal Rec.2020}
     - !<View> {name: RED IPP2, colorspace: RED IPP2 Rec.2020}
+    - !<View> {name: Sony S-Cinetone, colorspace: Sony S-Cinetone Rec.2020}
+    - !<View> {name: Blackmagic Extended Video, colorspace: Blackmagic Extended Video Rec.2020}
     - !<View> {name: Canon 201911, colorspace: Canon 201911 Rec.2020}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.2020}
     - !<View> {name: None, colorspace: Non-Color}
@@ -190,6 +212,7 @@ displays:
   Log:
     - !<View> {name: AgX Log, colorspace: AgX Log}
     - !<View> {name: AgX Kraken Log, colorspace: AgX Log Kraken}
+    - !<View> {name: 2499 Log, colorspace: 2499DRT Log (2499)}
     - !<View> {name: Filmic Log, colorspace: Filmic Log}
     - !<View> {name: DaVinci Intermidiate, colorspace: DaVinci Intermidiate WideGamut Log}
     - !<View> {name: Filmlight T-Log - E-Gamut, colorspace: T-Log - E-Gamut}
@@ -220,22 +243,31 @@ displays:
     
 active_displays: [sRGB, Display P3, Rec.1886, AdobeRGB, Rec.2020, Rec.2100PQ(1000), Log, Camera Log]
 
-active_views: [Standard, AgX, AgX Kraken, AgX-Resolve Default, AgX-Resolve Bombastic, AgX NR2383, Filmic, TCAMv2, OpenDRT, JzDT, ACES, ACES GamutComp, UnrealEngine, ARRI K1S1, ARRI ALF2, ARRI Reveal, RED IPP2, Canon 201911, False Color, None, AgX Log, Filmic Log, DaVinci Intermidiate, Filmlight T-Log - E-Gamut, ACEScc, ACEScct, ARRI LogC3, ARRI LogC4, BMDFilm Gen5, CanonLog2, CanonLog3, V-Log V-Gamut, Log3G10 RWG, S-Log2 ITU-709, S-Log2 S-Gamut, S-Log3 S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 Venice S-Gamut3.Cine, F-Log F-Gamut, F-Log2 F-Gamut, D-Log D-Gamut, ProTune Log, N-Log, Apple Log, Standard (1000 Limited)]  
+active_views: [Standard, AgX, AgX Kraken, AgX Kraken 800T, AgX-Resolve Default, AgX-Resolve Bombastic, AgX NR2383, 2499DRT, Filmic, TCAMv2, OpenDRT, JzDT, ACES, ACES GamutComp, UnrealEngine, ARRI K1S1, ARRI ALF2, ARRI Reveal, RED IPP2, Sony S-Cinetone, Blackmagic Extended Video, Canon 201911, False Color, None, AgX Log, AgX Kraken Log, 2499 Log, Filmic Log, DaVinci Intermidiate, Filmlight T-Log - E-Gamut, ACEScc, ACEScct, ARRI LogC3, ARRI LogC4, BMDFilm Gen5, CanonLog2, CanonLog3, V-Log V-Gamut, Log3G10 RWG, S-Log2 ITU-709, S-Log2 S-Gamut, S-Log3 S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 Venice S-Gamut3.Cine, F-Log F-Gamut, F-Log2 F-Gamut, D-Log D-Gamut, ProTune Log, N-Log, Apple Log, Standard (1000 Limited)]  
 
-#ONLY ONE INACTIVE SPACE CAN BE UN-COMMENTED AT A TIME. PICK ONE!
-#If you're a FUSION user comment-out ALL inactive_colorspaces!!!!
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#MINIMAL - Inactive spaces with absolute minimal clutter
-#inactive_colorspaces: [Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, AgX Log Kraken, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport sRGB, UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3,OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT sRGB, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, Filmic Log, ACEScct, ACEScc, AgX Log, DaVinci Intermidiate WideGamut Log, T-Log - E-Gamut, N-Log, ProTune Log, D-Log D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+# ************* ONLY ONE INACTIVE SPACE CAN BE UN-COMMENTED AT A TIME. PICK ONE! *********************
 
-#CG - Inactive spaces with STORAGE log formats visible
-#inactive_colorspaces: [Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport sRGB, UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3, OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT sRGB, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, N-Log, ProTune Log, D-Log D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+# If you're a FUSION user comment-out ALL inactive_colorspaces!!!!
 
-#STUDIO - Inactive spaces with CAMERA log formats visible to the user
-inactive_colorspaces: [Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, S-Log2 ITU 709 Matrix, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport sRGB, UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3, OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT sRGB, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+# MINIMAL - Inactive spaces with absolute minimal clutter
+inactive_colorspaces: [AgX Base Kraken 800T sRGB, AgX Base Kraken 800T Rec.1886, AgX Base Kraken 800T Display P3, AgX Base Kraken 800T AdobeRGB, Blackmagic Extended Video sRGB, Blackmagic Extended Video Rec.1886, Blackmagic Extended Video Rec.2020, Blackmagic Extended Video Display P3, Blackmagic Extended Video AdobeRGB, Sony S-Cinetone sRGB, Sony S-Cinetone Rec.1886, Sony S-Cinetone Display P3, Sony S-Cinetone Display P3, Sony S-Cinetone Rec.2020, Sony S-Cinetone AdobeRGB, ARRI K1S1 Display P3, 2499DRT Log (2499), AgX Log SB2383 Nihal, AgX NR2383 sRGB, AgX NR2383 Rec.1886, AgX NR2383 AdobeRGB, AgX NR2383 Display P3, AgX NR2383 Rec.2020, 2499DRT Base sRGB, 2499DRT Base Rec.1886, 2499DRT Base Display P3, 2499DRT Base AdobeRGB, 2499DRT Base Rec.2020, Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, AgX Log Kraken, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport sRGB, UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3,OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT sRGB, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, Filmic Log, ACEScct, ACEScc, DaVinci Intermidiate WideGamut Log, T-Log - E-Gamut, N-Log, ProTune Log, D-Log D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
 
-#EXPERIMENTAL - Inactive spaces with WHACKY REVERSE FORMATION possibilies visible to the user
-#inactive_colorspaces: [Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, S-Log2 ITU 709 Matrix, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3, OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, ACES2065-1, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+# CG - Inactive spaces with STORAGE log formats visible
+#inactive_colorspaces: [AgX Base Kraken 800T sRGB, AgX Base Kraken 800T Rec.1886, AgX Base Kraken 800T Display P3, AgX Base Kraken 800T AdobeRGB, Blackmagic Extended Video sRGB, Blackmagic Extended Video Rec.1886, Blackmagic Extended Video Rec.2020, Blackmagic Extended Video Display P3, Blackmagic Extended Video AdobeRGB, Sony S-Cinetone sRGB, Sony S-Cinetone Rec.1886, Sony S-Cinetone Display P3, Sony S-Cinetone Display P3, Sony S-Cinetone Rec.2020, Sony S-Cinetone AdobeRGB, ARRI K1S1 Display P3, 2499DRT Log (2499), AgX Log SB2383 Nihal, AgX NR2383 sRGB, AgX NR2383 Rec.1886, AgX NR2383 AdobeRGB, AgX NR2383 Display P3, AgX NR2383 Rec.2020, 2499DRT Base sRGB, 2499DRT Base Rec.1886, 2499DRT Base Display P3, 2499DRT Base AdobeRGB, 2499DRT Base Rec.2020, Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport sRGB, UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3, OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT sRGB, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, N-Log, ProTune Log, D-Log D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC3, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+
+# STUDIO - Inactive spaces with CAMERA log formats visible to the user
+#inactive_colorspaces: [AgX Base Kraken 800T sRGB, AgX Base Kraken 800T Rec.1886, AgX Base Kraken 800T Display P3, AgX Base Kraken 800T AdobeRGB, Blackmagic Extended Video sRGB, Blackmagic Extended Video Rec.1886, Blackmagic Extended Video Rec.2020, Blackmagic Extended Video Display P3, Blackmagic Extended Video AdobeRGB, Sony S-Cinetone sRGB, Sony S-Cinetone Rec.1886, Sony S-Cinetone Display P3, Sony S-Cinetone Display P3, Sony S-Cinetone Rec.2020, Sony S-Cinetone AdobeRGB, ARRI K1S1 Display P3, 2499DRT Log (2499), AgX Log SB2383 Nihal, AgX NR2383 sRGB, AgX NR2383 Rec.1886, AgX NR2383 AdobeRGB, AgX NR2383 Display P3, AgX NR2383 Rec.2020, 2499DRT Base sRGB, 2499DRT Base Rec.1886, 2499DRT Base Display P3, 2499DRT Base AdobeRGB, 2499DRT Base Rec.2020, Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, S-Log2 ITU 709 Matrix, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, AgX Base Kraken sRGB, Display P3 EOTF 2.2, ACES LMT sRGB, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport sRGB, UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT sRGB, JzDT Rec.1886, JzDT Display P3, OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT sRGB, OpenDRT Rec.2020, AgX Resolve Bombastic sRGB, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default sRGB, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, TCAMv2 sRGB, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, Filmic sRGB, ARRI K1S1 Rec.1886, ARRI K1S1 sRGB, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ARRI ALF2 sRGB, ACES Rec.1886, ACES Rec.2100PQ(1000), ACES sRGB, BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, Canon 201911 sRGB, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, RED IPP2 sRGB, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI Reveal sRGB, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ARRI ALF2 sRGB, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+
+# Minimal-Comp-Grading (Mainly for Blender) sRGB - All but sRGB image formation inactive. No camera LOG spaces visible. Useful when forming images in compositor (For sRGB displays)
+#inactive_colorspaces: [AgX Base Kraken 800T Rec.1886, AgX Base Kraken 800T Display P3, AgX Base Kraken 800T AdobeRGB, Blackmagic Extended Video Rec.1886, Blackmagic Extended Video Rec.2020, Blackmagic Extended Video Display P3, Blackmagic Extended Video AdobeRGB, Sony S-Cinetone Rec.1886, Sony S-Cinetone Display P3, Sony S-Cinetone Display P3, Sony S-Cinetone Rec.2020, Sony S-Cinetone AdobeRGB, AgX Log SB2383 Nihal, AgX NR2383 Rec.1886, AgX NR2383 AdobeRGB, AgX NR2383 Display P3, AgX NR2383 Rec.2020, 2499DRT Base Rec.1886, 2499DRT Base Display P3, 2499DRT Base AdobeRGB, 2499DRT Base Rec.2020, Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, Display P3 EOTF 2.2, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT Rec.1886, JzDT Display P3,OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT Rec.2020, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, Filmic Log, ACEScct, ACEScc, N-Log, ProTune Log, D-Log D-Gamut, F-Log2 F-Gamut, F-Log F-Gamut, Apple Log, S-Log3 Venice S-Gamut3.Cine, S-Log3 Venice S-Gamut3, S-Log3 S-Gamut3.Cine, S-Log3 S-Gamut3, S-Log2 S-Gamut, S-Log2 ITU 709 Matrix, Log3G10 REDWideGamutRGB, V-Log V-Gamut, CanonLog3 CinemaGamut D55, CanonLog2 CinemaGamut D55, ARRI LogC4, BMDFilm WideGamut Gen5 Log, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, ARRI K1S1 Rec.1886, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ACES Rec.1886, ACES Rec.2100PQ(1000), BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear FilmLight E-Gamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+
+# STUDIO-Comp-Grading (Mainly for Blender) sRGB - All but sRGB image formation inactive. Camera LOG spaces are visible. Useful when forming images in compositor (For sRGB displays)
+#inactive_colorspaces: [AgX Base Kraken 800T Rec.1886, AgX Base Kraken 800T Display P3, AgX Base Kraken 800T AdobeRGB, Blackmagic Extended Video Rec.1886, Blackmagic Extended Video Rec.2020, Blackmagic Extended Video Display P3, Blackmagic Extended Video AdobeRGB, Sony S-Cinetone Rec.1886, Sony S-Cinetone Display P3, Sony S-Cinetone Display P3, Sony S-Cinetone Rec.2020, Sony S-Cinetone AdobeRGB, ARRI K1S1 Display P3, 2499DRT Log (2499), AgX Log SB2383 Nihal, AgX NR2383 sRGB, AgX NR2383 Rec.1886, AgX NR2383 AdobeRGB, AgX NR2383 Display P3, AgX NR2383 Rec.2020, 2499DRT Base Rec.1886, 2499DRT Base Display P3, 2499DRT Base AdobeRGB, 2499DRT Base Rec.2020, Legacy Display P3, AgX Resolve Default AdobeRGB, AgX Resolve Bombastic AdobeRGB, TCAMv2 AdobeRGB, OpenDRT AdobeRGB, S-Log2 ITU 709 Matrix, JzDT AdobeRGB, ACES AdobeRGB, ACES LMT AdobeRGB, UnrealEngine Viewport AdobeRGB, ARRI K1S1 AdobeRGB, ARRI ALF2 AdobeRGB, ARRI Reveal AdobeRGB, RED IPP2 AdobeRGB, Canon 201911 AdobeRGB, AgX Base Kraken AdobeRGB, AgX Base AdobeRGB, AdobeRGB Piecewise 2.2, AdobeRGB EOTF 2.2, Linear ProPhoto RGB, Linear Adobe RGB (1998), AgX Base Kraken Rec.1886, AgX Base Kraken Display P3, Display P3 EOTF 2.2, ACES LMT Rec.1886, ACES LMT Display P3, ACES LMT Rec.2020, ACES LMT Rec.2100PQ(1000), UnrealEngine Viewport Rec.1886, UnrealEngine Viewport Display P3, UnrealEngine Viewport Rec.2020, JzDT Rec.2020, JzDT Rec.1886, JzDT Display P3, OpenDRT Display P3, OpenDRT Rec.1886, OpenDRT Rec.2020, AgX Resolve Bombastic Rec.2020, AgX Resolve Bombastic Display P3, AgX Resolve Bombastic Rec.1886, AgX Resolve Default Rec.2020, AgX Resolve Default Display P3, AgX Resolve Default Rec.1886, DCI-P3 D65 2.6, Linear DCI-P3 DCI, Linear CIE-XYZ DCI, AgX Base Rec.2100-HLG, AgX Base Rec.2100-PQ 1000 nits, Rec.2100-HLG, Rec.2100-PQ 1000 nits limited, DCI-P3 2.6, TCAMv2 Rec.2100PQ(1000), TCAMv2 Rec.2020, TCAMv2 Display P3, TCAMv2 Rec.1886, Linear Venice S-Gamut3, Linear S-Gamut3.Cine, ARRI K1S1 Rec.1886, ARRI ALF2 Rec.2100PQ(1000), ARRI ALF2 Rec.1886, ACES Rec.1886, ACES Rec.2100PQ(1000), BT.2020 2.4 I-E, BT.2020 2.4 I-E, Rec.2100(1000nit Limit), Display P3, Display P3 2.2 I-E, sRGB 2.2 I-E, Canon 201911 Rec.2100PQ(1000), Canon 201911 Rec.2020, Canon 201911 Display P3, Canon 201911 Rec.1886, RED IPP2 Rec.2100PQ(1000), RED IPP2 Rec.2020, RED IPP2 Display P3, RED IPP2 Rec.1886, ARRI Reveal Rec.2100PQ(1000), ARRI Reveal Rec.2020, ARRI Reveal Display P3, ARRI Reveal Rec.1886, ARRI ALF2 Rec.2020, ARRI ALF2 Display P3, ACES Rec.2020, ACES Display P3, AgX Base Rec.1886, AgX Base Display P3, AgX Base Rec.2020, Linear ProTune, Linear F-Gamut, Linear D-Gamut, Linear Venice S-Gamut3.Cine, Linear S-Gamut3, Linear S-Gamut, Linear REDWideGamutRGB, Linear V-Gamut, Linear CinemaGamut D55, Linear BMD WideGamut Gen5, Linear ARRI Wide Gamut 4, Linear ARRI Wide Gamut 3, Linear DaVinci WideGamut, Linear BT.2020 I-E, Linear DCI-P3 D65, Linear DCI-P3 I-E, Linear BT.709 I-E, Linear CIE-XYZ D65, Linear CIE-XYZ E, Luminance Compensation Rec.2020, Luminance Compensation sRGB, Luminance Compensation P3, AgX False Color Rec.709, AgX False Color P3, AgX False Color Rec.2020, AgX False Color Rec.2100]
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 colorspaces:
 
@@ -289,7 +321,7 @@ colorspaces:
   - !<ColorSpace> #Linear BT.709 I-E
     name: Linear BT.709 I-E
     aliases: []
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear BT.709 Tristimulus with I-E white point
@@ -302,7 +334,7 @@ colorspaces:
   - !<ColorSpace> #Linear Rec.709
     name: Linear Rec.709
     aliases: [Linear, Linear BT.709, Linear BT.709 I-D65, Linear Tristimulus, linrec709, Utility - Linear - sRGB, Utility - Linear - Rec.709, lin_srgb, Linear Rec.709 (sRGB), lin_rec709_srgb, lin_rec709, lin_srgb, "CGI: Linear - Rec.709"]
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -316,7 +348,7 @@ colorspaces:
   - !<ColorSpace> #Linear Adobe RGB (1998)
     name: Linear Adobe RGB (1998)
     aliases: []
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -332,7 +364,7 @@ colorspaces:
   - !<ColorSpace> #Linear ProPhoto RGB
     name: Linear ProPhoto RGB
     aliases: []
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -347,7 +379,7 @@ colorspaces:
 
   - !<ColorSpace> #Linear DCI-P3 I-E
     name: Linear DCI-P3 I-E
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear DCI-P3 Tristimulus with I-E white point
@@ -361,7 +393,7 @@ colorspaces:
   - !<ColorSpace> #Linear DCI-P3 D65
     name: Linear DCI-P3 D65
     aliases: [Linear DCI-P3 I-D65, Linear P3-D65, lin_p3d65, Utility - Linear - P3-D65, Apple DCI-P3 D65]
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -374,7 +406,7 @@ colorspaces:
 
   - !<ColorSpace> #Linear BT.2020 I-E
     name: Linear BT.2020 I-E
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear BT.2020 Tristimulus with I-E white point
@@ -387,7 +419,7 @@ colorspaces:
   - !<ColorSpace> #Linear Rec.2020
     name: Linear Rec.2020
     aliases: [Linear BT.2020 I-D65, Linear BT.2020, lin_rec2020, Utility - Linear - Rec.2020]
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -398,13 +430,13 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear CIE-XYZ D65}
         - !<MatrixTransform> {matrix: [ 1.7166634277958805, -0.3556733197301399, -0.2533680878902478, 0, -0.6666738361988869, 1.6164557398246981, 0.0157682970961337, 0, 0.0176424817849772, -0.0427769763827532, 0.9422432810184308, 0, 0, 0, 0, 1]}
 
-  - !<ColorSpace> #ACES2065-1
-    name: ACES2065-1
-    aliases: [Linear ACES, aces2065_1, ACES - ACES2065-1, lin_ap0, Linear ACES - AP0, "ACES: Linear - AP0"]
-    family: Colourspaces
+  - !<ColorSpace> #Linear ACES - AP0
+    name: Linear ACES - AP0
+    aliases: [ACES2065-1, Linear ACES, aces2065_1, ACES - ACES2065-1, lin_ap0, "ACES: Linear - AP0"]
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: unknown
-    description: Open Domain Linear AP0 Tristimulus with ACES white point
+    description: Open Domain Linear AP0 Tristimulus with D60 white point AKA ACES2065-1
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -412,13 +444,13 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
         - !<BuiltinTransform> {style: "UTILITY - ACES-AP0_to_CIE-XYZ-D65_BFD", direction: inverse}
 
-  - !<ColorSpace> #ACEScg
-    name: ACEScg
-    aliases: [Linear ACEScg, lin_ap1, ACES - ACEScg, Linear ACES - AP1, "ACEScg: Linear - AP1"]
-    family: Colourspaces
+  - !<ColorSpace> #Linear ACES - AP1
+    name: Linear ACES - AP1
+    aliases: [Linear ACEScg, lin_ap1, ACES - ACEScg, ACEScg, "ACEScg: Linear - AP1"]
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: unknown
-    description: Open Domain Linear AP1 Tristimulus with ACES white point
+    description: Open Domain Linear AP1 Tristimulus with D60 white point - AKA ACEScg
     isdata: false
     allocation: uniform
     from_scene_reference: !<GroupTransform>
@@ -429,7 +461,7 @@ colorspaces:
   - !<ColorSpace> #Linear FilmLight E-Gamut
     name: Linear FilmLight E-Gamut
     aliases: [Linear E-Gamut I-D65, "FilmLight: Linear - E-Gamut"]
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -443,7 +475,7 @@ colorspaces:
   - !<ColorSpace> #Linear DaVinci WideGamut
     name: Linear DaVinci WideGamut
     aliases: [lin_davinci_widegamut]
-    family: Colourspaces
+    family: Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear DaVinci WideGamut colorspace used for DaVinciResolve interchange
@@ -459,7 +491,7 @@ colorspaces:
   - !<ColorSpace> #Linear ARRI Wide Gamut 3
     name: Linear ARRI Wide Gamut 3
     aliases: [lin_arri_wide_gamut_3, Input - ARRI - Linear - ALEXA Wide Gamut, lin_alexawide]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear AWG 3
@@ -473,7 +505,7 @@ colorspaces:
   - !<ColorSpace> #Linear ARRI Wide Gamut 4
     name: Linear ARRI Wide Gamut 4
     aliases: [lin_arri_wide_gamut_4, lin_awg4]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear AWG 4 AKA ARRI Reveal
@@ -487,7 +519,7 @@ colorspaces:
   - !<ColorSpace> #Linear BMD WideGamut Gen5
     name: Linear BMD WideGamut Gen5
     aliases: [lin_bmd_widegamut_gen5]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear BMD WideGamut Gen5
@@ -501,7 +533,7 @@ colorspaces:
   - !<ColorSpace> #Linear CinemaGamut D55
     name: Linear CinemaGamut D55
     aliases: [lin_cinemagamut_d55, Input - Canon - Linear - Canon Cinema Gamut Daylight, lin_canoncgamutday]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Canon CinemaGamut Daylight
@@ -515,7 +547,7 @@ colorspaces:
   - !<ColorSpace> #Linear V-Gamut
     name: Linear V-Gamut
     aliases: [lin_vgamut, Input - Panasonic - Linear - V-Gamut]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Panasonic V-Gamut colourspace
@@ -529,7 +561,7 @@ colorspaces:
   - !<ColorSpace> #Linear REDWideGamutRGB
     name: Linear REDWideGamutRGB
     aliases: []
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear RED WideGamutRGB colorspace used for IPP2
@@ -543,7 +575,7 @@ colorspaces:
   - !<ColorSpace> #Linear S-Gamut
     name: Linear S-Gamut
     aliases: [lin_sgamut, Input - Sony - Linear - S-Gamut]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Sony S-Gamut (so called "camera native") colourspace
@@ -557,7 +589,7 @@ colorspaces:
   - !<ColorSpace> #Linear S-Gamut3
     name: Linear S-Gamut3
     aliases: [lin_sgamut3, Input - Sony - Linear - S-Gamut3]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Sony S-Gamut3 (so called "camera native") colourspace
@@ -571,7 +603,7 @@ colorspaces:
   - !<ColorSpace> #Linear S-Gamut3.Cine
     name: Linear S-Gamut3.Cine
     aliases: [lin_sgamut3cine, Input - Sony - Linear - S-Gamut3.Cine]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Sony S-Gamut3.cine colourspace
@@ -585,7 +617,7 @@ colorspaces:
   - !<ColorSpace> #Linear Venice S-Gamut3
     name: Linear Venice S-Gamut3
     aliases: [lin_venice_sgamut3, Input - Sony - Linear - Venice S-Gamut3]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Sony Venice S-Gamut3 (so called "camera native") colourspace
@@ -599,7 +631,7 @@ colorspaces:
   - !<ColorSpace> #Linear Venice S-Gamut3.Cine
     name: Linear Venice S-Gamut3.Cine
     aliases: [lin_venice_sgamut3cine, Input - Sony - Linear - Venice S-Gamut3.Cine]
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Sony Venice S-Gamut3.cine colourspace
@@ -613,7 +645,7 @@ colorspaces:
   - !<ColorSpace> #Linear D-Gamut
     name: Linear D-Gamut
     aliases: []
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear DJI D-Gamut colourspace
@@ -627,7 +659,7 @@ colorspaces:
   - !<ColorSpace> #Linear F-Gamut
     name: Linear F-Gamut
     aliases: []
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear Fuji F-Gamut colourspace
@@ -641,7 +673,7 @@ colorspaces:
   - !<ColorSpace> #Linear ProTune
     name: Linear ProTune
     aliases: []
-    family: Camera Colourspaces
+    family: Camera Chromaticity
     equalitygroup: ""
     bitdepth: 32f
     description: Open Domain Linear GoPro ProTune colourspace
@@ -798,6 +830,21 @@ colorspaces:
         - !<AllocationTransform> {allocation: lg2, vars: [-12.473931188, 4.026068812], direction: inverse}
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709, direction: inverse}
 
+  - !<ColorSpace> #2499DRT Log (2499)
+    name: 2499DRT Log (2499)
+    aliases: [Log, 2499DRT Log, 2499, 2499DRT 2499 Log]
+    family: Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2499DRT Log, (2499)
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
+        - !<MatrixTransform> {matrix: [0.56279692, 0.32353076, 0.11374766, 0.00000000, 0.07769616, 0.74961017, 0.17266308, 0.00000000, 0.06464207, 0.19200710, 0.74330971, 0.00000000, 0.00000000, 0.00000000, 0.00000000, 1.00000000]}
+        - !<AllocationTransform> {allocation: lg2, vars: [-11, 6.64382,0.00048828]}
+        - !<FileTransform> {src: Log2_2499log.cube, interpolation: tetrahedral}
 
 #Camera Log Stuff
   - !<ColorSpace> #ARRI LogC3
@@ -1139,7 +1186,6 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BT.2020 I-D65, direction: inverse}
 
 
-
 #Image Formation Stuff
   - !<ColorSpace> #Filmic sRGB
     name: Filmic sRGB
@@ -1158,7 +1204,7 @@ colorspaces:
   - !<ColorSpace> #AgX Base Rec.2020
     name: AgX Base Rec.2020
     aliases: [AgX Base BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1178,7 +1224,7 @@ colorspaces:
   - !<ColorSpace> #AgX Base AdobeRGB
     name: AgX Base AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1199,7 +1245,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base sRGB
     name: AgX Base sRGB
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1219,7 +1265,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base Display P3
     name: AgX Base Display P3
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1240,7 +1286,7 @@ colorspaces:
   - !<ColorSpace> #AgX Base Rec.1886
     name: AgX Base Rec.1886
     aliases: [AgX Base BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1258,7 +1304,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base Rec.2100-HLG
     name: AgX Base Rec.2100-HLG
-    family: Imagery
+    family: Imagery Rec.2100-HLG
     equalitygroup: ""
     bitdepth: unknown
     description: AgX Base Image Encoding for BT.2100-HLG 1000 nits Display
@@ -1277,7 +1323,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base Rec.2100-PQ 1000 nits
     name: AgX Base Rec.2100-PQ 1000 nits
-    family: Imagery
+    family: Imagery Rec.2100-PQ
     equalitygroup: ""
     bitdepth: unknown
     description: AgX Base Image Encoding for BT.2100-PQ 1000 nits Display
@@ -1291,7 +1337,7 @@ colorspaces:
 #AgX Kraken
   - !<ColorSpace> #AgX Base Kraken sRGB
     name: AgX Base Kraken sRGB
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1304,7 +1350,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base Kraken AdobeRGB
     name: AgX Base Kraken AdobeRGB
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1317,7 +1363,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base Kraken Display P3
     name: AgX Base Kraken Display P3
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1330,7 +1376,7 @@ colorspaces:
 
   - !<ColorSpace> #AgX Base Kraken Rec.1886
     name: AgX Base Kraken Rec.1886
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1341,12 +1387,84 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX Base Kraken sRGB}
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.1886}
 
+#AgX Kraken 800T
+  - !<ColorSpace> #AgX Base Kraken 800T sRGB
+    name: AgX Base Kraken 800T sRGB
+    family: Imagery sRGB
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Base Kraken (Original AgX) Image Encoding, edited to be chrispy & contrasty
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
+        - !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.9985, 1.9578, 1.9578], sat: 1.150}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: AgX Log Kraken}
+        - !<CDLTransform> {power: [1.0, 0.9925, 0.9925], sat: 1.050}
+        - !<FileTransform> {src: AgX_Kraken_Default_Contrast.spi1d}
+        - !<CDLTransform> {power: [1.07527, 1.07527, 1.07527], sat: 1.100}
+
+  - !<ColorSpace> #AgX Base Kraken 800T AdobeRGB
+    name: AgX Base Kraken 800T AdobeRGB
+    family: Imagery AdobeRGB
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Base Kraken (Original AgX) Image Encoding, edited to be chrispy & contrasty
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
+        - !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.9985, 1.9578, 1.9578], sat: 1.150}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: AgX Log Kraken}
+        - !<CDLTransform> {power: [1.0, 0.9925, 0.9925], sat: 1.050}
+        - !<FileTransform> {src: AgX_Kraken_Default_Contrast.spi1d}
+        - !<CDLTransform> {power: [1.07527, 1.07527, 1.07527], sat: 1.100}
+        - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: AdobeRGB EOTF 2.2}
+
+  - !<ColorSpace> #AgX Base Kraken 800T Display P3
+    name: AgX Base Kraken 800T Display P3
+    family: Imagery Display P3
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Base Kraken (Original AgX) Image Encoding, edited to be chrispy & contrasty
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
+        - !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.9985, 1.9578, 1.9578], sat: 1.150}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: AgX Log Kraken}
+        - !<CDLTransform> {power: [1.0, 0.9925, 0.9925], sat: 1.050}
+        - !<FileTransform> {src: AgX_Kraken_Default_Contrast.spi1d}
+        - !<CDLTransform> {power: [1.07527, 1.07527, 1.07527], sat: 1.100}
+        - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Display P3 EOTF 2.2}
+
+  - !<ColorSpace> #AgX Base Kraken 800T Rec.1886
+    name: AgX Base Kraken 800T Rec.1886
+    family: Imagery Rec.1886
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Base Kraken (Original AgX) Image Encoding, edited to be chrispy & contrasty
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
+        - !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.9985, 1.9578, 1.9578], sat: 1.150}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: AgX Log Kraken}
+        - !<CDLTransform> {power: [1.0, 0.9925, 0.9925], sat: 1.050}
+        - !<FileTransform> {src: AgX_Kraken_Default_Contrast.spi1d}
+        - !<CDLTransform> {power: [1.07527, 1.07527, 1.07527], sat: 1.100}
+        - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.1886}
+
 #AgX-Resolve Default
 
   - !<ColorSpace> #AgX Resolve Default Rec.2020
     name: AgX Resolve Default Rec.2020
     aliases: []
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1362,7 +1480,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Default AdobeRGB
     name: AgX Resolve Default AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1378,7 +1496,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Default sRGB
     name: AgX Resolve Default sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1394,7 +1512,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Default Rec.1886
     name: AgX Resolve Default Rec.1886
     aliases: []
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1410,7 +1528,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Default Display P3
     name: AgX Resolve Default Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1428,7 +1546,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Bombastic Default Rec.2020
     name: AgX Resolve Bombastic Rec.2020
     aliases: []
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1445,7 +1563,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Bombastic Default AdobeRGB
     name: AgX Resolve Bombastic AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1462,7 +1580,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Bombastic Default sRGB
     name: AgX Resolve Bombastic sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1479,7 +1597,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Bombastic Rec.1886
     name: AgX Resolve Bombastic Rec.1886
     aliases: []
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1496,7 +1614,7 @@ colorspaces:
   - !<ColorSpace> #AgX Resolve Bombastic Display P3
     name: AgX Resolve Bombastic Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1513,7 +1631,7 @@ colorspaces:
 #AgX NR2383
   - !<ColorSpace> #AgX NR2383 sRGB 
     name: AgX NR2383 sRGB 
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -1528,9 +1646,9 @@ colorspaces:
         - !<MatrixTransform> {matrix: [0.892117703985358, 0.0682709287349655, 0.0396113672796752, 0, 0.0504186619847998, 0.878895737795481, 0.0706856002197205, 0, 0.0333124149657632, 0.0572705341147235, 0.909417050919513, 0, 0, 0, 0, 1], direction: inverse}
         - !<ExponentTransform> {value: 2.2, direction: inverse}
 
-  - !<ColorSpace> #AgX Nihal Rec.1886
+  - !<ColorSpace> #AgX NR2383 Rec.1886
     name: AgX NR2383 Rec.1886
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -1542,9 +1660,9 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.1886}
         
-  - !<ColorSpace> #AgX Nihal AdobeRGB
+  - !<ColorSpace> #AgX NR2383 AdobeRGB
     name: AgX NR2383 AdobeRGB
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -1556,9 +1674,9 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: AdobeRGB EOTF 2.2}
 
-  - !<ColorSpace> #AgX Nihal Display P3
+  - !<ColorSpace> #AgX NR2383 Display P3
     name: AgX NR2383 Display P3
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -1570,9 +1688,9 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Display P3 EOTF 2.2}
 
-  - !<ColorSpace> #AgX Nihal Rec.2020
+  - !<ColorSpace> #AgX NR2383 Rec.2020
     name: AgX NR2383 Rec.2020
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: 32f
     description: |
@@ -1584,12 +1702,87 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: AgX NR2383 sRGB }
         - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.2020}
 
+#JP2499
+  - !<ColorSpace> #2499DRT Base sRGB
+    name: 2499DRT Base sRGB
+    aliases: [2499DRT Base]
+    family: Imagery sRGB
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2499DRT Base Image Encoding by Juan Pablo Zambrano
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: 2499DRT Log (2499)}
+        - !<FileTransform> {src: 2499log_to_Base.cube, interpolation: tetrahedral}
+        - !<ExponentTransform> {value: 0.9, direction: forward}
+
+  - !<ColorSpace> #2499DRT Base Rec.1886
+    name: 2499DRT Base Rec.1886 
+    aliases: [2499DRT Base BT.1886]
+    family: Imagery Rec.1886
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2499DRT Base Image Encoding Juan Pablo Zambrano
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: 2499DRT Log (2499)}
+        - !<FileTransform> {src: 2499log_to_Base.cube, interpolation: tetrahedral}
+        - !<ExponentTransform> {value: 0.9, direction: forward}
+        - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.1886}
+
+  - !<ColorSpace> #2499DRT Base Display P3
+    name: 2499DRT Base Display P3
+    family: Imagery Display P3
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2499DRT Base Image Encoding for Display P3 Displays Juan Pablo Zambrano
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: 2499DRT Log (2499)}
+        - !<FileTransform> {src: 2499log_to_P3.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace> #2499DRT Base AdobeRGB
+    name: 2499DRT Base AdobeRGB
+    family: Imagery AdobeRGB
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2499DRT Base Image Encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: 2499DRT Log (2499)}
+        - !<FileTransform> {src: 2499log_to_Base.cube, interpolation: tetrahedral}
+        - !<ExponentTransform> {value: 0.9, direction: forward}
+        - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: AdobeRGB EOTF 2.2}
+
+  - !<ColorSpace> #2499DRT Base Rec.2020
+    name: 2499DRT Base Rec.2020
+    family: Imagery Rec.2020
+    equalitygroup: ""
+    bitdepth: unknown
+    description: 2499DRT Base Image Encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: 2499DRT Log (2499)}
+        - !<FileTransform> {src: 2499log_to_Base.cube, interpolation: tetrahedral}
+        - !<ExponentTransform> {value: 0.9, direction: forward}
+        - !<ColorSpaceTransform> {src: Rec709 EOTF 2.2, dst: Rec.2020}
+
 #OpenDRT
 
   - !<ColorSpace> #OpenDRT Rec.2020
     name: OpenDRT Rec.2020
     aliases: []
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1605,7 +1798,7 @@ colorspaces:
   - !<ColorSpace> #OpenDRT AdobeRGB
     name: OpenDRT AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1621,7 +1814,7 @@ colorspaces:
   - !<ColorSpace> #OpenDRT sRGB
     name: OpenDRT sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1637,7 +1830,7 @@ colorspaces:
   - !<ColorSpace> #OpenDRT Rec.1886
     name: OpenDRT Rec.1886
     aliases: []
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1653,7 +1846,7 @@ colorspaces:
   - !<ColorSpace> #OpenDRT Display P3
     name: OpenDRT Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1671,7 +1864,7 @@ colorspaces:
   - !<ColorSpace> #JzDT Rec.2020
     name: JzDT Rec.2020
     aliases: []
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1687,7 +1880,7 @@ colorspaces:
   - !<ColorSpace> #JzDT AdobeRGB
     name: JzDT AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1703,7 +1896,7 @@ colorspaces:
   - !<ColorSpace> #JzDT sRGB
     name: JzDT sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1719,7 +1912,7 @@ colorspaces:
   - !<ColorSpace> #JzDT Rec.1886
     name: JzDT Rec.1886
     aliases: []
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1735,7 +1928,7 @@ colorspaces:
   - !<ColorSpace> #JzDT Display P3
     name: JzDT Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -1752,7 +1945,7 @@ colorspaces:
   - !<ColorSpace> #ACES sRGB
     name: ACES sRGB
     aliases: [Output - sRGB]
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ACES - sRGB 2.2 Gamma Display
@@ -1767,7 +1960,7 @@ colorspaces:
   - !<ColorSpace> #ACES Rec.1886
     name: ACES Rec.1886
     aliases: [Output - Rec.709, ACES Rec709, ACES BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: ACES - BT.1886-REC.709 Gamma Display
@@ -1782,7 +1975,7 @@ colorspaces:
   - !<ColorSpace> #ACES Display P3
     name: ACES Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: ACES Display P3
@@ -1797,7 +1990,7 @@ colorspaces:
   - !<ColorSpace> #ACES Rec.2020
     name: ACES Rec.2020
     aliases: [ACES BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: ACES REC.1886-REC.2020
@@ -1812,7 +2005,7 @@ colorspaces:
   - !<ColorSpace> #ACES AdobeRGB
     name: ACES AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ACES REC.1886-AdobeRGB
@@ -1828,7 +2021,7 @@ colorspaces:
   - !<ColorSpace> #ACES Rec.2100PQ(1000)
     name: ACES Rec.2100PQ(1000)
     aliases: [ACES Rec.2020 ST2084 1000 nits, ACES BT.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: ACES HDR-VIDEO-1000nit-15nit-REC2020lim_1.1 REC.2100-PQ
@@ -1844,7 +2037,7 @@ colorspaces:
   - !<ColorSpace> #ACES LMT sRGB
     name: ACES LMT sRGB
     aliases: [ACES GamutComp sRGB]
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ACES - sRGB 2.2 Gamma Display
@@ -1864,7 +2057,7 @@ colorspaces:
   - !<ColorSpace> #ACES LMT Rec.1886
     name: ACES LMT Rec.1886
     aliases: [ACES GamutComp Rec.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: ACES - BT.1886-REC.709 Gamma Display
@@ -1884,7 +2077,7 @@ colorspaces:
   - !<ColorSpace> #ACES LMT Display P3
     name: ACES LMT Display P3
     aliases: [ACES GamutComp Display P3]
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: ACES Display P3
@@ -1904,7 +2097,7 @@ colorspaces:
   - !<ColorSpace> #ACES LMT Rec.2020
     name: ACES LMT Rec.2020
     aliases: [ACES GamutComp Rec.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: ACES REC.1886-REC.2020
@@ -1924,7 +2117,7 @@ colorspaces:
   - !<ColorSpace> #ACES LMT AdobeRGB
     name: ACES LMT AdobeRGB
     aliases: [ACES GamutComp AdobeRGB]
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ACES REC.1886-AdobeRGB
@@ -1945,7 +2138,7 @@ colorspaces:
   - !<ColorSpace> #ACES LMT Rec.2100PQ(1000)
     name: ACES LMT Rec.2100PQ(1000)
     aliases: [ACES GamutComp Rec.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: ACES HDR-VIDEO-1000nit-15nit-REC2020lim_1.1 REC.2100-PQ
@@ -1967,7 +2160,7 @@ colorspaces:
   - !<ColorSpace> #UnrealEngine Viewport sRGB
     name: UnrealEngine Viewport sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: Unreal Engine Viewport sRGB baked using 33 point cube. Essentially ACES with so called "fixes", "tweaks" and "extended gamut sim"
@@ -1985,7 +2178,7 @@ colorspaces:
   - !<ColorSpace> #UnrealEngine Viewport Rec.1886
     name: UnrealEngine Viewport Rec.1886
     aliases: []
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: Unreal Engine Viewport sRGB baked using 33 point cube. Essentially ACES with so called "fixes", "tweaks" and "extended gamut sim"
@@ -2004,7 +2197,7 @@ colorspaces:
   - !<ColorSpace> #UnrealEngine Viewport Display P3
     name: UnrealEngine Viewport Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: Unreal Engine Viewport sRGB baked using 33 point cube. Essentially ACES with so called "fixes", "tweaks" and "extended gamut sim"
@@ -2023,7 +2216,7 @@ colorspaces:
   - !<ColorSpace> #UnrealEngine Viewport Rec.2020
     name: UnrealEngine Viewport Rec.2020
     aliases: []
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: Unreal Engine Viewport sRGB baked using 33 point cube. Essentially ACES with so called "fixes", "tweaks" and "extended gamut sim"
@@ -2042,7 +2235,7 @@ colorspaces:
   - !<ColorSpace> #UnrealEngine Viewport AdobeRGB
     name: UnrealEngine Viewport AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: Unreal Engine Viewport sRGB baked using 33 point cube. Essentially ACES with so called "fixes", "tweaks" and "extended gamut sim"
@@ -2063,7 +2256,7 @@ colorspaces:
   - !<ColorSpace> #TCAMv2 sRGB
     name: TCAMv2 sRGB
     aliases: [Filmlight sRGB]
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: Filmlights TCAMv2 sRGB 2.2
@@ -2077,7 +2270,7 @@ colorspaces:
   - !<ColorSpace> #TCAMv2 AdobeRGB
     name: TCAMv2 AdobeRGB
     aliases: [Filmlight AdobeRGB]
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: Edited AdobeRGB 2.2
@@ -2092,7 +2285,7 @@ colorspaces:
   - !<ColorSpace> #TCAMv2 Rec.1886
     name: TCAMv2 Rec.1886
     aliases: [Filmlight Rec1886 Rec709, TCAMv2 BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: Filmlights TCAMv2 Rec1886 Rec709
@@ -2106,7 +2299,7 @@ colorspaces:
   - !<ColorSpace> #TCAMv2 Display P3
     name: TCAMv2 Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: Filmlights TCAMv2 P3D65 altered from 2.6 gamma (not sure if this is right)
@@ -2121,7 +2314,7 @@ colorspaces:
   - !<ColorSpace> #TCAMv2 Rec.2020
     name: TCAMv2 Rec.2020
     aliases: [Filmlight Rec1886 Rec.2020, TCAMv2 BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: Filmlights TCAMv2 Rec1886 Rec.2020
@@ -2135,7 +2328,7 @@ colorspaces:
   - !<ColorSpace> #TCAMv2 Rec.2100PQ(1000)
     name: TCAMv2 Rec.2100PQ(1000)
     aliases: [Filmlight Rec2100 PQ - Rec 2020 - 1000 nits, TCAMv2 BT.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: Filmlights TCAMv2 PQ2020_1000
@@ -2150,7 +2343,7 @@ colorspaces:
   - !<ColorSpace> #ARRI K1S1 sRGB
     name: ARRI K1S1 sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description:  ARRI Classic K1S1 Look with altered gamma for sRGB
@@ -2161,11 +2354,26 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC3}
         - !<FileTransform> {src: ARRI_LogC2Video_Classic709_33.cube, interpolation: tetrahedral}
         - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec709 EOTF 2.2}
+        
+  - !<ColorSpace> #ARRI K1S1 Display P3
+    name: ARRI K1S1 Display P3
+    aliases: []
+    family: Imagery Display P3
+    equalitygroup: ""
+    bitdepth: unknown
+    description:  ARRI Classic K1S1 Look with altered gamma for sRGB
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ARRI LogC3}
+        - !<FileTransform> {src: ARRI_LogC2Video_Classic709_33.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: Display P3 EOTF 2.2}
 
   - !<ColorSpace> #ARRI K1S1 AdobeRGB
     name: ARRI K1S1 AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description:  ARRI Classic K1S1 Look for AdobeRGB
@@ -2180,7 +2388,7 @@ colorspaces:
   - !<ColorSpace> #ARRI K1S1 Rec.1886
     name: ARRI K1S1 Rec.1886
     aliases: [ARRI Classic, ARRI K1S1 BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description:  ARRI Classic K1S1 Look
@@ -2195,7 +2403,7 @@ colorspaces:
   - !<ColorSpace> #ARRI ALF2 sRGB
     name: ARRI ALF2 sRGB
     aliases: [ARRI sRGB]
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI ALF-2 Rec709 with sRGB gamma
@@ -2210,7 +2418,7 @@ colorspaces:
   - !<ColorSpace> #ARRI ALF2 Rec.1886
     name: ARRI ALF2 Rec.1886
     aliases: [ARRI Rec709, ARRI ALF2 BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI ALF-2 Rec709
@@ -2224,7 +2432,7 @@ colorspaces:
   - !<ColorSpace> #ARRI ALF2 Display P3
     name: ARRI ALF2 Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI ALF-2 DCI-P3 with altered gamma for Display P3 (not sure if this works right)
@@ -2239,7 +2447,7 @@ colorspaces:
   - !<ColorSpace> #ARRI ALF2 Rec.2020
     name: ARRI ALF2 Rec.2020
     aliases: [ARRI Rec2020, ARRI ALF2 BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI ALF-2 Rec2020
@@ -2253,7 +2461,7 @@ colorspaces:
   - !<ColorSpace> #ARRI ALF2 AdobeRGB
     name: ARRI ALF2 AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI ALF-2 AdobeRGB
@@ -2268,7 +2476,7 @@ colorspaces:
   - !<ColorSpace> #ARRI ALF2 Rec.2100PQ(1000)
     name: ARRI ALF2 Rec.2100PQ(1000)
     aliases: [ARRI PQ-1k Rec2020, ARRI ALF2 BT.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI ALF-2 2100PQ-PW-1k-DW100
@@ -2283,7 +2491,7 @@ colorspaces:
   - !<ColorSpace> #ARRI Reveal sRGB
     name: ARRI Reveal sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI Reveal Rec709 with sRGB gamma
@@ -2298,7 +2506,7 @@ colorspaces:
   - !<ColorSpace> #ARRI Reveal Rec.1886
     name: ARRI Reveal Rec.1886
     aliases: [ARRI Reveal Gamma 2.4 Rec709, ARRI Reveal BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI Reveal Rec709
@@ -2312,7 +2520,7 @@ colorspaces:
   - !<ColorSpace> #ARRI Reveal Display P3
     name: ARRI Reveal Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI Reveal DCI-P3 with altered gamma for Display P3 (not sure if this works right)
@@ -2327,7 +2535,7 @@ colorspaces:
   - !<ColorSpace> #ARRI Reveal Rec.2020
     name: ARRI Reveal Rec.2020
     aliases: [ARRI Reveal Rec2020, ARRI Reveal BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI Reveal Rec2020
@@ -2341,7 +2549,7 @@ colorspaces:
   - !<ColorSpace> #ARRI Reveal AdobeRGB
     name: ARRI Reveal AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI Reveal AdobeRGB
@@ -2356,7 +2564,7 @@ colorspaces:
   - !<ColorSpace> #ARRI Reveal Rec.2100PQ(1000)
     name: ARRI Reveal Rec.2100PQ(1000)
     aliases: [ARRI Reveal ST2084-1k Rec2100, ARRI Reveal BT.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: ARRI Reveal 2100PQ-PW-1k-DW100
@@ -2371,7 +2579,7 @@ colorspaces:
   - !<ColorSpace> #RED IPP2 sRGB
     name: RED IPP2 sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: RWG Rec709 BT1886 with MedCont-Med Size v1.33 altered gamma for sRGB
@@ -2386,7 +2594,7 @@ colorspaces:
   - !<ColorSpace> #RED IPP2 Rec.1886
     name: RED IPP2 Rec.1886
     aliases: [RED IPP2 BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: RWG Rec709 BT1886 with MedCont-Med Size v1.33
@@ -2400,7 +2608,7 @@ colorspaces:
   - !<ColorSpace> #RED IPP2 Display P3
     name: RED IPP2 Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: RWG P3D65_GAMMA26-MedCont-Med Size v1.33 with altered gamma for Display P3 (not sure if this works right)
@@ -2415,7 +2623,7 @@ colorspaces:
   - !<ColorSpace> #RED IPP2 Rec.2020
     name: RED IPP2 Rec.2020
     aliases: [RED IPP2 BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: RWG REC2020_BT1886-MedCont-Med Size v1.33
@@ -2429,7 +2637,7 @@ colorspaces:
   - !<ColorSpace> #RED IPP2 AdobeRGB
     name: RED IPP2 AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: RWG REC2020_BT1886-MedCont-Med Size v1.33
@@ -2444,7 +2652,7 @@ colorspaces:
   - !<ColorSpace> #RED IPP2 Rec.2100PQ(1000)
     name: RED IPP2 Rec.2100PQ(1000)
     aliases: [RED IPP2 BT.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: RWG REC2020_HDR2084_1K-MedCont-Med Size v1.33 
@@ -2455,11 +2663,161 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Log3G10 REDWideGamutRGB}
         - !<FileTransform> {src: RWG_Log3G10_to_REC2020_HDR2084_1K_with_MEDIUM_CONTRAST_and_R_2_Medium_size_64_v1.13.cub, interpolation: tetrahedral}
 
+#Sony s709 - sP3d65 aka S-Cinetone
+  - !<ColorSpace> #Sony S-Cinetone sRGB
+    name: Sony S-Cinetone sRGB
+    aliases: []
+    family: Imagery sRGB
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony s709 monitor. AKA S-cinetone
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: S-Log3 S-Gamut3}
+        - !<FileTransform> {src: SL3SG3tos709.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec709 EOTF 2.2}
+
+  - !<ColorSpace> #Sony S-Cinetone Rec.1886
+    name: Sony S-Cinetone Rec.1886
+    aliases: []
+    family: Imagery Rec.1886
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony s709 monitor. AKA S-cinetone
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: S-Log3 S-Gamut3}
+        - !<FileTransform> {src: SL3SG3tos709.cube, interpolation: tetrahedral}
+
+  - !<ColorSpace> #Sony S-Cinetone Display P3
+    name: Sony S-Cinetone Display P3
+    aliases: []
+    family: Imagery Display P3
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony s709 monitor. AKA S-cinetone Luts P3D65_GAMMA26 with altered gamma for Display P3 (not sure if this works right)
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: S-Log3 S-Gamut3}
+        - !<FileTransform> {src: SL3SG3tosP3D65.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: DCI-P3 2.6, dst: Display P3 EOTF 2.2}
+
+  - !<ColorSpace> #Sony S-Cinetone Rec.2020
+    name: Sony S-Cinetone Rec.2020
+    aliases: []
+    family: Imagery Rec.2020
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony s709 monitor.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: S-Log3 S-Gamut3}
+        - !<FileTransform> {src: SL3SG3tosP3D65.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: DCI-P3 2.6, dst: Rec.2020}
+
+  - !<ColorSpace> #Sony S-Cinetone AdobeRGB
+    name: Sony S-Cinetone AdobeRGB
+    aliases: []
+    family: Imagery AdobeRGB
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony s709 monitor. AKA S-cinetone
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: S-Log3 S-Gamut3}
+        - !<FileTransform> {src: SL3SG3tos709.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: AdobeRGB EOTF 2.2}
+
+#Blackmagic Extended Video
+  - !<ColorSpace> #Blackmagic Extended Video sRGB
+    name: Blackmagic Extended Video sRGB
+    aliases: []
+    family: Imagery sRGB
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Uses official "Blackmagic Gen 5 Film to Extended Video" Matches the Gen 5 'Extended Video' output from Blackmagic cameras.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: BMDFilm WideGamut Gen5 Log}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Extended Video.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec709 EOTF 2.2}
+
+  - !<ColorSpace> #Blackmagic Extended Video Display P3
+    name: Blackmagic Extended Video Display P3
+    aliases: []
+    family: Imagery Display P3
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Uses official "Blackmagic Gen 5 Film to Extended Video" Matches the Gen 5 'Extended Video' output from Blackmagic cameras.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: BMDFilm WideGamut Gen5 Log}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Extended Video.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: Display P3 EOTF 2.2}
+
+  - !<ColorSpace> #Blackmagic Extended Video AdobeRGB
+    name: Blackmagic Extended Video AdobeRGB
+    aliases: []
+    family: Imagery AdobeRGB
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Uses official "Blackmagic Gen 5 Film to Extended Video" Matches the Gen 5 'Extended Video' output from Blackmagic cameras.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: BMDFilm WideGamut Gen5 Log}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Extended Video.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: AdobeRGB EOTF 2.2}
+
+  - !<ColorSpace> #Blackmagic Extended Video Rec.2020
+    name: Blackmagic Extended Video Rec.2020
+    aliases: []
+    family: Imagery Rec.2020
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Uses official "Blackmagic Gen 5 Film to Extended Video" Matches the Gen 5 'Extended Video' output from Blackmagic cameras.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: BMDFilm WideGamut Gen5 Log}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Extended Video.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec.2020}
+
+  - !<ColorSpace> #Blackmagic Extended Video Rec.1886
+    name: Blackmagic Extended Video Rec.1886
+    aliases: []
+    family: Imagery Rec.1886
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Uses official "Blackmagic Gen 5 Film to Extended Video" Matches the Gen 5 'Extended Video' output from Blackmagic cameras.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: BMDFilm WideGamut Gen5 Log}
+        - !<FileTransform> {src: Blackmagic Gen 5 Film to Extended Video.cube, interpolation: tetrahedral}
+
 #Canon 201911
   - !<ColorSpace> #Canon 201911 sRGB
     name: Canon 201911 sRGB
     aliases: []
-    family: Imagery
+    family: Imagery sRGB
     equalitygroup: ""
     bitdepth: unknown
     description: Canon 201911 Luts with BT709_WideDR altered gamma for sRGB
@@ -2474,7 +2832,7 @@ colorspaces:
   - !<ColorSpace> #Canon 201911 Rec.1886
     name: Canon 201911 Rec.1886
     aliases: [Canon 201911 BT.1886]
-    family: Imagery
+    family: Imagery Rec.1886
     equalitygroup: ""
     bitdepth: unknown
     description: Canon 201911 Luts with BT709_WideDR
@@ -2488,7 +2846,7 @@ colorspaces:
   - !<ColorSpace> #Canon 201911 Display P3
     name: Canon 201911 Display P3
     aliases: []
-    family: Imagery
+    family: Imagery Display P3
     equalitygroup: ""
     bitdepth: unknown
     description: Canon 201911 Luts P3D65_GAMMA26 with altered gamma for Display P3 (not sure if this works right)
@@ -2503,7 +2861,7 @@ colorspaces:
   - !<ColorSpace> #Canon 201911 Rec.2020
     name: Canon 201911 Rec.2020
     aliases: [Canon 201911 BT.2020]
-    family: Imagery
+    family: Imagery Rec.2020
     equalitygroup: ""
     bitdepth: unknown
     description: Canon 201911 Luts BT2020_709WideDR
@@ -2517,7 +2875,7 @@ colorspaces:
   - !<ColorSpace> #Canon 201911 AdobeRGB
     name: Canon 201911 AdobeRGB
     aliases: []
-    family: Imagery
+    family: Imagery AdobeRGB
     equalitygroup: ""
     bitdepth: unknown
     description: Canon 201911 AdobeRGB
@@ -2532,7 +2890,7 @@ colorspaces:
   - !<ColorSpace> #Canon 201911 Rec.2100PQ(1000)
     name: Canon 201911 Rec.2100PQ(1000)
     aliases: [Canon 201911 BT.2100PQ(1000)]
-    family: Imagery
+    family: Imagery Rec.2100PQ
     equalitygroup: ""
     bitdepth: unknown
     description: Canon 201911 Luts BT2020_PQ (might not be 1000 nits didnt check)
@@ -2544,11 +2902,11 @@ colorspaces:
         - !<FileTransform> {src: CinemaGamut_CanonLog3-to-BT2020_PQ_33_FF_Ver.2.0.cube, interpolation: tetrahedral}
 
 
-#Gamma Stuff
-  - !<ColorSpace> #Legacy sRGB
-    name: Legacy sRGB
-    aliases: []
-    family: Legacy
+#Power Function Stuff
+  - !<ColorSpace> #sRGB Legacy
+    name: sRGB Legacy
+    aliases: [Legacy sRGB]
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2562,7 +2920,7 @@ colorspaces:
   - !<ColorSpace> #Rec709 EOTF 2.2
     name: sRGB
     aliases: [EOTF 2.2, Rec709 EOTF 2.2, Pure 2.2 Gamma, "sRGB Display: 2.2 Gamma - Rec.709", sRGB I-D65, srgb_display, sRGB - Display, g22_rec709 - Texture, Utility - sRGB - Texture, sRGB - Texture, srgb_tx, srgb_texture, Input - Generic - sRGB - Texture]
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2576,7 +2934,7 @@ colorspaces:
   - !<ColorSpace> #sRGB 2.2 I-E
     name: sRGB 2.2 I-E
     aliases: []
-    family:
+    family: Power Functions
     equalitygroup: ""
     bitdepth: unknown
     description: sRGB IEC 61966-2-1 2.2 Exponent Reference EOTF Display with I-E white point
@@ -2590,7 +2948,7 @@ colorspaces:
   - !<ColorSpace> #Display P3 2.2 I-E
     name: Display P3 2.2 I-E
     aliases: []
-    family:
+    family: Power Functions
     equalitygroup: ""
     bitdepth: unknown
     description: Display P3 2.2 Exponent EOTF Display with I-E white point
@@ -2604,7 +2962,7 @@ colorspaces:
   - !<ColorSpace> #Rec.1886
     name: Rec.1886
     aliases: [BT.1886, BT.1886 2.4, BT.1886 EOTF, BT.1886 I-D65, Rec.1886 / Rec.709 Video - Display, rec1886_rec709_video_display, Rec.1886 Rec.709 - Display, rec1886_rec709_display, "Rec1886: 2.4 Gamma - Rec.709"]
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2615,10 +2973,10 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709}
         - !<ExponentTransform> {value: 2.4, direction: inverse}
 
-  - !<ColorSpace> #Legacy Display P3
-    name: Legacy Display P3
-    aliases: []
-    family: Legacy
+  - !<ColorSpace> #Display P3 Legacy
+    name: Display P3 Legacy
+    aliases: [Legacy Display P3]
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2632,7 +2990,7 @@ colorspaces:
   - !<ColorSpace> #Display P3 EOTF 2.2
     name: Display P3 EOTF 2.2
     aliases: [Display P3, Display P3 2.2, Display P3 I-D65, P3-D65 - Display, p3_d65_display, p3d65_display, AppleP3 sRGB OETF]
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2643,10 +3001,10 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear DCI-P3 D65}
         - !<ExponentTransform> {value: 2.2, direction: inverse}
 
-  - !<ColorSpace> #Legacy AdobeRGB
-    name: Legacy AdobeRGB
-    aliases: [AdobeRGB Piecewise 2.2]
-    family: Legacy
+  - !<ColorSpace> #AdobeRGB Legacy
+    name: AdobeRGB Legacy
+    aliases: [AdobeRGB Piecewise 2.2, Legacy AdobeRGB]
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2660,7 +3018,7 @@ colorspaces:
   - !<ColorSpace> #AdobeRGB EOTF 2.2
     name: AdobeRGB EOTF 2.2
     aliases: []
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2674,7 +3032,7 @@ colorspaces:
   - !<ColorSpace> #DCI-P3 2.6
     name: DCI-P3 2.6
     aliases: []
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2688,7 +3046,7 @@ colorspaces:
   - !<ColorSpace> #DCI-P3 D65 2.6
     name: DCI-P3 D65 2.6
     aliases: []
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2702,7 +3060,7 @@ colorspaces:
   - !<ColorSpace> #Rec.2020
     name: Rec.2020
     aliases: [BT.2020, BT.2020 2.4, BT.2020 I-D65, Rec.1886 / Rec.2020 Video - Display, rec1886_rec2020_video_display, Rec.1886 Rec.2020 - Display, rec1886_rec2020_display, "Rec1886: 2.4 Gamma - Rec.2020"]
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2716,7 +3074,7 @@ colorspaces:
   - !<ColorSpace> #Rec.2100-PQ
     name: Rec.2100-PQ
     aliases: [Rec.2100-PQ - Display, rec2100_pq_display, BT2100, ST-2084, Rec.2100]
-    family:
+    family: Power Functions
     equalitygroup:
     bitdepth: 32f
     description: |
@@ -2730,7 +3088,7 @@ colorspaces:
   - !<ColorSpace> #Rec.2100-PQ 1000 nits limited
     name: Rec.2100-PQ 1000 nits limited
     aliases: [Rec.2100(1000nit Limit)]
-    family:
+    family: Power Functions
     equalitygroup: ""
     bitdepth: 32f
     description: BT.2100-ST.2084 1000 nits limited display
@@ -2749,7 +3107,7 @@ colorspaces:
   - !<ColorSpace> #Rec.2100-HLG
     name: Rec.2100-HLG
     aliases: [rec2100_hlg_display, Rec.2100-HLG - Display, BT.2100-HLG]
-    family:
+    family: Power Functions
     equalitygroup: ""
     bitdepth: 32f
     description: BT.2100-HLG 1000 nit Display
@@ -2763,7 +3121,7 @@ colorspaces:
   - !<ColorSpace> #BT.2020 2.4 I-E
     name: BT.2020 2.4 I-E
     aliases: []
-    family:
+    family: Power Functions
     equalitygroup: ""
     bitdepth: unknown
     description: BT.2020 2.4 Exponent EOTF Display with I-E white point
@@ -2907,7 +3265,7 @@ colorspaces:
   - !<ColorSpace> #Non-Color
     name: Non-Color
     aliases: [Generic Data, Non-Colour Data, Raw, Utility - Raw]
-    family: Data
+    family:
     description: |
         Generic data that is not color, will not apply any color transform (e.g. normal maps)
     equalitygroup:
@@ -3033,11 +3391,107 @@ looks:
           saturation: 1.15
           pivot: {contrast: -0.2}
 
+  - !<Look> #AgX - Power Purity Boost 1
+    name: AgX - Power Purity Boost 1
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.001, 0.001, 0.001], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.000}
+
+  - !<Look> #AgX - Power Purity Boost 2
+    name: AgX - Power Purity Boost 2
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.002, 0.002, 0.002], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.105}
+
+  - !<Look> #AgX - Power Purity Boost 3
+    name: AgX - Power Purity Boost 3
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.6195, 1.6195, 1.6195], sat: 1.150}
+
+  - !<Look> #AgX - Power Purity Boost 4
+    name: AgX - Power Purity Boost 4
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.006, 0.006, 0.006], power: [1.40, 1.40, 1.40], slope: [1.545, 1.545, 1.545], sat: 1.320}
+
   - !<Look> #AgX Kraken - Punchy
     name: AgX Kraken - Punchy
     process_space: AgX Base Kraken sRGB
     description: A punchy and more chroma laden look
     transform: !<CDLTransform> {power: [1.35, 1.35, 1.35], sat: 1.4}
+
+  - !<Look> #AgX Kraken - Power Purity Boost 1
+    name: AgX Kraken - Power Purity Boost 1
+    process_space: Linear Rec.709
+    description: A punchy and more chroma laden look
+    transform: !<CDLTransform> {offset: [0.001, 0.001, 0.001], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.000}
+
+  - !<Look> #AgX Kraken - Power Purity Boost 2
+    name: AgX Kraken - Power Purity Boost 2
+    process_space: Linear Rec.709
+    description: A punchy and more chroma laden look
+    transform: !<CDLTransform> {offset: [0.002, 0.002, 0.002], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.105}
+
+  - !<Look> #AgX Kraken - Power Purity Boost 3
+    name: AgX Kraken - Power Purity Boost 3
+    process_space: Linear Rec.709
+    description: A punchy and more chroma laden look
+    transform: !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.6195, 1.6195, 1.6195], sat: 1.150}
+
+  - !<Look> #AgX Kraken - Power Purity Boost 4
+    name: AgX Kraken - Power Purity Boost 4
+    process_space: Linear Rec.709
+    description: A punchy and more chroma laden look
+    transform: !<CDLTransform> {offset: [0.006, 0.006, 0.006], power: [1.40, 1.40, 1.40], slope: [1.545, 1.545, 1.545], sat: 1.320}
+
+  - !<Look> #Power Purity Boost 1
+    name: Power Purity Boost 1
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app.
+    transform: !<CDLTransform> {offset: [0.001, 0.001, 0.001], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.000}
+
+  - !<Look> #Power Purity Boost 2
+    name: Power Purity Boost 2
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app.
+    transform: !<CDLTransform> {offset: [0.002, 0.002, 0.002], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.105}
+
+  - !<Look> #Power Purity Boost 3
+    name: Power Purity Boost 3
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.6195, 1.6195, 1.6195], sat: 1.150}
+
+  - !<Look> #Power Purity Boost 4
+    name: Power Purity Boost 4
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.006, 0.006, 0.006], power: [1.40, 1.40, 1.40], slope: [1.545, 1.545, 1.545], sat: 1.320}
+
+  - !<Look> #Power Purity Boost 1 for Dim
+    name: Power Purity Boost 1 for Dim
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.001, 0.001, 0.001], power: [1.35, 1.35, 1.35], slope: [1.8166, 1.8166, 1.8166], sat: 1.000}
+
+  - !<Look> #Power Purity Boost 2 for Dim
+    name: Power Purity Boost 2 for Dim
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.002, 0.002, 0.002], power: [1.35, 1.35, 1.35], slope: [1.8166, 1.8166, 1.8166], sat: 1.105}
+
+  - !<Look> #Power Purity Boost 3 for Dim
+    name: Power Purity Boost 3 for Dim
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [2.04333, 2.04333, 2.04333], sat: 1.150}
+
+  - !<Look> #Power Purity Boost 4 for Dim
+    name: Power Purity Boost 4 for Dim
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved app
+    transform: !<CDLTransform> {offset: [0.006, 0.006, 0.006], power: [1.40, 1.40, 1.40], slope: [1.9309, 1.9309, 1.9309], sat: 1.320}
 
   - !<Look> #Filmic - Very High Contrast
     name: Filmic - Very High Contrast
@@ -3092,6 +3546,93 @@ looks:
       children:
         - !<FileTransform> {src: filmic_to_0-35_1-30.spi1d, interpolation: linear}
         - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
+
+  - !<Look> #2499DRT - Power Purity Boost 1
+    name: 2499DRT - Power Purity Boost 1
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved appk
+    transform: !<CDLTransform> {offset: [0.001, 0.001, 0.001], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.000}
+
+  - !<Look> #2499DRT - Power Purity Boost 2
+    name: 2499DRT - Power Purity Boost 2
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved appk
+    transform: !<CDLTransform> {offset: [0.002, 0.002, 0.002], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.105}
+
+  - !<Look> #2499DRT - Power Purity Boost 3
+    name: 2499DRT - Power Purity Boost 3
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved appk
+    transform: !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.6195, 1.6195, 1.6195], sat: 1.150}
+
+  - !<Look> #2499DRT - Power Purity Boost 4
+    name: 2499DRT - Power Purity Boost 4
+    process_space: Linear Rec.709
+    description: A nicked idea from a beloved appk
+    transform: !<CDLTransform> {offset: [0.006, 0.006, 0.006], power: [1.40, 1.40, 1.40], slope: [1.545, 1.545, 1.545], sat: 1.320}
+
+  - !<Look> #2499DRT - BnWX
+    name: 2499DRT - BnWX
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-BnWX.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - ClassicCinemaNegative
+    name: 2499DRT - ClassicCinemaNegative
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-ClassicCinemaNegative.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - ClassicNegative
+    name: 2499DRT - ClassicNegative
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-ClassicNegative.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - ClassicReversal
+    name: 2499DRT - ClassicReversal
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-ClassicReversal.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - CrazyNegative
+    name: 2499DRT - CrazyNegative
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-CrazyNegative.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - InstantFilm
+    name: 2499DRT - InstantFilm
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-InstantFilm.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - PrintV1
+    name: 2499DRT - PrintV1
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-PrintV1.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - PrintV2
+    name: 2499DRT - PrintV2
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-PrintV2.cube, interpolation: linear}
+
+  - !<Look> #2499DRT - PrintV3
+    name: 2499DRT - PrintV3
+    process_space: 2499DRT Log (2499)
+    transform: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: STP-2399Log-PrintV3.cube, interpolation: linear}
 
   - !<Look> #ACES - 1.3 Reference Gamut Compression BAKED!!!
       # special thanks to piotrus3333 for supplying the LogC4 based LMT lut
