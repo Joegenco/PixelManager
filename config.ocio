@@ -3625,88 +3625,88 @@ looks:
         - !<FileTransform> {src: filmic_to_0-35_1-30.spi1d, interpolation: linear}
         - !<FileTransform> {src: filmic_to_0-70_1-03.spi1d, interpolation: linear, direction: inverse}
 
-  - !<Look> #2499DRT - Power Purity Boost 1
-    name: 2499DRT - Power Purity Boost 1
+  - !<Look> #JP2499DRT - Power Purity Boost 1
+    name: JP2499DRT - Power Purity Boost 1
     process_space: Linear Rec.709
     description: A nicked idea from a beloved appk
     transform: !<CDLTransform> {offset: [0.001, 0.001, 0.001], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.000}
 
-  - !<Look> #2499DRT - Power Purity Boost 2
-    name: 2499DRT - Power Purity Boost 2
+  - !<Look> #JP2499DRT - Power Purity Boost 2
+    name: JP2499DRT - Power Purity Boost 2
     process_space: Linear Rec.709
     description: A nicked idea from a beloved appk
     transform: !<CDLTransform> {offset: [0.002, 0.002, 0.002], power: [1.35, 1.35, 1.35], slope: [1.56, 1.56, 1.56], sat: 1.105}
 
-  - !<Look> #2499DRT - Power Purity Boost 3
-    name: 2499DRT - Power Purity Boost 3
+  - !<Look> #JP2499DRT - Power Purity Boost 3
+    name: JP2499DRT - Power Purity Boost 3
     process_space: Linear Rec.709
     description: A nicked idea from a beloved appk
     transform: !<CDLTransform> {offset: [0.005, 0.005, 0.005], power: [1.45, 1.45, 1.45], slope: [1.6195, 1.6195, 1.6195], sat: 1.150}
 
-  - !<Look> #2499DRT - Power Purity Boost 4
-    name: 2499DRT - Power Purity Boost 4
+  - !<Look> #JP2499DRT - Power Purity Boost 4
+    name: JP2499DRT - Power Purity Boost 4
     process_space: Linear Rec.709
     description: A nicked idea from a beloved appk
     transform: !<CDLTransform> {offset: [0.006, 0.006, 0.006], power: [1.40, 1.40, 1.40], slope: [1.545, 1.545, 1.545], sat: 1.320}
 
-  - !<Look> #2499DRT - BnWX
-    name: 2499DRT - BnWX
+  - !<Look> #JP2499DRT - BnWX
+    name: JP2499DRT - BnWX
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-BnWX.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - ClassicCinemaNegative
-    name: 2499DRT - ClassicCinemaNegative
+  - !<Look> #JP2499DRT - ClassicCinemaNegative
+    name: JP2499DRT - ClassicCinemaNegative
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-ClassicCinemaNegative.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - ClassicNegative
-    name: 2499DRT - ClassicNegative
+  - !<Look> #JP2499DRT - ClassicNegative
+    name: JP2499DRT - ClassicNegative
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-ClassicNegative.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - ClassicReversal
-    name: 2499DRT - ClassicReversal
+  - !<Look> #JP2499DRT - ClassicReversal
+    name: JP2499DRT - ClassicReversal
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-ClassicReversal.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - CrazyNegative
-    name: 2499DRT - CrazyNegative
+  - !<Look> #JP2499DRT - CrazyNegative
+    name: JP2499DRT - CrazyNegative
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-CrazyNegative.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - InstantFilm
-    name: 2499DRT - InstantFilm
+  - !<Look> #JP2499DRT - InstantFilm
+    name: JP2499DRT - InstantFilm
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-InstantFilm.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - PrintV1
-    name: 2499DRT - PrintV1
+  - !<Look> #JP2499DRT - PrintV1
+    name: JP2499DRT - PrintV1
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-PrintV1.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - PrintV2
-    name: 2499DRT - PrintV2
+  - !<Look> #JP2499DRT - PrintV2
+    name: JP2499DRT - PrintV2
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
         - !<FileTransform> {src: STP-2399Log-PrintV2.cube, interpolation: linear}
 
-  - !<Look> #2499DRT - PrintV3
-    name: 2499DRT - PrintV3
+  - !<Look> #JP2499DRT - PrintV3
+    name: JP2499DRT - PrintV3
     process_space: 2499DRT Log (2499)
     transform: !<GroupTransform>
       children:
