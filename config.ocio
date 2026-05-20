@@ -79,9 +79,28 @@ roles:
 #  XYZ: Linear CIE-XYZ D65
 
 file_rules:
+  - !<Rule> {name: srgb_tx, colorspace: sRGB, pattern: "*srgb_tx*", extension: "*"}
+  - !<Rule> {name: srgb_texture, colorspace: sRGB, pattern: "*srgb_texture*", extension: "*"}
+  - !<Rule> {name: ACEScg, colorspace: ACEScg, pattern: "*ACEScg*", extension: "*"}
+  - !<Rule> {name: acescg_lower, colorspace: ACEScg, pattern: "*acescg*", extension: "*"}
+  - !<Rule> {name: lin_rec709, colorspace: Linear Rec.709, pattern: "*lin_rec709*", extension: "*"}
+  - !<Rule> {name: lin_srgb, colorspace: Linear Rec.709, pattern: "*lin_srgb*", extension: "*"}
   - !<Rule> {name: PBRMaps, regex: ".*(_(Normal|normal|Roughness|roughness|Metallic|metallic|Metal|metal|Height|height|Displacement|displacement|AmbientOcclusion|ambientOcclusion|AO|ao|Specular|specular|Glossiness|glossiness|Gloss|gloss|Cavity|cavity|Subsurface|subsurface|SubsurfaceScattering|subsurfaceScattering|SSS|sss|Alpha|alpha|Opacity|opacity|_nm|_rm|_mm|_hm|_dm|_ao|_sm|_gm|_cm|_ss|_sssm|_sss|_am|_om|_arm|_orm)).*", colorspace: Non-Color}
+  - !<Rule> {name: jpg, colorspace: sRGB, pattern: "*", extension: jpg}
+  - !<Rule> {name: jpeg, colorspace: sRGB, pattern: "*", extension: jpeg}
+  - !<Rule> {name: tga, colorspace: sRGB, pattern: "*", extension: tga}
+  - !<Rule> {name: png, colorspace: sRGB, pattern: "*", extension: png}
+  - !<Rule> {name: tif, colorspace: sRGB, pattern: "*", extension: tif}
+  - !<Rule> {name: tiff, colorspace: sRGB, pattern: "*", extension: tiff}
   - !<Rule> {name: OpenEXR, extension: "exr", pattern: "*", colorspace: Linear Rec.709}
   - !<Rule> {name: hdr, extension: "hdr", pattern: "*", colorspace: Linear Rec.709}
+  - !<Rule> {name: __usdz_jpg, colorspace: sRGB, regex: ".*[uu][ss][dd][zz]\\[.*[jj][pp][gg]\\]"}
+  - !<Rule> {name: __usdz_jpeg, colorspace: sRGB, regex: ".*[uu][ss][dd][zz]\\[.*[jj][pp][ee][gg]\\]"}
+  - !<Rule> {name: __usdz_tga, colorspace: sRGB, regex: ".*[uu][ss][dd][zz]\\[.*[tt][gg][aa]\\]"}
+  - !<Rule> {name: __usdz_png, colorspace: sRGB, regex: ".*[uu][ss][dd][zz]\\[.*[pp][nn][gg]\\]"}
+  - !<Rule> {name: __usdz_tif, colorspace: sRGB, regex: ".*[uu][ss][dd][zz]\\[.*[tt][ii][ff]\\]"}
+  - !<Rule> {name: __usdz_tiff, colorspace: sRGB, regex: ".*[uu][ss][dd][zz]\\[.*[tt][ii][ff][ff]\\]"}
+  - !<Rule> {name: __usdz_exr, colorspace: ACEScg, regex: ".*[uu][ss][dd][zz]\\[.*[ee][xx][rr]\\]"}
   - !<Rule> {name: ColorSpaceNamePathSearch}
   - !<Rule> {name: Default, colorspace: Linear Rec.709}
  
@@ -376,7 +395,7 @@ colorspaces:
 
   - !<ColorSpace> #Linear Rec.709
     name: Linear Rec.709
-    aliases: [Linear, Linear BT.709, Linear BT.709 I-D65, Linear Tristimulus, linrec709, Utility - Linear - sRGB, Utility - Linear - Rec.709, lin_srgb, Linear Rec.709 (sRGB), lin_rec709_srgb, lin_rec709, lin_srgb, "CGI: Linear - Rec.709"]
+    aliases: [Linear, Linear BT.709, Linear BT.709 I-D65, Linear Tristimulus, linrec709, Utility - Linear - sRGB, Utility - Linear - Rec.709, lin_srgb, Linear Rec.709 (sRGB), lin_rec709_srgb, lin_rec709, lin_rec709_scene, lin_srgb, "CGI: Linear - Rec.709"]
     family: Chromaticity
     equalitygroup:
     bitdepth: 32f
@@ -461,7 +480,7 @@ colorspaces:
 
   - !<ColorSpace> #Linear Rec.2020
     name: Linear Rec.2020
-    aliases: [Linear BT.2020 I-D65, Linear BT.2020, lin_rec2020, Utility - Linear - Rec.2020]
+    aliases: [Linear BT.2020 I-D65, Linear BT.2020, lin_rec2020, lin_rec2020_scene, Utility - Linear - Rec.2020]
     family: Chromaticity
     equalitygroup:
     bitdepth: 32f
@@ -475,7 +494,7 @@ colorspaces:
 
   - !<ColorSpace> #Linear ACES - AP0
     name: Linear ACES - AP0
-    aliases: [ACES2065-1, Linear ACES, aces2065_1, ACES - ACES2065-1, lin_ap0, "ACES: Linear - AP0"]
+    aliases: [ACES2065-1, Linear ACES, aces2065_1, aces, ACES, aces_ap0, ACES - ACES2065-1, lin_ap0, lin_ap0_scene, "ACES: Linear - AP0"]
     family: Chromaticity
     equalitygroup: ""
     bitdepth: unknown
@@ -489,7 +508,7 @@ colorspaces:
 
   - !<ColorSpace> #Linear ACES - AP1
     name: Linear ACES - AP1
-    aliases: [Linear ACEScg, lin_ap1, ACES - ACEScg, ACEScg, "ACEScg: Linear - AP1", lin_ap1_scene]
+    aliases: [Linear ACEScg, lin_ap1, lin_acescg, ACES - ACEScg, ACEScg, acescg, aces_cg, aces-cg, aces_ap1, "ACEScg: Linear - AP1", lin_ap1_scene]
     family: Chromaticity
     equalitygroup: ""
     bitdepth: unknown
@@ -3462,7 +3481,7 @@ colorspaces:
         
   - !<ColorSpace> #sRGB
     name: sRGB
-    aliases: [EOTF 2.2, Rec709 EOTF 2.2, Pure 2.2 Gamma, "sRGB Display: 2.2 Gamma - Rec.709", sRGB I-D65, srgb_display, sRGB - Display, g22_rec709 - Texture, Utility - sRGB - Texture, sRGB - Texture, srgb_tx, srgb_texture, Input - Generic - sRGB - Texture]
+    aliases: [EOTF 2.2, Rec709 EOTF 2.2, Pure 2.2 Gamma, "sRGB Display: 2.2 Gamma - Rec.709", sRGB I-D65, srgb_display, sRGB - Display, g22_rec709 - Texture, Utility - sRGB - Texture, sRGB - Texture, srgb_tx, srgb_texture, srgb_rec709_scene, Input - Generic - sRGB - Texture]
     family: Power Functions
     equalitygroup:
     bitdepth: 32f
@@ -3532,7 +3551,7 @@ colorspaces:
 
   - !<ColorSpace> #Display P3 EOTF 2.2
     name: Display P3 EOTF 2.2
-    aliases: [Display P3, Display P3 2.2, Display P3 I-D65, P3-D65 - Display, p3_d65_display, p3d65_display, AppleP3 sRGB OETF]
+    aliases: [Display P3, Display P3 2.2, Display P3 I-D65, P3-D65 - Display, p3_d65_display, p3d65_display, srgb_p3d65_scene, AppleP3 sRGB OETF]
     family: Power Functions
     equalitygroup:
     bitdepth: 32f
@@ -3786,7 +3805,7 @@ colorspaces:
 
   - !<ColorSpace> #Non-Color
     name: Non-Color
-    aliases: [Generic Data, Non-Colour Data, Raw, Utility - Raw]
+    aliases: [Generic Data, Non-Colour Data, Raw, Utility - Raw, Non-Color, raw, none, Passthrough]
     family:
     description: |
         Generic data that is not color, will not apply any color transform (e.g. normal maps)
